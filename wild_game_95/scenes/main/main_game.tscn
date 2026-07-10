@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://jf3diyih5ovq"]
+
+[node name="Main" type="Node" unique_id=614951479]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1572506534]
+
+[node name="EntitiesRoot" type="Node" parent="." unique_id=2128445096]
+
+[node name="VFXRoot" type="Node3D" parent="." unique_id=1412285277]
+
+[node name="WorldRoot" type="Node3D" parent="." unique_id=1628493592]
