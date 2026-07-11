@@ -1,3 +1,28 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+# Godot 4+
+wild_game_95/.godot/
+wild_game_95/.nomedia
+
+# Export files
+wild_game_95/export.cfg
+wild_game_95/export_credentials.cfg
+
+# Temporary files
+*.tmp
+*.translation
+
+# Mono (C#)
+wild_game_95/.mono/
+wild_game_95/data_*/
+mono_crash.*.json
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Builds
+build/
+exports/
