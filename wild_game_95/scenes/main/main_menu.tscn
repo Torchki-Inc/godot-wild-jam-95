@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dy34rmjjvwdbo"]
+
+[ext_resource type="Script" uid="uid://dmtd10nyx4w05" path="res://scenes/main/main_menu.gd" id="1_sd5it"]
+[ext_resource type="PackedScene" uid="uid://jf3diyih5ovq" path="res://scenes/main/main_game.tscn" id="2_5vafy"]
+
+[node name="MainMenu" type="Control" unique_id=1241170514]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sd5it")
+game_scene = ExtResource("2_5vafy")
+
+[node name="StartButton" type="Button" parent="." unique_id=1126928259]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -15.5
+offset_right = 28.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
