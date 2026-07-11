@@ -85,8 +85,7 @@ func enter_fight(enemy_data) -> void:
 		push_error("No fight_scene assigned.")
 		return
 
-	GameState.prev_state = GameState.state
-	GameState.state = GameState.State.FIGHTING
+	GameState.set_state(GameState.State.FIGHTING)
 
 	get_tree().paused = true
 
@@ -109,7 +108,7 @@ func _on_fight_finished(result = null) -> void:
 		current_fight.queue_free()
 		current_fight = null
 
-	GameState.state = GameState.State.EXPLORING
+	GameState.set_state(GameState.State.EXPLORING)
 	get_tree().paused = false
 
 	handle_fight_result(result)
