@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dpxvs80oyk00q"]
 
+[ext_resource type="Material" uid="uid://c4mrjp4ifge4i" path="res://shaders/materials/wall_material.tres" id="1_rlehd"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_c8qny"]
 size = Vector3(2, 0.2, 2)
 
@@ -7,10 +9,14 @@ size = Vector3(2, 0.2, 2)
 data = PackedVector3Array(-1, 0.099999994, 1, 1, 0.099999994, 1, -1, -0.099999994, 1, 1, 0.099999994, 1, 1, -0.099999994, 1, -1, -0.099999994, 1, 1, 0.099999994, -1, -1, 0.099999994, -1, 1, -0.099999994, -1, -1, 0.099999994, -1, -1, -0.099999994, -1, 1, -0.099999994, -1, 1, 0.099999994, 1, 1, 0.099999994, -1, 1, -0.099999994, 1, 1, 0.099999994, -1, 1, -0.099999994, -1, 1, -0.099999994, 1, -1, 0.099999994, -1, -1, 0.099999994, 1, -1, -0.099999994, -1, -1, 0.099999994, 1, -1, -0.099999994, 1, -1, -0.099999994, -1, 1, 0.099999994, 1, -1, 0.099999994, 1, 1, 0.099999994, -1, -1, 0.099999994, 1, -1, 0.099999994, -1, 1, 0.099999994, -1, -1, -0.099999994, 1, 1, -0.099999994, 1, -1, -0.099999994, -1, 1, -0.099999994, 1, 1, -0.099999994, -1, -1, -0.099999994, -1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wewn7"]
-size = Vector3(2, 2, 0.2)
+size = Vector3(2, 3, 0.2)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rlehd"]
-data = PackedVector3Array(-1, 1, 0.099999994, 1, 1, 0.099999994, -1, -1, 0.099999994, 1, 1, 0.099999994, 1, -1, 0.099999994, -1, -1, 0.099999994, 1, 1, -0.099999994, -1, 1, -0.099999994, 1, -1, -0.099999994, -1, 1, -0.099999994, -1, -1, -0.099999994, 1, -1, -0.099999994, 1, 1, 0.099999994, 1, 1, -0.099999994, 1, -1, 0.099999994, 1, 1, -0.099999994, 1, -1, -0.099999994, 1, -1, 0.099999994, -1, 1, -0.099999994, -1, 1, 0.099999994, -1, -1, -0.099999994, -1, 1, 0.099999994, -1, -1, 0.099999994, -1, -1, -0.099999994, 1, 1, 0.099999994, -1, 1, 0.099999994, 1, 1, -0.099999994, -1, 1, 0.099999994, -1, 1, -0.099999994, 1, 1, -0.099999994, -1, -1, 0.099999994, 1, -1, 0.099999994, -1, -1, -0.099999994, 1, -1, 0.099999994, 1, -1, -0.099999994, -1, -1, -0.099999994)
+data = PackedVector3Array(-1, 1.5, 0.099999994, 1, 1.5, 0.099999994, -1, -1.5, 0.099999994, 1, 1.5, 0.099999994, 1, -1.5, 0.099999994, -1, -1.5, 0.099999994, 1, 1.5, -0.099999994, -1, 1.5, -0.099999994, 1, -1.5, -0.099999994, -1, 1.5, -0.099999994, -1, -1.5, -0.099999994, 1, -1.5, -0.099999994, 1, 1.5, 0.099999994, 1, 1.5, -0.099999994, 1, -1.5, 0.099999994, 1, 1.5, -0.099999994, 1, -1.5, -0.099999994, 1, -1.5, 0.099999994, -1, 1.5, -0.099999994, -1, 1.5, 0.099999994, -1, -1.5, -0.099999994, -1, 1.5, 0.099999994, -1, -1.5, 0.099999994, -1, -1.5, -0.099999994, 1, 1.5, 0.099999994, -1, 1.5, 0.099999994, 1, 1.5, -0.099999994, -1, 1.5, 0.099999994, -1, 1.5, -0.099999994, 1, 1.5, -0.099999994, -1, -1.5, 0.099999994, 1, -1.5, 0.099999994, -1, -1.5, -0.099999994, 1, -1.5, 0.099999994, 1, -1.5, -0.099999994, -1, -1.5, -0.099999994)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rlehd"]
+material = ExtResource("1_rlehd")
+size = Vector3(2, 3, 0.2)
 
 [node name="Root" type="Node3D" unique_id=266184487]
 
@@ -23,10 +29,19 @@ mesh = SubResource("BoxMesh_c8qny")
 shape = SubResource("ConcavePolygonShape3D_1u5j6")
 
 [node name="WallTile" type="MeshInstance3D" parent="." unique_id=369783785]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0.9)
 mesh = SubResource("BoxMesh_wewn7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallTile" unique_id=910943314]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallTile/StaticBody3D" unique_id=1801293866]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallTile/StaticBody3D" unique_id=231822148]
+shape = SubResource("ConcavePolygonShape3D_rlehd")
+
+[node name="WallTileForward" type="MeshInstance3D" parent="." unique_id=836057422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0.9)
+mesh = SubResource("BoxMesh_rlehd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallTileForward" unique_id=318822425]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallTileForward/StaticBody3D" unique_id=1607806512]
 shape = SubResource("ConcavePolygonShape3D_rlehd")

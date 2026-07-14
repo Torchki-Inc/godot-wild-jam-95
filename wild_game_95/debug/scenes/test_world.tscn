@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://do8b7e4m5oa45"]
 
 [ext_resource type="PackedScene" uid="uid://b57xu2cle8m5n" path="res://scenes/player/player.tscn" id="1_4jxr4"]
-[ext_resource type="PackedScene" uid="uid://ch08f5l6v1arw" path="res://debug/scenes/level.tscn" id="2_37slg"]
+[ext_resource type="PackedScene" uid="uid://dfpt2p3g02nw1" path="res://debug/scenes/test_box.tscn" id="2_4jxr4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4jxr4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,14 +18,13 @@ glow_enabled = true
 [node name="TestWorld" type="Node3D" unique_id=2098245713]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=209533350]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.08185648, -0.6160386, -0.78345126, 0.4932541, -0.65802455, 0.56895, 0, 5.830118, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1773301666]
 environment = SubResource("Environment_hh3ca")
 
-[node name="Player" parent="." unique_id=1686751974 instance=ExtResource("1_4jxr4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.216225, 5.984236, 0.028839588)
+[node name="TestBox" parent="." unique_id=1442788025 instance=ExtResource("2_4jxr4")]
 
-[node name="Level" parent="." unique_id=1605686199 instance=ExtResource("2_37slg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+[node name="Player" parent="." unique_id=1686751974 instance=ExtResource("1_4jxr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)

@@ -8,9 +8,16 @@ extends CharacterBody3D
 @export_group("Camera")
 @export var head: Node3D
 
-
+enum FacingDirection {
+	FORWARD,
+	BACKWARD,
+	LEFT,
+	RIGHT,
+}
+var current_facing: FacingDirection = FacingDirection.LEFT
 
 func _physics_process(delta: float) -> void:
+	RenderingServer.global_shader_parameter_set("player_position", global_position)
 	var input_dir := Vector2.ZERO
 	input_dir = Input.get_vector(
 		"move_left",
