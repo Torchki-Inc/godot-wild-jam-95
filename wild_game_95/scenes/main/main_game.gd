@@ -1,5 +1,7 @@
 extends Node
 
+@export var test_encounter: EncounterData
+
 @export var starting_level: PackedScene
 @export var fight_scene: PackedScene
 @export var player_scene: PackedScene
@@ -12,12 +14,19 @@ var current_level: Node
 var player: Node
 var current_fight: Node
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		if GameState.state == GameState.State.EXPLORING:
+			enter_fight(test_encounter)
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 	spawn_player()
 	load_level(starting_level)
+
+	GameState.set_state(GameState.State.EXPLORING)
+
 
 
 func load_level(
@@ -38,7 +47,6 @@ func load_level(
 	level_root.add_child(current_level)
 
 	move_player_to_spawn(spawn_point_name)
-	GameState.state = GameState.State.EXPLORING
 
 
 func change_level(
@@ -76,7 +84,7 @@ func move_player_to_spawn(spawn_point_name: StringName) -> void:
 	if player is Node3D:
 		player.global_transform = spawn_point.global_transform
 
-func enter_fight(enemy_data) -> void:
+func enter_fight(encounter_data: EncounterData) -> void:
 	if current_fight != null:
 		push_warning("A fight is already active.")
 		return
@@ -93,7 +101,7 @@ func enter_fight(enemy_data) -> void:
 	current_fight.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 	if current_fight.has_method("setup"):
-		current_fight.setup(enemy_data)
+		current_fight.setup(encounter_data)
 
 	fight_root.add_child(current_fight)
 

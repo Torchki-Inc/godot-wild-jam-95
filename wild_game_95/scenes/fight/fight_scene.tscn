@@ -1,6 +1,515 @@
 [gd_scene format=3 uid="uid://y0vuuyw7ms08"]
 
 [ext_resource type="Script" uid="uid://dd1pfjfpxbdh6" path="res://scenes/fight/fight.gd" id="1_qxmn2"]
+[ext_resource type="Texture2D" uid="uid://bmwt3by7xwf6c" path="res://assets/battle_overlay.png" id="2_2sgx1"]
+[ext_resource type="Texture2D" uid="uid://clk8is2byogge" path="res://assets/battle_button.png" id="3_wcevn"]
 
-[node name="FightScene" type="Node3D" unique_id=558413241]
+[node name="Fight" type="Node3D" unique_id=558413241]
 script = ExtResource("1_qxmn2")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1472521781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40.499)
+
+[node name="BattleUI" type="CanvasLayer" parent="." unique_id=1781115597]
+
+[node name="Root" type="Control" parent="BattleUI" unique_id=151723790]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Border" type="TextureRect" parent="BattleUI/Root" unique_id=365026297]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2sgx1")
+
+[node name="MainButtons" type="GridContainer" parent="BattleUI/Root" unique_id=684442678]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -133.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="Attack" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=1362617117]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/MainButtons/Attack" unique_id=146017291]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.5
+offset_right = 30.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ATTACK"
+
+[node name="Item" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=1692229795]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/MainButtons/Item" unique_id=685212206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -11.5
+offset_right = 36.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "USE ITEM"
+
+[node name="Skill" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=47383889]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/MainButtons/Skill" unique_id=170388976]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "USE SKILL"
+
+[node name="Run" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=1364729401]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/MainButtons/Run" unique_id=777595942]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "RUN"
+
+[node name="AttackButtons" type="GridContainer" parent="BattleUI/Root" unique_id=318286092]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -133.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="Attack1" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=1745128615]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/AttackButtons/Attack1" unique_id=390628600]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.5
+offset_right = 30.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SLASH"
+
+[node name="Attack2" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=167474289]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/AttackButtons/Attack2" unique_id=1149886176]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.5
+offset_right = 30.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "HEAVY STRIKE"
+
+[node name="Attack3" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=107532705]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/AttackButtons/Attack3" unique_id=1514142895]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.5
+offset_right = 30.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "CROSSBOW"
+
+[node name="Back" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=807218081]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/AttackButtons/Back" unique_id=587318004]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+
+[node name="SkillButtons" type="GridContainer" parent="BattleUI/Root" unique_id=461974389]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -133.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="Skill1" type="TextureButton" parent="BattleUI/Root/SkillButtons" unique_id=184562044]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/SkillButtons/Skill1" unique_id=630631504]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.5
+offset_right = 30.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "DEFEND"
+
+[node name="Skill2" type="TextureButton" parent="BattleUI/Root/SkillButtons" unique_id=38143659]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/SkillButtons/Skill2" unique_id=621953070]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -11.5
+offset_right = 15.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "AIM"
+
+[node name="Back" type="TextureButton" parent="BattleUI/Root/SkillButtons" unique_id=656234735]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/SkillButtons/Back" unique_id=939348514]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+
+[node name="ItemButtons" type="GridContainer" parent="BattleUI/Root" unique_id=1308487686]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -133.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="Item1" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=1523162478]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/ItemButtons/Item1" unique_id=638298710]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -11.5
+offset_right = 32.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "POTION"
+
+[node name="Item2" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=647319029]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/ItemButtons/Item2" unique_id=1803189896]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BOMB"
+
+[node name="Item3" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=1726334196]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/ItemButtons/Item3" unique_id=722065100]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.5
+offset_right = 17.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SMOKE BOMB"
+
+[node name="Back" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=1250494882]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/ItemButtons/Back" unique_id=1882794054]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+
+[node name="TargetButtons" type="GridContainer" parent="BattleUI/Root" unique_id=2088419708]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -133.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="Target0" type="TextureButton" parent="BattleUI/Root/TargetButtons" unique_id=2029505220]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/TargetButtons/Target0" unique_id=1448634093]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -11.5
+offset_right = 32.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Target1" type="TextureButton" parent="BattleUI/Root/TargetButtons" unique_id=740268427]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/TargetButtons/Target1" unique_id=864781642]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Target2" type="TextureButton" parent="BattleUI/Root/TargetButtons" unique_id=1992300293]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/TargetButtons/Target2" unique_id=114853397]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.5
+offset_right = 17.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TargetBack" type="TextureButton" parent="BattleUI/Root/TargetButtons" unique_id=618712969]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("3_wcevn")
+
+[node name="Label" type="Label" parent="BattleUI/Root/TargetButtons/TargetBack" unique_id=204143402]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+
+[node name="EnemySlots" type="Node3D" parent="." unique_id=204100950]
+
+[node name="Slot0" type="Node3D" parent="EnemySlots" unique_id=329696043]
+
+[node name="Slot1" type="Node3D" parent="EnemySlots" unique_id=1954418001]
+
+[node name="Slot2" type="Node3D" parent="EnemySlots" unique_id=262627477]
+
+[node name="Slot3" type="Node3D" parent="EnemySlots" unique_id=391901983]
+
+[connection signal="pressed" from="BattleUI/Root/MainButtons/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="BattleUI/Root/MainButtons/Item" to="." method="_on_item_pressed"]
+[connection signal="pressed" from="BattleUI/Root/MainButtons/Skill" to="." method="_on_skill_pressed"]
+[connection signal="pressed" from="BattleUI/Root/MainButtons/Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="BattleUI/Root/AttackButtons/Attack1" to="." method="_on_attack_1_pressed"]
+[connection signal="pressed" from="BattleUI/Root/AttackButtons/Attack2" to="." method="_on_attack_2_pressed"]
+[connection signal="pressed" from="BattleUI/Root/AttackButtons/Attack3" to="." method="_on_attack_3_pressed"]
+[connection signal="pressed" from="BattleUI/Root/AttackButtons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BattleUI/Root/SkillButtons/Skill1" to="." method="_on_skill_1_pressed"]
+[connection signal="pressed" from="BattleUI/Root/SkillButtons/Skill2" to="." method="_on_skill_2_pressed"]
+[connection signal="pressed" from="BattleUI/Root/SkillButtons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BattleUI/Root/ItemButtons/Item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="BattleUI/Root/ItemButtons/Item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="BattleUI/Root/ItemButtons/Item3" to="." method="_on_item_3_pressed"]
+[connection signal="pressed" from="BattleUI/Root/ItemButtons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BattleUI/Root/TargetButtons/Target0" to="." method="_on_target_0_pressed"]
+[connection signal="pressed" from="BattleUI/Root/TargetButtons/Target1" to="." method="_on_target_1_pressed"]
+[connection signal="pressed" from="BattleUI/Root/TargetButtons/Target2" to="." method="_on_target_2_pressed"]
+[connection signal="pressed" from="BattleUI/Root/TargetButtons/TargetBack" to="." method="_on_target_back_pressed"]
