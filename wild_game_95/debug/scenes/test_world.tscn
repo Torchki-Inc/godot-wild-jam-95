@@ -34,4 +34,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
 
 [node name="Item" parent="Items" unique_id=1321334820 instance=ExtResource("3_37slg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.9)
-ITEM_TYPE = 3
+ITEM_TYPE = 4
+key_id = "test"

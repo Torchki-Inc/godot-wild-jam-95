@@ -11,6 +11,8 @@ script = ExtResource("1_xhhhv")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=614637331]
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1323860294]
+collision_layer = 9
+collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1277946452]

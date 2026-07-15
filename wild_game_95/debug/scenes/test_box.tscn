@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://dfpt2p3g02nw1"]
 
 [ext_resource type="MeshLibrary" uid="uid://qvyduun0bqwf" path="res://assets/tilesets/dungeon_tileset.tres" id="1_dwqt1"]
+[ext_resource type="PackedScene" uid="uid://c1yhou67nhkid" path="res://scenes/level/door.tscn" id="2_ajkcd"]
 
 [node name="TestBox" type="Node3D" unique_id=1442788025]
+
+[node name="Door2" parent="." unique_id=1626321234 instance=ExtResource("2_ajkcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5271683, 1.7298307, -5.436268)
+required_key = "test"
 
 [node name="Floor" type="GridMap" parent="." unique_id=118406472]
 mesh_library = ExtResource("1_dwqt1")
@@ -24,3 +29,6 @@ cell_center_y = false
 data = {
 "cells": PackedInt32Array(65528, 0, 1048577, 65529, 1, 655362, 65530, 1, 655362, 65531, 1, 655362, 65532, 1, 655362, 65533, 1, 655362, 0, 1, 655362, 1, 1, 655362, 2, 1, 655362, 3, 1, 655362, 4, 1, 655362)
 }
+
+[node name="Door" parent="." unique_id=1470132704 instance=ExtResource("2_ajkcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -2)

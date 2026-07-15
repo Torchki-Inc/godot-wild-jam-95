@@ -19,6 +19,10 @@ var inventory := {
     "smoke_bombs": 1,
 }
 
+var keys := {
+
+}
+
 var state:State = State.MENU
 var prev_state = state
 
@@ -28,3 +32,9 @@ func set_state(new_state: State) -> void:
 
     prev_state = state
     state = new_state
+
+func has_key(key: String) -> bool:
+    return keys.has(key)
+
+func add_key(key: String) -> void:
+    keys[key] = true
