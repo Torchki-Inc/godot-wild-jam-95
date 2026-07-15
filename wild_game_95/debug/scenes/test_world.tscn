@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b57xu2cle8m5n" path="res://scenes/player/player.tscn" id="1_4jxr4"]
 [ext_resource type="PackedScene" uid="uid://dfpt2p3g02nw1" path="res://debug/scenes/test_box.tscn" id="2_4jxr4"]
+[ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="3_37slg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4jxr4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,3 +29,10 @@ environment = SubResource("Environment_hh3ca")
 
 [node name="Player" parent="." unique_id=1686751974 instance=ExtResource("1_4jxr4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+
+[node name="Items" type="Node3D" parent="." unique_id=508813741]
+
+[node name="Item" parent="Items" unique_id=1321334820 instance=ExtResource("3_37slg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.9)
+ITEM_TYPE = 4
+key_id = "test"

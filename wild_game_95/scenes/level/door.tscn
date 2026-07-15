@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c1yhou67nhkid"]
+
+[ext_resource type="Script" uid="uid://cbidq68om2nvk" path="res://scenes/level/door.gd" id="1_y2uik"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wewn7"]
+size = Vector3(0.2, 2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fs55d"]
+size = Vector3(0.1, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b0vu5"]
+size = Vector3(0.1, 2, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2uik"]
+size = Vector3(0.1, 2, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8qny"]
+size = Vector3(1.6, 2, 2)
+
+[node name="Door" type="Node3D" unique_id=1626321234 node_paths=PackedStringArray("area")]
+script = ExtResource("1_y2uik")
+area = NodePath("Area3D")
+
+[node name="Hinge" type="StaticBody3D" parent="." unique_id=1600996266]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge" unique_id=1878295045]
+mesh = SubResource("BoxMesh_wewn7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge" unique_id=953224160]
+shape = SubResource("BoxShape3D_fs55d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1603016564]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2017089618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_b0vu5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=626238454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("BoxShape3D_y2uik")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=67345930 groups=["Door"]]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1484831703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8169967)
+shape = SubResource("BoxShape3D_c8qny")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

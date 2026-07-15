@@ -8,16 +8,20 @@ radius = 0.80810547
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_dovo2"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1686751974 node_paths=PackedStringArray("head")]
+[node name="Player" type="CharacterBody3D" unique_id=1686751974 node_paths=PackedStringArray("head", "debug_label")]
+collision_layer = 11
 script = ExtResource("1_8afob")
 SPEED = 7.0
 acceleration = 1.0
 head = NodePath("CameraRig")
+debug_label = NodePath("CameraRig/SpringArm3D/Camera3D/CanvasLayer/Debug")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=112874671]
 texture = ExtResource("2_dovo2")
 
 [node name="InteractZone" type="Area3D" parent="." unique_id=1837636290]
+collision_layer = 31
+monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractZone" unique_id=1401344331]
 shape = SubResource("CapsuleShape3D_c8qny")
@@ -36,3 +40,9 @@ spring_length = 4.0
 attributes = SubResource("CameraAttributesPractical_dovo2")
 fov = 60.0
 size = 10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraRig/SpringArm3D/Camera3D" unique_id=637980831]
+
+[node name="Debug" type="Label" parent="CameraRig/SpringArm3D/Camera3D/CanvasLayer" unique_id=1570445388]
+offset_right = 40.0
+offset_bottom = 23.0

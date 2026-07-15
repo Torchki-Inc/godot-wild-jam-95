@@ -36,6 +36,11 @@ folder_colors={
 "res://debug/": "yellow"
 }
 
+[global_group]
+
+Door=""
+Player=""
+
 [input]
 
 move_up={

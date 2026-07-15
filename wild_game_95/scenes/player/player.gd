@@ -7,6 +7,8 @@ extends CharacterBody3D
 
 @export_group("Camera")
 @export var head: Node3D
+@export var debug_label: Label
+
 
 enum FacingDirection {
 	FORWARD,
@@ -16,8 +18,12 @@ enum FacingDirection {
 }
 var current_facing: FacingDirection = FacingDirection.LEFT
 
+
 func _physics_process(delta: float) -> void:
 	RenderingServer.global_shader_parameter_set("player_position", global_position)
+
+	update_debug_label()
+
 	var input_dir := Vector2.ZERO
 	input_dir = Input.get_vector(
 		"move_left",
@@ -25,6 +31,7 @@ func _physics_process(delta: float) -> void:
 		"move_up",
 		"move_down",
 	)
+
 	var direction := Vector3(input_dir.x, 0, input_dir.y)
 	var target_velocity := Vector3(input_dir.x * SPEED, 0, input_dir.y * SPEED)
 
@@ -41,3 +48,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0.0
 
 	move_and_slide()
+
+
+func update_debug_label() -> void:
+	if debug_label:
+		debug_label.text = "Arrow: " + str(GameState.player.arrows) \
+			+ "\nBombs: " + str(GameState.inventory.bombs) \
+			+ "\nSmoke Bombs: " + str(GameState.inventory.smoke_bombs) \
+			+ "\nPotions: " + str(GameState.inventory.potions)
