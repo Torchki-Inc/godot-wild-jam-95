@@ -7,8 +7,16 @@ enum State{
 	FIGHTING,
 }
 
-var player = {
-	health = 100
+var player := {
+	"health": 100,
+	"max_health": 100,
+	"arrows": 3,
+}
+
+var inventory := {
+	"potions": 2,
+	"bombs": 1,
+	"smoke_bombs": 1,
 }
 
 var state:State = State.MENU
