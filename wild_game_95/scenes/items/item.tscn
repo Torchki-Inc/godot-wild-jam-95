@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://p52mtcn56mv8"]
+
+[ext_resource type="Script" uid="uid://om4ctblvs7pa" path="res://scenes/items/item.gd" id="1_xhhhv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c8qny"]
+radius = 2.0
+
+[node name="Item" type="Node3D" unique_id=1321334820]
+script = ExtResource("1_xhhhv")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=614637331]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1323860294]
+collision_layer = 9
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1277946452]
+shape = SubResource("SphereShape3D_c8qny")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

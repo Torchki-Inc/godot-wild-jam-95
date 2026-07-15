@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c4mrjp4ifge4i"]
+
+[ext_resource type="Shader" uid="uid://bmvy3budsssit" path="res://shaders/wall_xray.gdshader" id="1_pp7e5"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pp7e5")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.8
+shader_parameter/radius = 2.5
+shader_parameter/edge_softness = 1.0

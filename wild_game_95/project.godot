@@ -36,6 +36,11 @@ folder_colors={
 "res://debug/": "yellow"
 }
 
+[global_group]
+
+Door=""
+Player=""
+
 [input]
 
 move_up={
@@ -69,6 +74,15 @@ move_left={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Walls"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="Enemies"
+3d_physics/layer_4="Items"
+3d_physics/layer_5="Triggers"
+3d_physics/layer_6="CameraOcclusions"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -78,3 +92,10 @@ move_left={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+
+[shader_globals]
+
+player_position={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
