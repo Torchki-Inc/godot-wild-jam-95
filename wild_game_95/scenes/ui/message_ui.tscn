@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d3g2cr7ydn14h"]
+
+[ext_resource type="Script" uid="uid://clunleybpykpx" path="res://scenes/ui/message_ui.gd" id="1_rowjr"]
+
+[node name="MessageUI" type="CanvasLayer" unique_id=263412717]
+layer = 10
+script = ExtResource("1_rowjr")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=749181806]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.5
+offset_right = 206.5
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=863936467]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
