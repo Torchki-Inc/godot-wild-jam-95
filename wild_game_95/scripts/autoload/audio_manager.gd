@@ -159,6 +159,21 @@ func play_sfx(
 
 	return player
 
+func play_sfx_random_pitch(
+	stream: AudioStream,
+	minimum_pitch: float = 0.9,
+	maximum_pitch: float = 1.1,
+	volume_db: float = 0.0
+) -> AudioStreamPlayer:
+	var minimum := minf(minimum_pitch, maximum_pitch)
+	var maximum := maxf(minimum_pitch, maximum_pitch)
+
+	return play_sfx(
+		stream,
+		volume_db,
+		randf_range(minimum, maximum)
+	)
+
 func _get_available_sfx_player() -> AudioStreamPlayer:
 	for player in sfx_players:
 		if not player.playing:
