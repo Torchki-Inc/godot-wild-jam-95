@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dy2nyw6g0hd3c" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://cdj40p4gc550c" path="res://assets/sprites/Player_sprite_sheet.png" id="2_dovo2"]
+[ext_resource type="Shader" uid="uid://dq1aybfj4d6nx" path="res://shaders/materials/crt.gdshader" id="3_gmlin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
 atlas = ExtResource("2_dovo2")
@@ -138,15 +139,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c8qny"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmlin"]
 radius = 0.80810547
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c8qny"]
+radius = 0.5288086
+height = 2.2426758
+
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_dovo2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8qny"]
+shader = ExtResource("3_gmlin")
+shader_parameter/pixel_size = 1.11200000532
+shader_parameter/vhs_intensity = 0.0
+shader_parameter/noise_intensity = 0.0850000040375
+shader_parameter/opacity = 0.4650000220875
 
 [node name="Player" type="CharacterBody3D" unique_id=1686751974 node_paths=PackedStringArray("head", "debug_label", "sprite")]
 collision_layer = 11
 script = ExtResource("1_8afob")
-SPEED = 7.0
+SPEED = 4.0
 acceleration = 1.0
 head = NodePath("CameraRig")
 debug_label = NodePath("CameraRig/SpringArm3D/Camera3D/CanvasLayer/Debug")
@@ -163,9 +175,11 @@ collision_layer = 31
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractZone" unique_id=1401344331]
-shape = SubResource("CapsuleShape3D_c8qny")
+shape = SubResource("CapsuleShape3D_gmlin")
+debug_color = Color(0.96511835, 4.813075e-07, 0.49155545, 0.41960785)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=719466034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057734013, -0.09824437, 0)
 shape = SubResource("CapsuleShape3D_c8qny")
 
 [node name="CameraRig" type="Node3D" parent="." unique_id=558088415]
@@ -185,3 +199,12 @@ size = 10.0
 [node name="Debug" type="Label" parent="CameraRig/SpringArm3D/Camera3D/CanvasLayer" unique_id=1570445388]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="CRTOverlay" type="ColorRect" parent="CameraRig/SpringArm3D/Camera3D/CanvasLayer" unique_id=908736544]
+material = SubResource("ShaderMaterial_c8qny")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

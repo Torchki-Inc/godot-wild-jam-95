@@ -16,7 +16,9 @@ func try_open() -> void:
 		open_door()
 	else:
 		#CALL MESSAGE LOG
+		MessageManager.show_message("door_locked", {"item": required_key} )
 		MessageManager.show_message("need_key", {"item": required_key} )
+
 		print("Door is close, " + required_key + " required" )
 
 func open_door():

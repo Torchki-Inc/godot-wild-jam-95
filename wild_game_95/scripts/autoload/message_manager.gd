@@ -17,6 +17,7 @@ func show_message(key: String, params: Dictionary):
 func process_message():
     if queue.is_empty():
         is_displaying = false
+        get_tree().paused = false
         return
     is_displaying = true
     var text: String = queue.pop_front()
