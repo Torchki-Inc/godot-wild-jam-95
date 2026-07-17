@@ -4,6 +4,7 @@ extends Node3D
 @export var area: Area3D
 @export var required_key: String = ""
 
+
 var player_in_area: bool = false
 
 func _process(delta: float) -> void:
