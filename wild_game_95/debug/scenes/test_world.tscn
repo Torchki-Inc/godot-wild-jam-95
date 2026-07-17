@@ -29,7 +29,7 @@ environment = SubResource("Environment_hh3ca")
 [node name="TestBox" parent="." unique_id=1442788025 instance=ExtResource("2_4jxr4")]
 
 [node name="Player" parent="." unique_id=1686751974 instance=ExtResource("1_4jxr4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6585836, -4.646963)
 
 [node name="Items" type="Node3D" parent="." unique_id=508813741]
 
@@ -41,3 +41,12 @@ item_name = "test_key"
 
 [node name="MessageUI" parent="." unique_id=263412717 instance=ExtResource("4_hh3ca")]
 process_mode = 2
+
+[node name="VFXRoot" type="Node3D" parent="." unique_id=859676003]
+
+[node name="LevelRoot" type="Node3D" parent="." unique_id=36256025]
+
+[node name="FightRoot" type="Node3D" parent="." unique_id=224716417]
+
+[node name="EntityRoot" type="Node3D" parent="." unique_id=1117670378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4328327, 0)
