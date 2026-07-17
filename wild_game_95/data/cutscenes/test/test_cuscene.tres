@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://c23qxl43qi132"]
+
+[ext_resource type="Script" uid="uid://c3x0b6v8wsv8o" path="res://scripts/cutscenes/cutscene_data.gd" id="1_gpxyr"]
+[ext_resource type="Script" uid="uid://khtcrn1x6c8o" path="res://scripts/cutscenes/cutscene_slide.gd" id="2_cmy0x"]
+[ext_resource type="Texture2D" uid="uid://rxe6om73j817" path="res://assets/test_cutscene/2-images-that-go-together-v0-fpjpi71zwqbh1.webp" id="3_6l2sn"]
+[ext_resource type="Texture2D" uid="uid://byf6eb50abp4k" path="res://assets/test_cutscene/absolute-gems-v0-oo1z5djyxy7h1.webp" id="4_1ij52"]
+[ext_resource type="Texture2D" uid="uid://tg8mhlg28cl0" path="res://assets/test_cutscene/some-meme-reactions-that-i-have-v0-qzdcbihjs43h1.webp" id="5_nv08y"]
+[ext_resource type="Texture2D" uid="uid://cttmyn2300iwe" path="res://assets/test_cutscene/some-meme-reactions-that-i-have-v0-yr3gfppjs43h1.webp" id="6_wvw1q"]
+[ext_resource type="Texture2D" uid="uid://b8svwduaeanpu" path="res://assets/test_cutscene/some-meme-reactions-that-i-have-v0-smpejogjs43h1.webp" id="7_a3ano"]
+
+[sub_resource type="Resource" id="Resource_hrbs3"]
+script = ExtResource("2_cmy0x")
+image = ExtResource("3_6l2sn")
+text = "text1"
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_mx6ly"]
+script = ExtResource("2_cmy0x")
+image = ExtResource("4_1ij52")
+text = "tex
+t2"
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_862ea"]
+script = ExtResource("2_cmy0x")
+image = ExtResource("5_nv08y")
+text = "texttt3"
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_6l2sn"]
+script = ExtResource("2_cmy0x")
+image = ExtResource("6_wvw1q")
+text = "ttextt4"
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_1ij52"]
+script = ExtResource("2_cmy0x")
+image = ExtResource("7_a3ano")
+text = "ttetxtt5"
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[resource]
+script = ExtResource("1_gpxyr")
+slides = Array[ExtResource("2_cmy0x")]([SubResource("Resource_hrbs3"), SubResource("Resource_mx6ly"), SubResource("Resource_862ea"), SubResource("Resource_6l2sn"), SubResource("Resource_1ij52")])
+metadata/_custom_type_script = "uid://c3x0b6v8wsv8o"
