@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" format=3 uid="uid://ca5f2ayja4qfl"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_s81wi"]
+
+[resource]
+script = ExtResource("1_s81wi")
+display_name = "Steal"
+effect = 3
+metadata/_custom_type_script = "uid://efac4ijlimfd"

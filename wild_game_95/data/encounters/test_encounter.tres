@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="EncounterData" format=3 uid="uid://dtlj670ki8fvs"]
 
 [ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="1_6ce15"]
+[ext_resource type="PackedScene" uid="uid://6ad83o6sbnjq" path="res://scenes/fight/environements/dungeon.tscn" id="1_s3pxy"]
 [ext_resource type="Resource" uid="uid://c5seacpm27u2d" path="res://data/enemies/test_soul.tres" id="2_s3pxy"]
 [ext_resource type="Script" uid="uid://bct0nkfj3elu0" path="res://scripts/battle/encounter_data.gd" id="3_lvd7i"]
 
 [resource]
 script = ExtResource("3_lvd7i")
 enemies = Array[ExtResource("1_6ce15")]([ExtResource("2_s3pxy")])
+battle_environment = ExtResource("1_s3pxy")
 metadata/_custom_type_script = "uid://bct0nkfj3elu0"
