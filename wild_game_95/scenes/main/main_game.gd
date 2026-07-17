@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			enter_fight(test_encounter)
 
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	# process_mode = Node.PROCESS_MODE_ALWAYS
 
 	spawn_player()
 	load_level(starting_level)
