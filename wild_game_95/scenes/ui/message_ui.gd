@@ -7,11 +7,17 @@ extends CanvasLayer
 var full_text: String = ""
 var typing: bool = false
 
+var previous_tree_paused := false
+var dialogue_session_active := false
+var owns_pause := false
+
 func _ready() -> void:
 	process_mode = ProcessMode.PROCESS_MODE_WHEN_PAUSED
 
 	panel.modulate.a = 0.0
+
 	MessageManager.message_displayed.connect(_on_message_shown)
+	MessageManager.queue_finished.connect(_on_queue_finished)
 # 	arrow.visible = !typing
 
 # func _process(delta: float) -> void:
@@ -21,9 +27,12 @@ func _ready() -> void:
 # 	arrow.visible = int(Time.get_ticks_msec() / 400.0) % 2 == 0
 
 func _on_message_shown(text: String) -> void:
+	if not dialogue_session_active:
+		previous_tree_paused = get_tree().paused
+		dialogue_session_active = true
+
 	full_text = text
 	label.text = ""
-
 	panel.modulate.a = 0.0
 
 	get_tree().paused = true
@@ -32,8 +41,8 @@ func _on_message_shown(text: String) -> void:
 	tween.tween_property(panel, "modulate:a", 1.0, 0.15)
 
 	await tween.finished
-	typing = true
 
+	typing = true
 	type_text()
 
 func type_text() -> void:
@@ -66,3 +75,10 @@ func close_message() -> void:
 	await tween.finished
 
 	MessageManager.process_message()
+
+func _on_queue_finished() -> void:
+	if not dialogue_session_active:
+		return
+
+	dialogue_session_active = false
+	get_tree().paused = previous_tree_paused

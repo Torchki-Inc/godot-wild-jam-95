@@ -5,6 +5,7 @@ enum State{
     PAUSED,
     EXPLORING,
     FIGHTING,
+    CUTSCENE,
 }
 
 var player := {
