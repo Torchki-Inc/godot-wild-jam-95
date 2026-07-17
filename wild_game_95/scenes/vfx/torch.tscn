@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://xooecfudl7cr"]
+
+[ext_resource type="Script" uid="uid://bfbou4q1b5uhl" path="res://scenes/vfx/torch.gd" id="1_85w40"]
+
+[node name="Torch" type="Node3D" unique_id=2093334873]
+script = ExtResource("1_85w40")
+light_flicker = 1.0
+flicker_speed = 2.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=145989001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039415836, 0.06695199, 0)
+light_color = Color(0.7764706, 0.62352943, 0.4, 1)
+light_energy = 1.396
+light_indirect_energy = 2.501
+light_volumetric_fog_energy = 10.249
+light_size = 0.4
+light_specular = 4.956
+light_bake_mode = 0
+distance_fade_begin = 0.0
+omni_range = 0.567
+omni_shadow_mode = 0

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://6ad83o6sbnjq"]
+
+[ext_resource type="Texture2D" uid="uid://djn4vtunt3ejc" path="res://assets/backgrounddungeon.png" id="1_oy5wt"]
+[ext_resource type="PackedScene" uid="uid://xooecfudl7cr" path="res://scenes/vfx/torch.tscn" id="2_t1j8a"]
+
+[sub_resource type="Environment" id="Environment_wcnl7"]
+background_mode = 3
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 2
+tonemap_exposure = 0.55
+glow_enabled = true
+glow_intensity = 1.24
+glow_strength = 0.41
+glow_blend_mode = 0
+fog_enabled = true
+fog_mode = 1
+fog_density = 1.0
+
+[node name="Dungeon" type="Node3D" unique_id=294443838]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=460341275]
+environment = SubResource("Environment_wcnl7")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=615945116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, -2.3)
+gi_mode = 2
+transparent = false
+shaded = true
+texture = ExtResource("1_oy5wt")
+
+[node name="Torch" parent="." unique_id=2093334873 instance=ExtResource("2_t1j8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65, 1.242735, -1.9141257)
+
+[node name="Torch2" parent="." unique_id=1897777427 instance=ExtResource("2_t1j8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94416213, 1.3747989, -1.9141257)

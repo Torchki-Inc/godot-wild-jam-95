@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c8oa2rjpyr67b"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_rkpyt"]
+[ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="2_lq68n"]
+[ext_resource type="Resource" uid="uid://dqemky3ii0r0e" path="res://data/moves/bite.tres" id="2_pl3tc"]
+[ext_resource type="Resource" uid="uid://5o4lmmws7qlr" path="res://data/moves/snarl.tres" id="3_j4rvh"]
+
+[resource]
+script = ExtResource("2_lq68n")
+display_name = "Dog"
+max_health = 12
+passive = 2
+moves = Array[ExtResource("1_rkpyt")]([ExtResource("2_pl3tc"), ExtResource("3_j4rvh")])
+metadata/_custom_type_script = "uid://0w1pe1fmfvwg"
