@@ -2,6 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://qvyduun0bqwf" path="res://assets/tilesets/dungeon_tileset.tres" id="1_dwqt1"]
 [ext_resource type="PackedScene" uid="uid://c1yhou67nhkid" path="res://scenes/level/door.tscn" id="2_ajkcd"]
+[ext_resource type="PackedScene" uid="uid://bn5jgjkndmdqf" path="res://scenes/level/lever.tscn" id="3_jhbxu"]
 
 [node name="TestBox" type="Node3D" unique_id=1442788025]
 
@@ -30,5 +31,10 @@ data = {
 "cells": PackedInt32Array(65528, 0, 1048577, 65529, 1, 655362, 65530, 1, 655362, 65531, 1, 655362, 65532, 1, 655362, 65533, 1, 655362, 0, 1, 655362, 1, 1, 655362, 2, 1, 655362, 3, 1, 655362, 4, 1, 655362)
 }
 
-[node name="Door" parent="." unique_id=1470132704 instance=ExtResource("2_ajkcd")]
+[node name="Door" parent="." unique_id=1470132704 node_paths=PackedStringArray("required_levers") instance=ExtResource("2_ajkcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -2)
+required_levers = [NodePath("../Lever")]
+
+[node name="Lever" parent="." unique_id=1125123968 instance=ExtResource("3_jhbxu")]
+transform = Transform3D(0.49999124, 0.00271331, -0.0011891695, -0.0027098483, 0.49999055, 0.0014539956, 0.0011970373, -0.0014475252, 0.49999648, 2.0065231, 1.5243237, 0.7407597)
+lever_id = "1"
