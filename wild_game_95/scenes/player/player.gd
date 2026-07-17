@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var head: Node3D
 @export var debug_label: Label
 
+@export var sprite: AnimatedSprite3D
 
 enum FacingDirection {
 	FORWARD,
@@ -24,23 +25,33 @@ func _physics_process(delta: float) -> void:
 
 	update_debug_label()
 
-	var input_dir := Vector2.ZERO
-	input_dir = Input.get_vector(
-		"move_left",
-		"move_right",
-		"move_up",
-		"move_down",
-	)
+	# var input_dir := Vector2.ZERO
+	# input_dir = Input.get_vector(
+	# 	"move_left",
+	# 	"move_right",
+	# 	"move_up",
+	# 	"move_down",
+	# )
+	var dir := Vector2.ZERO
 
-	var direction := Vector3(input_dir.x, 0, input_dir.y)
-	var target_velocity := Vector3(input_dir.x * SPEED, 0, input_dir.y * SPEED)
+	if Input.is_action_pressed("move_left"):
+		dir = Vector2.LEFT
+	elif Input.is_action_pressed("move_right"):
+		dir = Vector2.RIGHT
+	elif Input.is_action_pressed("move_up"):
+		dir = Vector2.UP
+	elif Input.is_action_pressed("move_down"):
+		dir = Vector2.DOWN
+	var direction := Vector3(dir.x, 0, dir.y)
 
-	if direction.length() > 0.01:
-		velocity.x = move_toward(velocity.x, target_velocity.x, acceleration * delta * SPEED)
-		velocity.z = move_toward(velocity.z, target_velocity.z, acceleration * delta * SPEED)
+	if direction.length() > 0:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+		update_animations(direction)
 	else:
-		velocity.x = move_toward(velocity.x, 0, friction * delta * SPEED)
-		velocity.z = move_toward(velocity.z, 0, friction * delta * SPEED)
+		velocity.x = 0
+		velocity.z = 0
+		sprite.stop()
 
 	if not is_on_floor():
 		velocity.y -= 9.8 * delta
@@ -56,3 +67,19 @@ func update_debug_label() -> void:
 			+ "\nBombs: " + str(GameState.inventory.bombs) \
 			+ "\nSmoke Bombs: " + str(GameState.inventory.smoke_bombs) \
 			+ "\nPotions: " + str(GameState.inventory.potions)
+
+func update_animations(dir: Vector3) -> void:
+	if abs(dir.x) > abs(dir.z):
+		current_facing = FacingDirection.RIGHT if dir.x > 0 else FacingDirection.LEFT
+	else:
+		current_facing = FacingDirection.BACKWARD if dir.z > 0 else FacingDirection.FORWARD
+
+	match current_facing:
+		FacingDirection.FORWARD:
+			sprite.play("move_forward")
+		FacingDirection.BACKWARD:
+			sprite.play("move_down")
+		FacingDirection.LEFT:
+			sprite.play("move_left")
+		FacingDirection.RIGHT:
+			sprite.play("move_right")

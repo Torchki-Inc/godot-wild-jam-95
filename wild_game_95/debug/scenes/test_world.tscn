@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b57xu2cle8m5n" path="res://scenes/player/player.tscn" id="1_4jxr4"]
 [ext_resource type="PackedScene" uid="uid://dfpt2p3g02nw1" path="res://debug/scenes/test_box.tscn" id="2_4jxr4"]
 [ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="3_37slg"]
+[ext_resource type="PackedScene" uid="uid://d3g2cr7ydn14h" path="res://scenes/ui/message_ui.tscn" id="4_hh3ca"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4jxr4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,3 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.9)
 ITEM_TYPE = 4
 key_id = "test"
+item_name = "test_key"
+
+[node name="MessageUI" parent="." unique_id=263412717 instance=ExtResource("4_hh3ca")]
+process_mode = 2
