@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://dd1pfjfpxbdh6" path="res://scenes/fight/fight.gd" id="1_qxmn2"]
 [ext_resource type="Texture2D" uid="uid://bmwt3by7xwf6c" path="res://assets/battle_overlay.png" id="2_2sgx1"]
 [ext_resource type="Texture2D" uid="uid://clk8is2byogge" path="res://assets/battle_button.png" id="3_wcevn"]
+[ext_resource type="Texture2D" uid="uid://dwi3gukbbv2ks" path="res://assets/battle_button_selected.png" id="4_r66f3"]
 
 [node name="Fight" type="Node3D" unique_id=558413241]
 script = ExtResource("1_qxmn2")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1472521781]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40.499)
 
 [node name="BattleUI" type="CanvasLayer" parent="." unique_id=1781115597]
 
@@ -25,7 +25,6 @@ offset_bottom = 40.0
 texture = ExtResource("2_2sgx1")
 
 [node name="MainButtons" type="GridContainer" parent="BattleUI/Root" unique_id=684442678]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -39,9 +38,11 @@ columns = 2
 
 [node name="Attack" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=1362617117]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/MainButtons/Attack" unique_id=146017291]
 layout_mode = 1
@@ -60,9 +61,11 @@ text = "ATTACK"
 
 [node name="Item" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=1692229795]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/MainButtons/Item" unique_id=685212206]
 layout_mode = 1
@@ -81,9 +84,11 @@ text = "USE ITEM"
 
 [node name="Skill" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=47383889]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/MainButtons/Skill" unique_id=170388976]
 layout_mode = 1
@@ -102,9 +107,11 @@ text = "USE SKILL"
 
 [node name="Run" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=1364729401]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/MainButtons/Run" unique_id=777595942]
 layout_mode = 1
@@ -136,9 +143,11 @@ columns = 2
 
 [node name="Attack1" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=1745128615]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/AttackButtons/Attack1" unique_id=390628600]
 layout_mode = 1
@@ -157,9 +166,11 @@ text = "SLASH"
 
 [node name="Attack2" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=167474289]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/AttackButtons/Attack2" unique_id=1149886176]
 layout_mode = 1
@@ -178,9 +189,11 @@ text = "HEAVY STRIKE"
 
 [node name="Attack3" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=107532705]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/AttackButtons/Attack3" unique_id=1514142895]
 layout_mode = 1
@@ -199,9 +212,11 @@ text = "CROSSBOW"
 
 [node name="Back" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=807218081]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/AttackButtons/Back" unique_id=587318004]
 layout_mode = 1
@@ -233,9 +248,11 @@ columns = 2
 
 [node name="Skill1" type="TextureButton" parent="BattleUI/Root/SkillButtons" unique_id=184562044]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/SkillButtons/Skill1" unique_id=630631504]
 layout_mode = 1
@@ -254,9 +271,11 @@ text = "DEFEND"
 
 [node name="Skill2" type="TextureButton" parent="BattleUI/Root/SkillButtons" unique_id=38143659]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/SkillButtons/Skill2" unique_id=621953070]
 layout_mode = 1
@@ -275,9 +294,11 @@ text = "AIM"
 
 [node name="Back" type="TextureButton" parent="BattleUI/Root/SkillButtons" unique_id=656234735]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/SkillButtons/Back" unique_id=939348514]
 layout_mode = 1
@@ -309,9 +330,11 @@ columns = 2
 
 [node name="Item1" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=1523162478]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/ItemButtons/Item1" unique_id=638298710]
 layout_mode = 1
@@ -330,9 +353,11 @@ text = "POTION"
 
 [node name="Item2" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=647319029]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/ItemButtons/Item2" unique_id=1803189896]
 layout_mode = 1
@@ -351,9 +376,11 @@ text = "BOMB"
 
 [node name="Item3" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=1726334196]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/ItemButtons/Item3" unique_id=722065100]
 layout_mode = 1
@@ -372,9 +399,11 @@ text = "SMOKE BOMB"
 
 [node name="Back" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=1250494882]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/ItemButtons/Back" unique_id=1882794054]
 layout_mode = 1
@@ -392,6 +421,7 @@ grow_vertical = 2
 text = "BACK"
 
 [node name="TargetButtons" type="GridContainer" parent="BattleUI/Root" unique_id=2088419708]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -405,9 +435,11 @@ columns = 2
 
 [node name="Target0" type="TextureButton" parent="BattleUI/Root/TargetButtons" unique_id=2029505220]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/TargetButtons/Target0" unique_id=1448634093]
 layout_mode = 1
@@ -425,9 +457,11 @@ grow_vertical = 2
 
 [node name="Target1" type="TextureButton" parent="BattleUI/Root/TargetButtons" unique_id=740268427]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/TargetButtons/Target1" unique_id=864781642]
 layout_mode = 1
@@ -445,9 +479,11 @@ grow_vertical = 2
 
 [node name="Target2" type="TextureButton" parent="BattleUI/Root/TargetButtons" unique_id=1992300293]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/TargetButtons/Target2" unique_id=114853397]
 layout_mode = 1
@@ -465,9 +501,11 @@ grow_vertical = 2
 
 [node name="TargetBack" type="TextureButton" parent="BattleUI/Root/TargetButtons" unique_id=618712969]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wcevn")
+texture_pressed = ExtResource("4_r66f3")
+texture_hover = ExtResource("4_r66f3")
 
 [node name="Label" type="Label" parent="BattleUI/Root/TargetButtons/TargetBack" unique_id=204143402]
 layout_mode = 1
@@ -482,7 +520,6 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "BACK"
 
 [node name="EnemySlots" type="Node3D" parent="." unique_id=204100950]
 

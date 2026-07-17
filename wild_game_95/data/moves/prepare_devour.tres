@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" format=3 uid="uid://dxojcvviggr7y"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_1cipo"]
+[ext_resource type="Resource" uid="uid://bwewlb1xdi4jv" path="res://data/moves/devour.tres" id="1_iab4k"]
+
+[resource]
+script = ExtResource("1_1cipo")
+display_name = "Prepare devour"
+effect = 5
+follow_up_move = ExtResource("1_iab4k")
+metadata/_custom_type_script = "uid://efac4ijlimfd"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dktuhmuaqvece"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_akqoj"]
+[ext_resource type="Resource" uid="uid://bcwn06fgpa102" path="res://data/moves/haunt.tres" id="2_h70wa"]
+[ext_resource type="Resource" uid="uid://d1ibkctmafu61" path="res://data/moves/curse.tres" id="3_5fd32"]
+[ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="3_f7xux"]
+[ext_resource type="Resource" uid="uid://d88ere7b72e4" path="res://data/moves/wail.tres" id="4_n6v40"]
+
+[resource]
+script = ExtResource("3_f7xux")
+display_name = "Cursed Soul"
+max_health = 15
+passive = 1
+moves = Array[ExtResource("1_akqoj")]([ExtResource("2_h70wa"), ExtResource("3_5fd32"), ExtResource("4_n6v40")])
+metadata/_custom_type_script = "uid://0w1pe1fmfvwg"

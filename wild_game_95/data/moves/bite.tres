@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" format=3 uid="uid://dqemky3ii0r0e"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_r1xkl"]
+
+[resource]
+script = ExtResource("1_r1xkl")
+display_name = "Bite"
+damage = 4
+metadata/_custom_type_script = "uid://efac4ijlimfd"

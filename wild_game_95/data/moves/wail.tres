@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" format=3 uid="uid://d88ere7b72e4"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_43dnw"]
+
+[resource]
+script = ExtResource("1_43dnw")
+display_name = "Wail"
+effect = 2
+damage_multiplier = 2.0
+metadata/_custom_type_script = "uid://efac4ijlimfd"

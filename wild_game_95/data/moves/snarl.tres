@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" format=3 uid="uid://5o4lmmws7qlr"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_60xsa"]
+
+[resource]
+script = ExtResource("1_60xsa")
+display_name = "Snarl"
+effect = 2
+damage_bonus = 2
+metadata/_custom_type_script = "uid://efac4ijlimfd"

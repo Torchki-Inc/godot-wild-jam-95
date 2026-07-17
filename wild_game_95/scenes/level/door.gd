@@ -4,6 +4,7 @@ extends Node3D
 @export var area: Area3D
 @export var required_key: String = ""
 
+
 var player_in_area: bool = false
 
 func _process(delta: float) -> void:
@@ -16,6 +17,9 @@ func try_open() -> void:
 		open_door()
 	else:
 		#CALL MESSAGE LOG
+		MessageManager.show_message("door_locked", {"item": required_key} )
+		MessageManager.show_message("need_key", {"item": required_key} )
+
 		print("Door is close, " + required_key + " required" )
 
 func open_door():

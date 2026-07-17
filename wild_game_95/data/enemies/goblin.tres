@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://b6eq20s4qmvyf"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_powyv"]
+[ext_resource type="Resource" uid="uid://6ymwtl1uk3hu" path="res://data/moves/stab.tres" id="2_tsokr"]
+[ext_resource type="Resource" uid="uid://ca5f2ayja4qfl" path="res://data/moves/steal.tres" id="3_nm75t"]
+[ext_resource type="Resource" uid="uid://bh5rbruanrnh2" path="res://data/moves/hide.tres" id="4_h0avr"]
+[ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="4_mdrv5"]
+
+[resource]
+script = ExtResource("4_mdrv5")
+display_name = "Goblin"
+max_health = 18
+passive = 3
+moves = Array[ExtResource("1_powyv")]([ExtResource("2_tsokr"), ExtResource("3_nm75t"), ExtResource("4_h0avr")])
+metadata/_custom_type_script = "uid://0w1pe1fmfvwg"
