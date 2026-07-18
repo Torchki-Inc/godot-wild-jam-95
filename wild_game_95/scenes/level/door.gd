@@ -30,7 +30,7 @@ func try_open() -> void:
 func open_door():
 	if area:
 		area.monitoring = false
-		rotation.y = 67.5
+		rotation.y -= 67.5
 	print("Door opened")
 
 func _on_area_3d_area_exited(area: Area3D) -> void:

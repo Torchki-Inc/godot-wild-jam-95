@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://om4ctblvs7pa" path="res://scenes/items/item.gd" id="1_xhhhv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c8qny"]
-radius = 2.0
+radius = 1.1916827
 
 [node name="Item" type="Node3D" unique_id=1321334820]
 script = ExtResource("1_xhhhv")

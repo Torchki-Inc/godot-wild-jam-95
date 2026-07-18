@@ -6,7 +6,7 @@ var queue: Array[String] = []
 var is_displaying: bool = false
 
 const MAX_WORDS_PER_KEY_MESSAGE := 20
-const MAX_WORDS_PER_CUSTOM_MESSAGE := 12
+const MAX_WORDS_PER_CUSTOM_MESSAGE := 25
 
 func show_message(key: String, params: Dictionary = {}):
 	var text: String = Message.TEXT.get(key, key)
