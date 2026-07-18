@@ -23,6 +23,10 @@ var keys := {
 
 }
 
+var levers := {
+
+}
+
 var state:State = State.MENU
 var prev_state = state
 
@@ -38,3 +42,9 @@ func has_key(key: String) -> bool:
 
 func add_key(key: String) -> void:
     keys[key] = true
+
+func has_lever(lever_id: String) -> bool:
+    return levers.has(lever_id)
+
+func add_lever(lever_id: String) -> void:
+    levers[lever_id] = true

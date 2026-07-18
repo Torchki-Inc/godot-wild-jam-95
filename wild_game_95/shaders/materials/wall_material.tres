@@ -1,11 +1,14 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://c4mrjp4ifge4i"]
 
 [ext_resource type="Shader" uid="uid://bmvy3budsssit" path="res://shaders/wall_xray.gdshader" id="1_pp7e5"]
+[ext_resource type="Texture2D" uid="uid://3nru4xlwsl74" path="res://assets/tilesets/dungeon/walldungeon1.png" id="2_dsl2a"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_pp7e5")
+shader_parameter/albedo_texture = ExtResource("2_dsl2a")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/roughness = 0.8
-shader_parameter/radius = 2.5
-shader_parameter/edge_softness = 1.0
+shader_parameter/roughness = 0.800000038
+shader_parameter/uv_scale = Vector2(2, 2)
+shader_parameter/radius = 2.2430001065425
+shader_parameter/edge_softness = 1.5120000711214798
