@@ -90,7 +90,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05
 mesh = SubResource("QuadMesh_a8a0q")
 
 [node name="Area3D" type="Area3D" parent="Doors/Door3" unique_id=1897189269 groups=["Door"]]
-visible = false
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Door3/Area3D" unique_id=484568152]
@@ -154,7 +153,7 @@ sprite = ExtResource("7_dw6dp")
 [node name="Keys" type="Node3D" parent="." unique_id=1163877472]
 
 [node name="Item" parent="Keys" unique_id=973239846 instance=ExtResource("3_brja1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2086444, 0, -29.745422)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.209, 0.6, -29.745)
 ITEM_TYPE = 4
 sprite = ExtResource("4_uinbw")
 key_id = "basement key"

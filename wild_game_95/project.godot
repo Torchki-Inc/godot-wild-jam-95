@@ -49,6 +49,9 @@ folder_colors={
 
 Door=""
 Player=""
+camera_player=""
+camera_fight=""
+cameras=""
 
 [gui]
 

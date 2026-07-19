@@ -8,7 +8,7 @@ signal activated
 @export var lever_texture_down: Texture2D
 
 @export var lever_id: String
-@export var activation_message: String = ""
+@export var activation_message: String = "You hear old mechanism set in motion"
 
 var in_lever_area: bool = false
 var is_activated: bool = false
