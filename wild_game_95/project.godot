@@ -13,6 +13,7 @@ config_version=5
 config/name="wild-game-95"
 run/main_scene="uid://dy34rmjjvwdbo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [audio]
@@ -25,6 +26,7 @@ GameState="*uid://b1fvn6q4tkd1b"
 AudioManager="*uid://c01gwoovp28aw"
 MessageManager="*uid://304yaopvle8t"
 SettingsManager="*uid://bwalx3e57c46j"
+ScreenFade="*uid://cotskxd0bwuwv"
 
 [display]
 

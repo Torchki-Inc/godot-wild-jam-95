@@ -19,30 +19,29 @@ enum FacingDirection {
 }
 var current_facing: FacingDirection = FacingDirection.LEFT
 
+var is_scripted_moving: bool = false
+var scripted_direction: Vector3 = Vector3.ZERO
+
 
 func _physics_process(delta: float) -> void:
 	RenderingServer.global_shader_parameter_set("player_position", global_position)
-
 	update_debug_label()
 
-	# var input_dir := Vector2.ZERO
-	# input_dir = Input.get_vector(
-	# 	"move_left",
-	# 	"move_right",
-	# 	"move_up",
-	# 	"move_down",
-	# )
-	var dir := Vector2.ZERO
+	var direction := Vector3.ZERO
 
-	if Input.is_action_pressed("move_left"):
-		dir = Vector2.LEFT
-	elif Input.is_action_pressed("move_right"):
-		dir = Vector2.RIGHT
-	elif Input.is_action_pressed("move_up"):
-		dir = Vector2.UP
-	elif Input.is_action_pressed("move_down"):
-		dir = Vector2.DOWN
-	var direction := Vector3(dir.x, 0, dir.y)
+	if is_scripted_moving:
+		direction = scripted_direction
+	else:
+		var dir := Vector2.ZERO
+		if Input.is_action_pressed("move_left"):
+			dir = Vector2.LEFT
+		elif Input.is_action_pressed("move_right"):
+			dir = Vector2.RIGHT
+		elif Input.is_action_pressed("move_up"):
+			dir = Vector2.UP
+		elif Input.is_action_pressed("move_down"):
+			dir = Vector2.DOWN
+		direction = Vector3(dir.x, 0, dir.y)
 
 	if direction.length() > 0:
 		velocity.x = direction.x * SPEED
@@ -60,6 +59,17 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func start_scripted_walk(direction: Vector3, duration: float) -> void:
+	is_scripted_moving = true
+	scripted_direction = direction
+	update_animations(direction)
+	var timer := get_tree().create_timer(duration)
+	timer.timeout.connect(func():
+		is_scripted_moving = false
+		velocity.x = 0
+		velocity.z = 0
+		sprite.stop()
+	)
 
 func update_debug_label() -> void:
 	if debug_label:

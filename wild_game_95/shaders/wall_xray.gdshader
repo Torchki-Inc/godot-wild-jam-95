@@ -4,6 +4,7 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_sc
 uniform sampler2D albedo_texture : source_color, filter_linear_mipmap, repeat_enable;
 uniform vec4 albedo : source_color = vec4(1.0);
 uniform float roughness : hint_range(0.0, 1.0) = 0.8;
+uniform vec2 uv_scale = vec2(1.0, 1.0);
 
 // Updated globally from GDScript every frame
 global uniform vec3 player_position;
@@ -18,7 +19,8 @@ void vertex() {
 }
 
 void fragment() {
-    vec4 tex = texture(albedo_texture, UV) * albedo;
+    // vec4 tex = texture(albedo_texture, UV) * albedo;
+    vec4 tex = texture(albedo_texture, UV * uv_scale) * albedo;
     ALBEDO = tex.rgb;
     ROUGHNESS = roughness;
 

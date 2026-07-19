@@ -1,21 +1,40 @@
 [gd_scene format=3 uid="uid://c1yhou67nhkid"]
 
 [ext_resource type="Script" uid="uid://cbidq68om2nvk" path="res://scenes/level/door.gd" id="1_y2uik"]
+[ext_resource type="Texture2D" uid="uid://ql3428cj73kb" path="res://assets/tilesets/dungeon/walldungeon2.png" id="2_y45w8"]
+[ext_resource type="Texture2D" uid="uid://v5g53jpmiiuj" path="res://assets/tilesets/dungeon/doorchapel.png" id="3_muqxn"]
+[ext_resource type="Texture2D" uid="uid://kcr4yk0jd6n6" path="res://assets/tilesets/dungeon/doordungeonclosed.png" id="4_xnm6w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muqxn"]
+albedo_texture = ExtResource("2_y45w8")
 
 [sub_resource type="BoxMesh" id="BoxMesh_wewn7"]
-size = Vector3(0.2, 2, 0.2)
+material = SubResource("StandardMaterial3D_muqxn")
+size = Vector3(0.2, 4, 0.2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fs55d"]
-size = Vector3(0.1, 2, 0.1)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y45w8"]
+data = PackedVector3Array(-0.099999994, 2, 0.099999994, 0.099999994, 2, 0.099999994, -0.099999994, -2, 0.099999994, 0.099999994, 2, 0.099999994, 0.099999994, -2, 0.099999994, -0.099999994, -2, 0.099999994, 0.099999994, 2, -0.099999994, -0.099999994, 2, -0.099999994, 0.099999994, -2, -0.099999994, -0.099999994, 2, -0.099999994, -0.099999994, -2, -0.099999994, 0.099999994, -2, -0.099999994, 0.099999994, 2, 0.099999994, 0.099999994, 2, -0.099999994, 0.099999994, -2, 0.099999994, 0.099999994, 2, -0.099999994, 0.099999994, -2, -0.099999994, 0.099999994, -2, 0.099999994, -0.099999994, 2, -0.099999994, -0.099999994, 2, 0.099999994, -0.099999994, -2, -0.099999994, -0.099999994, 2, 0.099999994, -0.099999994, -2, 0.099999994, -0.099999994, -2, -0.099999994, 0.099999994, 2, 0.099999994, -0.099999994, 2, 0.099999994, 0.099999994, 2, -0.099999994, -0.099999994, 2, 0.099999994, -0.099999994, 2, -0.099999994, 0.099999994, 2, -0.099999994, -0.099999994, -2, 0.099999994, 0.099999994, -2, 0.099999994, -0.099999994, -2, -0.099999994, 0.099999994, -2, 0.099999994, 0.099999994, -2, -0.099999994, -0.099999994, -2, -0.099999994)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnm6w"]
+albedo_texture = ExtResource("3_muqxn")
 
 [sub_resource type="BoxMesh" id="BoxMesh_b0vu5"]
-size = Vector3(0.1, 2, 1.8)
+material = SubResource("StandardMaterial3D_xnm6w")
+size = Vector3(0.1, 4, 1.8)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y2uik"]
-size = Vector3(0.1, 2, 1.8)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y2uik"]
+data = PackedVector3Array(-0.049999997, 2, 0.9, 0.049999997, 2, 0.9, -0.049999997, -2, 0.9, 0.049999997, 2, 0.9, 0.049999997, -2, 0.9, -0.049999997, -2, 0.9, 0.049999997, 2, -0.9, -0.049999997, 2, -0.9, 0.049999997, -2, -0.9, -0.049999997, 2, -0.9, -0.049999997, -2, -0.9, 0.049999997, -2, -0.9, 0.049999997, 2, 0.9, 0.049999997, 2, -0.9, 0.049999997, -2, 0.9, 0.049999997, 2, -0.9, 0.049999997, -2, -0.9, 0.049999997, -2, 0.9, -0.049999997, 2, -0.9, -0.049999997, 2, 0.9, -0.049999997, -2, -0.9, -0.049999997, 2, 0.9, -0.049999997, -2, 0.9, -0.049999997, -2, -0.9, 0.049999997, 2, 0.9, -0.049999997, 2, 0.9, 0.049999997, 2, -0.9, -0.049999997, 2, 0.9, -0.049999997, 2, -0.9, 0.049999997, 2, -0.9, -0.049999997, -2, 0.9, 0.049999997, -2, 0.9, -0.049999997, -2, -0.9, 0.049999997, -2, 0.9, 0.049999997, -2, -0.9, -0.049999997, -2, -0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wytq7"]
+shading_mode = 0
+albedo_texture = ExtResource("4_xnm6w")
+
+[sub_resource type="QuadMesh" id="QuadMesh_c8qny"]
+material = SubResource("StandardMaterial3D_wytq7")
+size = Vector2(1.8, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c8qny"]
-size = Vector3(1.6, 2, 2)
+size = Vector3(1.6, 4.225586, 2)
 
 [node name="Door" type="Node3D" unique_id=1626321234 node_paths=PackedStringArray("area")]
 script = ExtResource("1_y2uik")
@@ -26,8 +45,8 @@ area = NodePath("Area3D")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge" unique_id=1878295045]
 mesh = SubResource("BoxMesh_wewn7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge" unique_id=953224160]
-shape = SubResource("BoxShape3D_fs55d")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge" unique_id=1125652873]
+shape = SubResource("ConcavePolygonShape3D_y45w8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1603016564]
 
@@ -35,15 +54,24 @@ shape = SubResource("BoxShape3D_fs55d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 mesh = SubResource("BoxMesh_b0vu5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=626238454]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1093589691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-shape = SubResource("BoxShape3D_y2uik")
+shape = SubResource("ConcavePolygonShape3D_y2uik")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D" unique_id=675447233]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.051, 0, 1)
+mesh = SubResource("QuadMesh_c8qny")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D" unique_id=2021670315]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.051, 0, 1)
+mesh = SubResource("QuadMesh_c8qny")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=67345930 groups=["Door"]]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1484831703]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8169967)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03173828, 0.8169967)
 shape = SubResource("BoxShape3D_c8qny")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -1,20 +1,16 @@
 [gd_scene format=3 uid="uid://do8b7e4m5oa45"]
 
 [ext_resource type="PackedScene" uid="uid://b57xu2cle8m5n" path="res://scenes/player/player.tscn" id="1_4jxr4"]
-[ext_resource type="PackedScene" uid="uid://dfpt2p3g02nw1" path="res://debug/scenes/test_box.tscn" id="2_4jxr4"]
 [ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="3_37slg"]
 [ext_resource type="PackedScene" uid="uid://d3g2cr7ydn14h" path="res://scenes/ui/message_ui.tscn" id="4_hh3ca"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4jxr4"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_37slg"]
-sky_material = SubResource("ProceduralSkyMaterial_4jxr4")
+[ext_resource type="PackedScene" uid="uid://pnwrmicuc60x" path="res://scenes/level/levels/floor_1.tscn" id="4_i12tw"]
 
 [sub_resource type="Environment" id="Environment_hh3ca"]
-background_mode = 2
-sky = SubResource("Sky_37slg")
+background_mode = 1
+background_color = Color(0.039215688, 0.05490196, 0.078431375, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.101960786, 0.1254902, 0.1882353, 1)
+ambient_light_energy = 16.0
 glow_enabled = true
 
 [node name="TestWorld" type="Node3D" unique_id=2098245713]
@@ -26,10 +22,8 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1773301666]
 environment = SubResource("Environment_hh3ca")
 
-[node name="TestBox" parent="." unique_id=1442788025 instance=ExtResource("2_4jxr4")]
-
 [node name="Player" parent="." unique_id=1686751974 instance=ExtResource("1_4jxr4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6585836, 2.4530368)
 
 [node name="Items" type="Node3D" parent="." unique_id=508813741]
 
@@ -41,3 +35,14 @@ item_name = "test_key"
 
 [node name="MessageUI" parent="." unique_id=263412717 instance=ExtResource("4_hh3ca")]
 process_mode = 2
+
+[node name="VFXRoot" type="Node3D" parent="." unique_id=859676003]
+
+[node name="LevelRoot" type="Node3D" parent="." unique_id=36256025]
+
+[node name="FightRoot" type="Node3D" parent="." unique_id=224716417]
+
+[node name="EntityRoot" type="Node3D" parent="." unique_id=1117670378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4328327, 0)
+
+[node name="Floor1" parent="." unique_id=922095307 instance=ExtResource("4_i12tw")]

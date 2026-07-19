@@ -10,6 +10,7 @@ enum ItemType {
 }
 
 @export var ITEM_TYPE: ItemType
+@export var amount: int = 1
 @export var sprite: Texture2D = preload("res://icon.svg")
 @export var key_id: String = ""
 
@@ -34,18 +35,18 @@ func _process(delta: float) -> void:
 func on_pickup() -> void:
 	match ITEM_TYPE:
 		ItemType.POTION:
-			GameState.inventory.potions += 1
+			GameState.inventory.potions += amount
 		ItemType.SMOKE:
-			GameState.inventory.smoke_bombs += 1
+			GameState.inventory.smoke_bombs += amount
 		ItemType.BOMB:
-			GameState.inventory.bombs += 1
+			GameState.inventory.bombs += amount
 		ItemType.ARROW:
-			GameState.player.arrows += 1
+			GameState.player.arrows += amount
 		ItemType.KEY:
 			GameState.add_key(key_id)
-	# MessageManager.show_message("item_pickup", {"item": item_name} )
-	MessageManager.show_custom_message("Мой батя ебашит вообще адовые блюда. Ну такой вот примерно рецепт усредненный, потому что вариаций масса. Берется суп, он не греется, греть – это не про моего батю. Он берет это суп, вываливает его на сковороду и начинает жарить. Добавляет в него огромное количество лука, чеснока, перца черного и красного МУКИ! для вязкости, томатная паста сверху. Все это жарится до дыма. Потом снимается с огня и остужается на балконе. Потом батя заносит и щедро полив майонезом начинает есть. При этом ест со сковороды шкрябая по ней ложкой. Ест и приговаривает полушепотом ух бля. При этом у него на лбу аж пот выступает. Любезно мне иногда предлагает, но я отказываюсь. Надо ли говорить о том какой дичайший пердеж потом?
-		Вонища такая, что обои от стен отклеиваются.")
+	MessageManager.show_message("item_pickup", {"item": item_name} )
+	# MessageManager.show_custom_message("Мой батя ебашит вообще адовые блюда. Ну такой вот примерно рецепт усредненный, потому что вариаций масса. Берется суп, он не греется, греть – это не про моего батю. Он берет это суп, вываливает его на сковороду и начинает жарить. Добавляет в него огромное количество лука, чеснока, перца черного и красного МУКИ! для вязкости, томатная паста сверху. Все это жарится до дыма. Потом снимается с огня и остужается на балконе. Потом батя заносит и щедро полив майонезом начинает есть. При этом ест со сковороды шкрябая по ней ложкой. Ест и приговаривает полушепотом ух бля. При этом у него на лбу аж пот выступает. Любезно мне иногда предлагает, но я отказываюсь. Надо ли говорить о том какой дичайший пердеж потом?
+	# 	Вонища такая, что обои от стен отклеиваются.")
 	queue_free()
 
 func _set_name() -> void:
