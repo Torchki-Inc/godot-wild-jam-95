@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://c74evxirnpj4y"]
+
+[ext_resource type="Script" uid="uid://c3x0b6v8wsv8o" path="res://scripts/cutscenes/cutscene_data.gd" id="1_1e8lo"]
+[ext_resource type="Script" uid="uid://khtcrn1x6c8o" path="res://scripts/cutscenes/cutscene_slide.gd" id="2_c0urc"]
+[ext_resource type="Texture2D" uid="uid://b7hkpdlvqb3fy" path="res://assets/cutscenes/cutscene1_1.png" id="3_omcnb"]
+[ext_resource type="Texture2D" uid="uid://c20of4hlovdms" path="res://assets/cutscenes/cutscene1_2.png" id="4_dcopl"]
+[ext_resource type="Texture2D" uid="uid://cdl5ev41dpqol" path="res://assets/cutscenes/cutscene1_3.png" id="5_rf64y"]
+[ext_resource type="Texture2D" uid="uid://dptc2gjffclht" path="res://assets/cutscenes/cutscene1_4.png" id="6_7xl4y"]
+
+[sub_resource type="Resource" id="Resource_vgh5a"]
+script = ExtResource("2_c0urc")
+image = ExtResource("3_omcnb")
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_ui2qr"]
+script = ExtResource("2_c0urc")
+image = ExtResource("4_dcopl")
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_omcnb"]
+script = ExtResource("2_c0urc")
+image = ExtResource("5_rf64y")
+text = "Your sorrow turns into a consuming rage."
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_dcopl"]
+script = ExtResource("2_c0urc")
+image = ExtResource("6_7xl4y")
+text = "I'll talk to this demon and I'll bring you back, no matter how many lives it takes"
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[resource]
+script = ExtResource("1_1e8lo")
+slides = Array[ExtResource("2_c0urc")]([SubResource("Resource_vgh5a"), SubResource("Resource_ui2qr"), SubResource("Resource_omcnb"), SubResource("Resource_dcopl")])
+metadata/_custom_type_script = "uid://c3x0b6v8wsv8o"
