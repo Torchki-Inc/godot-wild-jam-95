@@ -11,7 +11,8 @@ extends Node
 @onready var fight_root: Node = $FightRoot
 
 @export_category("Cutscenes")
-@export var test_cutscene: CutsceneData
+@export var start_cutscene: CutsceneData
+@export var end_cutscene: CutsceneData
 
 @onready var cutscene_player: CutscenePlayer = $UI/CutscenePlayer
 
@@ -27,14 +28,6 @@ var current_level: Node
 var player: Node
 var current_fight: Node
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		if GameState.state == GameState.State.EXPLORING:
-			enter_fight(test_encounter)
-
-	if event.is_action_pressed("ui_undo"):
-		if test_cutscene != null:
-			await play_cutscene(test_cutscene)
 
 func _ready() -> void:
 	# process_mode = Node.PROCESS_MODE_ALWAYS
@@ -43,6 +36,7 @@ func _ready() -> void:
 	load_level(starting_level)
 	add_to_group("main_game")
 
+	await play_cutscene(start_cutscene)
 	GameState.set_state(GameState.State.EXPLORING)
 	AudioManager.play_music(exploration_music)
 

@@ -351,6 +351,7 @@ mesh = SubResource("ArrayMesh_dhb3n")
 shape = SubResource("ConcavePolygonShape3D_p5fib")
 
 [node name="ChapelFloor" type="MeshInstance3D" parent="." unique_id=1069924894]
+visible = false
 mesh = SubResource("PlaneMesh_8mxrd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ChapelFloor" unique_id=1327068193]
@@ -382,7 +383,6 @@ shape = SubResource("ConcavePolygonShape3D_mhc71")
 
 [node name="ChapaelWall2" type="MeshInstance3D" parent="." unique_id=1839068566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.9)
-visible = false
 mesh = SubResource("ArrayMesh_8bo6s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ChapaelWall2" unique_id=369778963]

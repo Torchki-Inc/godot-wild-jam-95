@@ -5,14 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://cib6l03pees5" path="res://scenes/level/levels/dungeon.tscn" id="2_bebfr"]
 [ext_resource type="PackedScene" uid="uid://b57xu2cle8m5n" path="res://scenes/player/player.tscn" id="3_esv8v"]
 [ext_resource type="PackedScene" uid="uid://y0vuuyw7ms08" path="res://scenes/fight/fight_scene.tscn" id="3_v4wsd"]
-[ext_resource type="Resource" uid="uid://c23qxl43qi132" path="res://data/cutscenes/test/test_cuscene.tres" id="4_bebfr"]
+[ext_resource type="Resource" uid="uid://c74evxirnpj4y" path="res://data/cutscenes/beginning.tres" id="4_0wxsa"]
+[ext_resource type="Resource" uid="uid://bdclei5wggtrf" path="res://data/cutscenes/ending.tres" id="5_25ngl"]
 [ext_resource type="PackedScene" uid="uid://bkpfy5u5icpor" path="res://scenes/cutscenes/CutscenePlayer.tscn" id="5_bebfr"]
 
 [node name="Main" type="Node" unique_id=614951479]
 script = ExtResource("1_exxld")
 starting_level = ExtResource("2_bebfr")
 fight_scene = ExtResource("3_v4wsd")
-test_cutscene = ExtResource("4_bebfr")
+start_cutscene = ExtResource("4_0wxsa")
+end_cutscene = ExtResource("5_25ngl")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1572506534]
 

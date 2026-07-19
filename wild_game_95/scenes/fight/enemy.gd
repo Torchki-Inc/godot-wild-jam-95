@@ -91,7 +91,7 @@ func _trigger_battle() -> void:
 func _on_fight_finished(result = null) -> void:
 	var victory := false
 	if result is Dictionary:
-		victory = result.get("victory", false) # проверь актуальный ключ!
+		victory = result.get("victory", false)
 	elif result is bool:
 		victory = result
 

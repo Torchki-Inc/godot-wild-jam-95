@@ -18,3 +18,4 @@ enum Passive {
 
 @export var passive: Passive = Passive.NONE
 @export var moves: Array[EnemyMoveData] = []
+@export var is_boss: bool = false
