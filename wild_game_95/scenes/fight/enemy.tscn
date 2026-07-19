@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cwtnuk6fe5r24"]
+
+[ext_resource type="Script" uid="uid://bd2oymr7euxqt" path="res://scenes/fight/enemy.gd" id="1_5uwov"]
+[ext_resource type="PackedScene" uid="uid://6ad83o6sbnjq" path="res://scenes/fight/environements/dungeon.tscn" id="2_miw8n"]
+[ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="3_wulrm"]
+[ext_resource type="Script" uid="uid://bct0nkfj3elu0" path="res://scripts/battle/encounter_data.gd" id="4_jyyib"]
+
+[sub_resource type="Resource" id="Resource_6j73u"]
+script = ExtResource("4_jyyib")
+battle_environment = ExtResource("2_miw8n")
+metadata/_custom_type_script = "uid://bct0nkfj3elu0"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_edf8v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5uwov"]
+load_path = "res://.godot/imported/some-meme-reactions-that-i-have-v0-qzdcbihjs43h1.webp-3a73153549c3ab0202176dc78c5a9511.s3tc.ctex"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hnbee"]
+radius = 1.6638297
+
+[node name="Enemy" type="CharacterBody3D" unique_id=2029052555]
+script = ExtResource("1_5uwov")
+encounter_data = SubResource("Resource_6j73u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1339576650]
+shape = SubResource("CapsuleShape3D_edf8v")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1596497064]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0, 0, 0)
+texture = SubResource("CompressedTexture2D_5uwov")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1884054265]
+collision_layer = 7
+collision_mask = 7
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1283015813]
+shape = SubResource("SphereShape3D_hnbee")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

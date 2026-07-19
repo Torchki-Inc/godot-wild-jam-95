@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bkpfy5u5icpor"]
+
+[ext_resource type="Script" uid="uid://c02stio473ant" path="res://scenes/cutscenes/cutscene_player.gd" id="1_0go7r"]
+
+[node name="CutscenePlayer" type="Control" unique_id=59222506]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0go7r")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1435501605]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SlideImage" type="TextureRect" parent="." unique_id=1825070595]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fade" type="ColorRect" parent="." unique_id=509411484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ContinueLabel" type="Label" parent="." unique_id=770693532]
+visible = false
+layout_mode = 0
+offset_left = 550.0
+offset_top = 334.0
+offset_right = 638.0
+offset_bottom = 357.0
+text = "Press Enter"

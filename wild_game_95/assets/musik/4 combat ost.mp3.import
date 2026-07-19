@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xe8w8xxl7plo"
+path="res://.godot/imported/4 combat ost.mp3-a55c7945c87088b07c62e1dfe2d12417.mp3str"
+
+[deps]
+
+source_file="res://assets/musik/4 combat ost.mp3"
+dest_files=["res://.godot/imported/4 combat ost.mp3-a55c7945c87088b07c62e1dfe2d12417.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

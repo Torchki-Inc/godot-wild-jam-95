@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bthyaflogor31"]
+
+[ext_resource type="Script" uid="uid://choc31fps2axb" path="res://scenes/triggers/music_switch.gd" id="1_cnxy0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8qny"]
+size = Vector3(3.7470703, 1, 1)
+
+[node name="MusicSwitch" type="Area3D" unique_id=742333163]
+script = ExtResource("1_cnxy0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=868430289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3735352, 0, 0)
+shape = SubResource("BoxShape3D_c8qny")
+debug_color = Color(0.6176869, 0.5359521, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

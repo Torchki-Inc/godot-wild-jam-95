@@ -1,28 +1,36 @@
 @tool
 extends EditorScript
 
+# Путь к ноде, которую нужно "запечь" — например "ChapaelWall2"
+@export var target_path: NodePath = NodePath("ChapaelWall4")
+
 func _run():
-	var scene := get_scene()  # текущая открытая сцена в редакторе
-	var wall5 := scene.get_node("WallTile5") as MeshInstance3D
-	var m1 := scene.get_node("WallTile5/MeshInstance3D") as MeshInstance3D
-	var m2 := scene.get_node("WallTile5/MeshInstance3D2") as MeshInstance3D
+	var scene := get_scene()
+	var target := scene.get_node(target_path) as MeshInstance3D
+	if target == null:
+		push_error("Нода не найдена или это не MeshInstance3D: %s" % target_path)
+		return
 
 	var st := SurfaceTool.new()
 	var result := ArrayMesh.new()
 
-	# бокс — в локальном пространстве WallTile5, трансформ identity относительно себя
-	_append(st, result, wall5.mesh, Transform3D.IDENTITY)
-	# плейны — с их локальными трансформами относительно WallTile5
-	_append(st, result, m1.mesh, m1.transform)
-	_append(st, result, m2.mesh, m2.transform)
+	# собственный меш ноды — трансформ identity относительно себя
+	if target.mesh:
+		_append(st, result, target.mesh, Transform3D.IDENTITY)
 
-	wall5.mesh = result
+	# все дочерние MeshInstance3D (плейны и т.п.) — с их локальными трансформами
+	var to_free: Array[MeshInstance3D] = []
+	for child in target.get_children():
+		if child is MeshInstance3D and child.mesh:
+			_append(st, result, child.mesh, child.transform)
+			to_free.append(child)
 
-	# чистим — геометрия уже внутри result
-	m1.queue_free()
-	m2.queue_free()
+	target.mesh = result
 
-	print("Done: ", result.get_surface_count(), " surfaces")
+	for child in to_free:
+		child.queue_free()
+
+	print("Done on '%s': %d surfaces" % [target.name, result.get_surface_count()])
 
 func _append(st: SurfaceTool, result: ArrayMesh, mesh: Mesh, xform: Transform3D):
 	for surf_idx in mesh.get_surface_count():

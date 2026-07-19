@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfaffwdmpu56v"
+path="res://.godot/imported/8 End credits.mp3-2b8f641c61cd9d356c8f5652929cede4.mp3str"
+
+[deps]
+
+source_file="res://assets/musik/8 End credits.mp3"
+dest_files=["res://.godot/imported/8 End credits.mp3-2b8f641c61cd9d356c8f5652929cede4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

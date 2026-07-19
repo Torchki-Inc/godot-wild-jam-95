@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://d3g2cr7ydn14h"]
 
 [ext_resource type="Script" uid="uid://clunleybpykpx" path="res://scenes/ui/message_ui.gd" id="1_rowjr"]
+[ext_resource type="Texture2D" uid="uid://dwi3gukbbv2ks" path="res://assets/battle_button_selected.png" id="2_pfwhv"]
+[ext_resource type="AudioStream" uid="uid://b5aegmy16vtfk" path="res://assets/sfx/Dialogue beep.mp3" id="2_u23ax"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pvj2x"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+texture = ExtResource("2_pfwhv")
 
 [node name="MessageUI" type="CanvasLayer" unique_id=263412717]
 process_mode = 3
 layer = 10
 script = ExtResource("1_rowjr")
+typing_sounds = Array[AudioStream]([ExtResource("2_u23ax")])
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=749181806]
 custom_minimum_size = Vector2(80, 0)
@@ -18,6 +28,7 @@ offset_top = 8.0
 offset_right = 40.0
 offset_bottom = 8.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pvj2x")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=401647946]
 layout_mode = 2

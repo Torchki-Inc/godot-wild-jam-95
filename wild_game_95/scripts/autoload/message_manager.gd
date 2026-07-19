@@ -1,12 +1,13 @@
 extends Node
 
 signal message_displayed(text: String)
+signal queue_finished
 
 var queue: Array[String] = []
 var is_displaying: bool = false
 
 const MAX_WORDS_PER_KEY_MESSAGE := 20
-const MAX_WORDS_PER_CUSTOM_MESSAGE := 12
+const MAX_WORDS_PER_CUSTOM_MESSAGE := 25
 
 func show_message(key: String, params: Dictionary = {}):
 	var text: String = Message.TEXT.get(key, key)
@@ -39,7 +40,7 @@ func _enqueue_split(text: String, max_words: int) -> void:
 func process_message():
 	if queue.is_empty():
 		is_displaying = false
-		get_tree().paused = false
+		queue_finished.emit()
 		return
 	is_displaying = true
 	var text: String = queue.pop_front()

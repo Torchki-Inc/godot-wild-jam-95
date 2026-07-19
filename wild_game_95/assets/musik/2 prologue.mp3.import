@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bl87i44863y57"
+path="res://.godot/imported/2 prologue.mp3-147e41e9670f2ce355ab82ad40274b25.mp3str"
+
+[deps]
+
+source_file="res://assets/musik/2 prologue.mp3"
+dest_files=["res://.godot/imported/2 prologue.mp3-147e41e9670f2ce355ab82ad40274b25.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
