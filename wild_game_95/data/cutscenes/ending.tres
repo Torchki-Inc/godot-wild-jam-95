@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://bdclei5wggtrf"]
+
+[ext_resource type="Script" uid="uid://c3x0b6v8wsv8o" path="res://scripts/cutscenes/cutscene_data.gd" id="1_kpnlu"]
+[ext_resource type="Script" uid="uid://khtcrn1x6c8o" path="res://scripts/cutscenes/cutscene_slide.gd" id="2_u40i0"]
+[ext_resource type="Texture2D" uid="uid://drqhkak27ntv4" path="res://assets/cutscenes/cutscene2_1.png" id="3_ue4ec"]
+[ext_resource type="Texture2D" uid="uid://dhgm4bb0cpsvm" path="res://assets/cutscenes/cutscene2_2.png" id="4_cw3ek"]
+[ext_resource type="Texture2D" uid="uid://dpf6m18yvqwsc" path="res://assets/cutscenes/cutscene2_3.png" id="5_imu12"]
+[ext_resource type="Texture2D" uid="uid://2h4qkoap6uda" path="res://assets/cutscenes/cutscene2_4.png" id="6_18sv8"]
+
+[sub_resource type="Resource" id="Resource_wpevc"]
+script = ExtResource("2_u40i0")
+image = ExtResource("3_ue4ec")
+text = "Poor thing, you know that there is no such thing as challenging death."
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_q615w"]
+script = ExtResource("2_u40i0")
+image = ExtResource("4_cw3ek")
+text = "Look at you, you are dying, your blind rage brought you there, you should have break the cycle violence."
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_wcnl7"]
+script = ExtResource("2_u40i0")
+image = ExtResource("5_imu12")
+text = "If you dont want your soul to rot and to end up like the monsters you saw on your way here..."
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[sub_resource type="Resource" id="Resource_46hs8"]
+script = ExtResource("2_u40i0")
+image = ExtResource("6_18sv8")
+text = "Accept what happened, accept the pain, Askiel."
+metadata/_custom_type_script = "uid://khtcrn1x6c8o"
+
+[resource]
+script = ExtResource("1_kpnlu")
+slides = Array[ExtResource("2_u40i0")]([SubResource("Resource_wpevc"), SubResource("Resource_q615w"), SubResource("Resource_wcnl7"), SubResource("Resource_46hs8")])
+metadata/_custom_type_script = "uid://c3x0b6v8wsv8o"
