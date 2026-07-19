@@ -24,5 +24,6 @@ enum PlayerMove {
 var actor_type: ActorType
 var player_move: PlayerMove = PlayerMove.NONE
 var enemy_index: int = -1
+var enemy_move: EnemyMoveData
 var priority: int = 0
 var target_index: int = -1

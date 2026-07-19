@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv1gw4qnp2dpn"
-path.s3tc="res://.godot/imported/wallchapel2.png-2425e3c1c3290d338b3a6119fdb75143.s3tc.ctex"
+uid="uid://b5rnb0uphd73l"
+path.s3tc="res://.godot/imported/dog1.png-7b4e34d09fcd96dfd189b83d74027db5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/tilesets/dungeon/chapel/wallchapel2.png"
-dest_files=["res://.godot/imported/wallchapel2.png-2425e3c1c3290d338b3a6119fdb75143.s3tc.ctex"]
+source_file="res://assets/sprites/dog1.png"
+dest_files=["res://.godot/imported/dog1.png-7b4e34d09fcd96dfd189b83d74027db5.s3tc.ctex"]
 
 [params]
 

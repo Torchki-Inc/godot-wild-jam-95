@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" format=3 uid="uid://e0l37y8ceanl"]
+
+[ext_resource type="Resource" uid="uid://c5tin4a1iudhh" path="res://data/moves/death_from_above.tres" id="1_3os0b"]
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_6qohm"]
+
+[resource]
+script = ExtResource("1_6qohm")
+display_name = "Take Flight"
+effect = 7
+effect_amount = 0.5
+duration_turns = 1
+follow_up_move = ExtResource("1_3os0b")
+metadata/_custom_type_script = "uid://efac4ijlimfd"

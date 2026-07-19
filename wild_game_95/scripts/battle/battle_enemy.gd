@@ -5,6 +5,8 @@ var data: EnemyData
 var health: int
 var current_intent: EnemyMoveData
 var forced_next_intent: EnemyMoveData
+var bonus_intent: EnemyMoveData
+var boss_phase_two := false
 
 var dodge_bonus: float = 0.0
 var temporary_dodge_bonus: float = 0.0

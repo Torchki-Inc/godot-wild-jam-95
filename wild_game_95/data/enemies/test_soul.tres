@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c5seacpm27u2d"]
 
+[ext_resource type="PackedScene" uid="uid://bgdd8g2k7dipq" path="res://scenes/fight/actors/soul.tscn" id="1_i45iu"]
 [ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_kldc3"]
 [ext_resource type="Resource" uid="uid://bcwn06fgpa102" path="res://data/moves/haunt.tres" id="2_i45iu"]
 [ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="2_phpye"]
@@ -8,5 +9,6 @@
 script = ExtResource("2_phpye")
 display_name = "Test Soul"
 max_health = 15
+model_scene = ExtResource("1_i45iu")
 moves = Array[ExtResource("1_kldc3")]([ExtResource("2_i45iu")])
 metadata/_custom_type_script = "uid://0w1pe1fmfvwg"

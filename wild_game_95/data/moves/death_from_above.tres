@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" format=3 uid="uid://c5tin4a1iudhh"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_n81go"]
+
+[resource]
+script = ExtResource("1_n81go")
+display_name = "Death From Above"
+damage = 12
+metadata/_custom_type_script = "uid://efac4ijlimfd"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" format=3 uid="uid://chepjy0hwsbrp"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_reoy8"]
+
+[resource]
+script = ExtResource("1_reoy8")
+display_name = "Feast on Fear"
+effect = 6
+effect_amount = 6.0
+metadata/_custom_type_script = "uid://efac4ijlimfd"

@@ -24,6 +24,7 @@ var player_is_aiming := false
 var player_dodges_next_attack := false
 var player_accuracy_modifier := 0.0
 var player_accuracy_debuff_turns := 0
+var last_player_move: BattleAction.PlayerMove = BattleAction.PlayerMove.NONE
 
 const CROSSBOW_DAMAGE := 15
 
@@ -45,6 +46,48 @@ const CROSSBOW_DAMAGE := 15
 	$EnemySlots/Slot2,
 ]
 
+@onready var intent_panels: Array[PanelContainer] = [
+	$BattleUI/Root/IntentUI/Intent0,
+	$BattleUI/Root/IntentUI/Intent1,
+	$BattleUI/Root/IntentUI/Intent2,
+]
+
+@onready var intent_name_labels: Array[Label] = [
+	$BattleUI/Root/IntentUI/Intent0/MarginContainer/VBoxContainer/EnemyName,
+	$BattleUI/Root/IntentUI/Intent1/MarginContainer/VBoxContainer/EnemyName,
+	$BattleUI/Root/IntentUI/Intent2/MarginContainer/VBoxContainer/EnemyName,
+]
+
+@onready var primary_intent_labels: Array[Label] = [
+	$BattleUI/Root/IntentUI/Intent0/MarginContainer/VBoxContainer/PrimaryIntent,
+	$BattleUI/Root/IntentUI/Intent1/MarginContainer/VBoxContainer/PrimaryIntent,
+	$BattleUI/Root/IntentUI/Intent2/MarginContainer/VBoxContainer/PrimaryIntent,
+]
+
+@onready var bonus_intent_labels: Array[Label] = [
+	$BattleUI/Root/IntentUI/Intent0/MarginContainer/VBoxContainer/BonusIntent,
+	$BattleUI/Root/IntentUI/Intent1/MarginContainer/VBoxContainer/BonusIntent,
+	$BattleUI/Root/IntentUI/Intent2/MarginContainer/VBoxContainer/BonusIntent,
+]
+
+@onready var player_health_bar: TextureProgressBar = (
+	$BattleUI/Root/HealthUI/PlayerHealthBar
+)
+
+@onready var enemy_health_bars: Array[TextureProgressBar] = [
+	$BattleUI/Root/HealthUI/EnemyHealthRow/EnemyHealthBar0,
+	$BattleUI/Root/HealthUI/EnemyHealthRow/EnemyHealthBar1,
+	$BattleUI/Root/HealthUI/EnemyHealthRow/EnemyHealthBar2,
+]
+
+var intent_world_offsets := [
+	Vector3(0.0, 1.10, 0.0),
+	Vector3(0.0, 0.92, 0.0),
+	Vector3(0.0, 1.08, 0.0),
+]
+
+@onready var player_visual: Node3D = $PlayerSlot/PlayerBattleActor
+
 var player_health: int
 
 var encounter_data: EncounterData
@@ -57,6 +100,167 @@ var selected_target_index: int = -1
 
 func setup(encounter: EncounterData) -> void:
 	encounter_data = encounter
+
+func _process(_delta: float) -> void:
+	update_intent_positions()
+	update_health_bars()
+
+func update_intent_positions() -> void:
+	var camera := $Camera3D as Camera3D
+	var ui_root := $BattleUI/Root as Control
+
+	for index in range(intent_panels.size()):
+		var panel := intent_panels[index]
+
+		if index >= enemies.size():
+			panel.hide()
+			continue
+
+		var enemy := enemies[index]
+
+		if enemy.health <= 0:
+			panel.hide()
+			continue
+
+		var slot: Node3D = enemy_slots[index]
+
+		var world_position: Vector3 = (
+			slot.global_position
+			+ intent_world_offsets[index]
+		)
+
+		if camera.is_position_behind(world_position):
+			panel.hide()
+			continue
+
+		panel.show()
+
+		var screen_position := camera.unproject_position(world_position)
+
+		panel.position = Vector2(
+			screen_position.x - panel.size.x * 0.5,
+			screen_position.y - panel.size.y
+		)
+
+	resolve_intent_panel_overlaps(ui_root.size)
+
+func resolve_intent_panel_overlaps(ui_size: Vector2) -> void:
+	var visible_panels: Array[PanelContainer] = []
+
+	for panel in intent_panels:
+		if panel.visible:
+			visible_panels.append(panel)
+
+	if visible_panels.is_empty():
+		return
+
+	visible_panels.sort_custom(
+		func(a: PanelContainer, b: PanelContainer) -> bool:
+			return a.position.x < b.position.x
+	)
+
+	var spacing := 5.0
+	var left_limit := 18.0
+	var right_limit := ui_size.x - 18.0
+
+	for index in range(1, visible_panels.size()):
+		var previous := visible_panels[index - 1]
+		var current := visible_panels[index]
+
+		var minimum_x := (
+			previous.position.x
+			+ previous.size.x
+			+ spacing
+		)
+
+		current.position.x = maxf(
+			current.position.x,
+			minimum_x
+		)
+
+	var last_panel: PanelContainer = visible_panels.back()
+
+	var right_overflow: float = last_panel.position.x + last_panel.size.x - right_limit
+
+	if right_overflow > 0.0:
+		for panel in visible_panels:
+			panel.position.x -= right_overflow
+
+	var first_panel: PanelContainer = visible_panels.front()
+
+	var left_overflow: float = left_limit - first_panel.position.x
+
+	if left_overflow > 0.0:
+		for panel in visible_panels:
+			panel.position.x += left_overflow
+
+	for panel in visible_panels:
+		panel.position.y = clampf(
+			panel.position.y,
+			8.0,
+			205.0 - panel.size.y
+		)
+
+func update_enemy_health_bars() -> void:
+	for index in range(enemy_health_bars.size()):
+		var bar: TextureProgressBar = enemy_health_bars[index]
+
+		if index >= enemies.size():
+			bar.hide()
+			continue
+
+		var enemy: BattleEnemy = enemies[index]
+
+		if enemy.health <= 0:
+			bar.hide()
+			continue
+
+		bar.show()
+		bar.max_value = float(enemy.data.max_health)
+		bar.value = float(enemy.health)
+
+func update_player_health_bar() -> void:
+	player_health_bar.max_value = float(
+		GameState.player["max_health"]
+	)
+	player_health_bar.value = float(player_health)
+
+func update_health_bars() -> void:
+	update_player_health_bar()
+	update_enemy_health_bars()
+
+func arrange_enemy_slots() -> void:
+	var formation: Array[Vector3] = []
+
+	match enemies.size():
+		1:
+			formation = [
+				Vector3(2.05, -0.02, -1.54),
+			]
+
+		2:
+			formation = [
+				Vector3(1.65, -0.02, -1.50),
+				Vector3(2.45,  0.02, -1.58),
+			]
+
+		3:
+			formation = [
+				Vector3(1.45, -0.02, -1.50), # left/front
+				Vector3(2.05, -0.08, -1.66), # middle/back
+				Vector3(2.72, -0.01, -1.52), # right/front
+			]
+
+		_:
+			formation = [
+				Vector3(1.45, -0.02, -1.50),
+				Vector3(2.05, -0.08, -1.66),
+				Vector3(2.72, -0.01, -1.52),
+			]
+
+	for i in range(enemy_slots.size()):
+		if i < formation.size():
+			enemy_slots[i].position = formation[i]
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
@@ -83,6 +287,10 @@ func _ready() -> void:
 	spawn_enemy_models()
 
 	choose_enemy_intents()
+
+	await get_tree().process_frame
+	update_intent_positions()
+
 	start_player_turn()
 
 func spawn_battle_environment() -> void:
@@ -119,40 +327,183 @@ func choose_enemy_intents() -> void:
 		if enemy.health <= 0:
 			continue
 
+		enemy.bonus_intent = null
+
 		if enemy.forced_next_intent != null:
 			enemy.current_intent = enemy.forced_next_intent
 			enemy.forced_next_intent = null
-			continue
+		else:
+			enemy.current_intent = choose_intent_for_enemy(enemy)
 
-		if enemy.data.moves.is_empty():
-			push_warning(
-				"%s has no moves." % enemy.data.display_name
-			)
-			enemy.current_intent = null
-			continue
-
-		enemy.current_intent = enemy.data.moves.pick_random()
+		if enemy.data.passive == EnemyData.Passive.DEMON_CROW \
+		and enemy.boss_phase_two:
+			enemy.bonus_intent = choose_boss_bonus_intent(enemy)
 
 	update_intent_ui()
 
-# TODO
-func update_intent_ui() -> void:
-	print("--- ENEMY INTENTS ---")
+func choose_intent_for_enemy(enemy: BattleEnemy) -> EnemyMoveData:
+	if enemy.data.moves.is_empty():
+		push_warning("%s has no moves." % enemy.data.display_name)
+		return null
 
-	for enemy in enemies:
-		if enemy.health <= 0:
+	if enemy.data.passive != EnemyData.Passive.DEMON_CROW:
+		return enemy.data.moves.pick_random()
+
+	var possible_moves: Array[EnemyMoveData] = []
+
+	for move in enemy.data.moves:
+		if move == null:
 			continue
 
-		if enemy.current_intent == null:
-			print("%s: no action" % enemy.data.display_name)
-		else:
-			print(
-				"%s intends to use %s"
-				% [
-					enemy.data.display_name,
-					enemy.current_intent.display_name,
-				]
+		if move.effect == EnemyMoveData.Effect.HEAL:
+			var player_showed_fear := (
+				last_player_move == BattleAction.PlayerMove.DEFEND
+				or last_player_move == BattleAction.PlayerMove.SMOKE_BOMB
 			)
+
+			if not player_showed_fear:
+				continue
+
+			if enemy.health >= enemy.data.max_health:
+				continue
+
+		possible_moves.append(move)
+
+	if possible_moves.is_empty():
+		return enemy.data.moves[0]
+
+	return possible_moves.pick_random()
+
+func choose_boss_bonus_intent(enemy: BattleEnemy) -> EnemyMoveData:
+	var possible_moves: Array[EnemyMoveData] = []
+
+	for move in enemy.data.moves:
+		if move == null:
+			continue
+
+		# The second action should not begin another forced two-turn move.
+		if move.effect == EnemyMoveData.Effect.TAKE_FLIGHT:
+			continue
+
+		# Do not let the boss heal as its bonus action.
+		if move.effect == EnemyMoveData.Effect.HEAL:
+			continue
+
+		possible_moves.append(move)
+
+	if possible_moves.is_empty():
+		return null
+
+	return possible_moves.pick_random()
+
+func get_intent_text(enemy: BattleEnemy,	move: EnemyMoveData) -> String:
+	if move == null:
+		return "No action"
+
+	if enemy.data.passive != EnemyData.Passive.DEMON_CROW \
+	or not enemy.boss_phase_two:
+		return move.display_name
+
+	match move.effect:
+		EnemyMoveData.Effect.DAMAGE, \
+		EnemyMoveData.Effect.ACCURACY_DOWN:
+			return "An attack"
+
+		EnemyMoveData.Effect.POWER_UP_NEXT_ATTACK:
+			return "A dark omen"
+
+		EnemyMoveData.Effect.HEAL:
+			return "Feeding"
+
+		EnemyMoveData.Effect.TAKE_FLIGHT:
+			return "Taking flight"
+
+		_:
+			return "Something dreadful"
+
+func update_intent_ui() -> void:
+	for index in range(intent_panels.size()):
+		var panel := intent_panels[index]
+
+		if index >= enemies.size():
+			panel.hide()
+			continue
+
+		var enemy := enemies[index]
+
+		if enemy.health <= 0:
+			panel.hide()
+			continue
+
+		panel.show()
+
+		intent_name_labels[index].text = enemy.data.display_name.to_upper()
+
+		primary_intent_labels[index].text = get_intent_description(
+			enemy,
+			enemy.current_intent
+		)
+
+		if enemy.bonus_intent != null:
+			bonus_intent_labels[index].text = (
+				"+ "
+				+ get_intent_description(
+					enemy,
+					enemy.bonus_intent
+				)
+			)
+			bonus_intent_labels[index].show()
+		else:
+			bonus_intent_labels[index].hide()
+
+func get_intent_description(
+	enemy: BattleEnemy,
+	move: EnemyMoveData
+) -> String:
+	if move == null:
+		return "No action"
+
+	# The phase-two boss conceals exact move information.
+	if enemy.data.passive == EnemyData.Passive.DEMON_CROW \
+	and enemy.boss_phase_two:
+		return get_intent_text(enemy, move)
+
+	match move.effect:
+		EnemyMoveData.Effect.DAMAGE:
+			return "%s · %d DMG" % [
+				move.display_name,
+				move.damage,
+			]
+
+		EnemyMoveData.Effect.ACCURACY_DOWN:
+			return "%s · %d DMG · ACC ↓" % [
+				move.display_name,
+				move.damage,
+			]
+
+		EnemyMoveData.Effect.POWER_UP_NEXT_ATTACK:
+			return "%s · POWER ↑" % move.display_name
+
+		EnemyMoveData.Effect.STEAL_ITEM:
+			return "%s · STEALS ITEM" % move.display_name
+
+		EnemyMoveData.Effect.DODGE_NEXT_TURN:
+			return "%s · DODGE ↑" % move.display_name
+
+		EnemyMoveData.Effect.PREPARE_MOVE:
+			return "%s · PREPARING" % move.display_name
+
+		EnemyMoveData.Effect.HEAL:
+			return "%s · HEAL %d" % [
+				move.display_name,
+				roundi(move.effect_amount),
+			]
+
+		EnemyMoveData.Effect.TAKE_FLIGHT:
+			return "%s · DODGE ↑" % move.display_name
+
+		_:
+			return move.display_name
 
 func resolve_round(player_action: BattleAction) -> void:
 	if battle_state == BattleState.RESOLVING_TURN:
@@ -174,12 +525,21 @@ func resolve_round(player_action: BattleAction) -> void:
 			continue
 
 		var enemy_action := BattleAction.new()
-
 		enemy_action.actor_type = BattleAction.ActorType.ENEMY
 		enemy_action.enemy_index = enemy_index
+		enemy_action.enemy_move = enemy.current_intent
 		enemy_action.priority = get_enemy_priority(enemy)
 
 		actions.append(enemy_action)
+
+		if enemy.bonus_intent != null:
+			var bonus_action := BattleAction.new()
+			bonus_action.actor_type = BattleAction.ActorType.ENEMY
+			bonus_action.enemy_index = enemy_index
+			bonus_action.enemy_move = enemy.bonus_intent
+			bonus_action.priority = get_enemy_priority(enemy) - 1
+
+			actions.append(bonus_action)
 
 	actions.sort_custom(
 		func(a: BattleAction, b: BattleAction) -> bool:
@@ -196,6 +556,7 @@ func resolve_round(player_action: BattleAction) -> void:
 
 		await execute_action(action)
 		process_enemy_deaths()
+		process_boss_phase_changes()
 
 		if get_living_enemy_indices().is_empty():
 			await win_fight()
@@ -218,6 +579,8 @@ func execute_action(action: BattleAction) -> void:
 			await execute_enemy_action(action)
 
 func execute_player_action(action: BattleAction) -> void:
+	last_player_move = action.player_move
+
 	match action.player_move:
 		BattleAction.PlayerMove.SLASH, \
 		BattleAction.PlayerMove.HEAVY_STRIKE, \
@@ -257,6 +620,7 @@ func execute_player_attack_action(action: BattleAction) -> void:
 		action.target_index = living_enemies[0]
 		target = enemies[action.target_index]
 
+	await animate_lunge(player_visual, 1.0)
 	match action.player_move:
 		BattleAction.PlayerMove.SLASH:
 			await perform_player_attack(
@@ -441,7 +805,10 @@ func execute_enemy_action(action: BattleAction) -> void:
 	if enemy.health <= 0:
 		return
 
-	var move := enemy.current_intent
+	var move := action.enemy_move
+
+	if move == null:
+		move = enemy.current_intent
 
 	if move == null:
 		return
@@ -453,6 +820,9 @@ func execute_enemy_action(action: BattleAction) -> void:
 			move.display_name,
 		]
 	)
+
+	var enemy_visual := get_enemy_visual(action.enemy_index)
+	await animate_lunge(enemy_visual, -1.0)
 
 	await get_tree().create_timer(0.5, true).timeout
 
@@ -486,7 +856,34 @@ func execute_enemy_action(action: BattleAction) -> void:
 
 			print("%s becomes harder to hit." % enemy.data.display_name)
 
+		EnemyMoveData.Effect.HEAL:
+			var heal_amount := roundi(move.effect_amount)
+			var old_health := enemy.health
 
+			enemy.health = mini(
+				enemy.health + heal_amount,
+				enemy.data.max_health
+			)
+
+			print(
+				"%s restores %d HP. HP: %d/%d"
+				% [
+					enemy.data.display_name,
+					enemy.health - old_health,
+					enemy.health,
+					enemy.data.max_health,
+				]
+			)
+
+		EnemyMoveData.Effect.TAKE_FLIGHT:
+			enemy.temporary_dodge_bonus = move.effect_amount
+			enemy.temporary_dodge_turns = move.duration_turns + 1
+			enemy.forced_next_intent = move.follow_up_move
+
+			print(
+				"%s takes flight and prepares Death From Above."
+				% enemy.data.display_name
+			)
 		_:
 			print(
 				"Enemy effect not implemented yet: ",
@@ -495,10 +892,7 @@ func execute_enemy_action(action: BattleAction) -> void:
 
 	await get_tree().create_timer(0.4, true).timeout
 
-func deal_enemy_damage(
-	enemy: BattleEnemy,
-	base_damage: int
-) -> bool:
+func deal_enemy_damage(enemy: BattleEnemy, base_damage: int) -> bool:
 	var damage := roundi(
 		(base_damage + enemy.damage_bonus)
 		* enemy.damage_multiplier
@@ -917,7 +1311,9 @@ func finish_round() -> void:
 	start_player_turn()
 
 func process_enemy_deaths() -> void:
-	for enemy in enemies:
+	for enemy_index in range(enemies.size()):
+		var enemy = enemies[enemy_index]
+
 		if enemy.health > 0:
 			continue
 
@@ -925,6 +1321,117 @@ func process_enemy_deaths() -> void:
 			continue
 
 		enemy.death_processed = true
+
 		return_stolen_items(enemy)
+		await animate_enemy_death(enemy_index)
 
 		print("%s was defeated." % enemy.data.display_name)
+
+func animate_lunge(actor: Node3D, direction: float) -> void:
+	if actor == null:
+		return
+
+	var start_position := actor.position
+
+	var tween := create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(
+		actor,
+		"position:x",
+		start_position.x + 0.18 * direction,
+		0.10
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	tween.tween_property(
+		actor,
+		"position:x",
+		start_position.x,
+		0.14
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+	await tween.finished
+
+func get_enemy_visual(enemy_index: int) -> Node3D:
+	if enemy_index < 0 or enemy_index >= enemy_slots.size():
+		return null
+
+	if enemy_slots[enemy_index].get_child_count() == 0:
+		return null
+
+	return enemy_slots[enemy_index].get_child(0) as Node3D
+
+func animate_hit(actor: Node3D) -> void:
+	if actor == null:
+		return
+
+	var sprite := actor.get_node_or_null("Sprite") as Sprite3D
+	var start_position := actor.position
+
+	if sprite != null:
+		sprite.modulate = Color(1.8, 1.8, 1.8, 1.0)
+
+	var tween := create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+
+	tween.tween_property(actor, "position:x", start_position.x + 0.05, 0.035)
+	tween.tween_property(actor, "position:x", start_position.x - 0.05, 0.035)
+	tween.tween_property(actor, "position:x", start_position.x, 0.035)
+
+	await tween.finished
+
+	if sprite != null:
+		sprite.modulate = Color.WHITE
+
+func animate_enemy_death(enemy_index: int) -> void:
+	var visual := get_enemy_visual(enemy_index)
+
+	if visual == null:
+		return
+
+	var sprite := visual.get_node_or_null("Sprite") as GeometryInstance3D
+	var shadow := visual.get_node_or_null("Shadow") as GeometryInstance3D
+
+	var tween := create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.set_parallel(true)
+
+	tween.tween_property(
+		visual,
+		"position:y",
+		visual.position.y - 0.12,
+		0.30
+	)
+
+	if sprite != null:
+		tween.tween_property(sprite, "transparency", 1.0, 0.30)
+
+	if shadow != null:
+		tween.tween_property(shadow, "transparency", 1.0, 0.22)
+
+	await tween.finished
+	visual.hide()
+
+func process_boss_phase_changes() -> void:
+	for enemy in enemies:
+		if enemy.health <= 0:
+			continue
+
+		if enemy.data.passive != EnemyData.Passive.DEMON_CROW:
+			continue
+
+		if enemy.boss_phase_two:
+			continue
+
+		var phase_two_threshold := ceili(
+			enemy.data.max_health * 0.5
+		)
+
+		if enemy.health > phase_two_threshold:
+			continue
+
+		enemy.boss_phase_two = true
+
+		print(
+			"Omen of Death awakens. "
+			+ "The Demon Crow will act twice each round."
+		)

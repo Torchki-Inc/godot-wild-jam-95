@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://hxxt5ejakaqk"]
 
+[ext_resource type="PackedScene" uid="uid://usg0c7ci3hn5" path="res://scenes/fight/actors/flesh.tscn" id="1_1bxyj"]
 [ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_v5ujh"]
 [ext_resource type="Resource" uid="uid://drovel1t73v7k" path="res://data/moves/slam.tres" id="2_kwwhs"]
 [ext_resource type="Resource" uid="uid://dxojcvviggr7y" path="res://data/moves/prepare_devour.tres" id="3_v5ujh"]
@@ -9,6 +10,7 @@
 script = ExtResource("5_sfu5i")
 display_name = "Flesh Amalgamation"
 max_health = 30
+model_scene = ExtResource("1_1bxyj")
 passive = 4
 moves = Array[ExtResource("1_v5ujh")]([ExtResource("2_kwwhs"), ExtResource("3_v5ujh")])
 metadata/_custom_type_script = "uid://0w1pe1fmfvwg"
