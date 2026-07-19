@@ -1,20 +1,20 @@
-[gd_scene format=3 uid="uid://bn5jgjkndmdqf"]
+[gd_scene format=3 uid="uid://dn5d2lxufhg12"]
 
-[ext_resource type="Script" uid="uid://c1638pkcj6vou" path="res://scenes/level/lever.gd" id="1_kshgm"]
-[ext_resource type="Texture2D" uid="uid://b1gdpocj0etv7" path="res://assets/sprites/lever/leverfrontup.png" id="2_cwyf7"]
-[ext_resource type="Texture2D" uid="uid://coglbuj7qhxts" path="res://assets/sprites/lever/leverfrontdow.png" id="3_d7jp3"]
+[ext_resource type="Script" uid="uid://c1638pkcj6vou" path="res://scenes/level/lever.gd" id="1_oxk2y"]
+[ext_resource type="Texture2D" uid="uid://v0j55jjbrf2e" path="res://assets/sprites/lever/leversideup.png" id="2_oxk2y"]
+[ext_resource type="Texture2D" uid="uid://c7j12d67phfbb" path="res://assets/sprites/lever/leversidedown.png" id="3_mi0rp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kshgm"]
 radius = 2.0
 
 [node name="Lever" type="Node3D" unique_id=1125123968]
-script = ExtResource("1_kshgm")
-lever_texture_up = ExtResource("2_cwyf7")
-lever_texture_down = ExtResource("3_d7jp3")
+script = ExtResource("1_oxk2y")
+lever_texture_up = ExtResource("2_oxk2y")
+lever_texture_down = ExtResource("3_mi0rp")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=145940839]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-texture = ExtResource("2_cwyf7")
+texture = ExtResource("2_oxk2y")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=486495782]
 collision_layer = 9

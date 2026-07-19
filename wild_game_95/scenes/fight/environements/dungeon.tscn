@@ -23,7 +23,7 @@ fog_density = 1.0
 environment = SubResource("Environment_wcnl7")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=615945116]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, -2.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004847467, 0.64455855, -2.294442)
 gi_mode = 2
 transparent = false
 shaded = true

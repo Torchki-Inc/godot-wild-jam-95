@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b8rh2bpliq7wu"]
+
+[ext_resource type="MeshLibrary" uid="uid://cxuydycoocknt" path="res://assets/tilesets/dungeon/dungeon_tileset.tres" id="1_067u5"]
+[ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="2_1jp8b"]
+[ext_resource type="PackedScene" uid="uid://dtdrjatgdfimn" path="res://scenes/vfx/torch_exploring.tscn" id="3_5kb17"]
+[ext_resource type="Texture2D" uid="uid://0nblybhdv3wv" path="res://assets/sprites/items/bombs.png" id="3_q4ftb"]
+[ext_resource type="Texture2D" uid="uid://cnwpjsk5lp5bo" path="res://assets/sprites/items/key.png" id="4_rf076"]
+
+[node name="Floor1B" type="Node3D" unique_id=1920983300]
+
+[node name="Floor" type="GridMap" parent="." unique_id=646457612]
+mesh_library = ExtResource("1_067u5")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(1, 65535, 1048578, 1, 0, 1048578, 0, 65535, 1048578, 0, 0, 1048578, 65535, 0, 1048578, 65535, 65535, 2, 65534, 65535, 1048578, 65534, 0, 1048578, 65533, 0, 1048578, 65533, 65535, 2, 65532, 0, 2, 65532, 65535, 1048578, 65531, 0, 1048578, 65531, 65535, 1048578, 65531, 1, 1048578, 65532, 1, 1048578, 65533, 1, 1048578, 65534, 1, 2, 65535, 1, 2, 0, 1, 2, 1, 1, 1048578)
+}
+
+[node name="Walls" type="GridMap" parent="." unique_id=1836190287]
+mesh_library = ExtResource("1_067u5")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65531, 65535, 655365, 65532, 65535, 655363, 65533, 65535, 655365, 65534, 65535, 655366, 65535, 65535, 655365, 0, 65535, 655365, 1, 65535, 655363, 65530, 65535, 1048583, 65530, 0, 1048581, 65530, 1, 1048581, 2, 65535, 1441799, 2, 1, 1441799)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="FrontWalls" type="GridMap" parent="." unique_id=1408729554]
+mesh_library = ExtResource("1_067u5")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65531, 2, 655364, 65532, 2, 655364, 65533, 2, 655364, 65534, 2, 655364, 65535, 2, 655364, 0, 2, 655364, 1, 2, 655364)
+}
+
+[node name="Doors" type="Node3D" parent="." unique_id=1315004216]
+
+[node name="Items" type="Node3D" parent="." unique_id=2106068956]
+
+[node name="Item" parent="Items" unique_id=1321334820 instance=ExtResource("2_1jp8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 2)
+ITEM_TYPE = 2
+sprite = ExtResource("3_q4ftb")
+
+[node name="Keys" type="Node3D" parent="." unique_id=146547264]
+
+[node name="Item" parent="Keys" unique_id=522278764 instance=ExtResource("2_1jp8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.015, 0.6, -0.944)
+ITEM_TYPE = 4
+sprite = ExtResource("4_rf076")
+key_id = "rusty_key"
+item_name = "rusty_key"
+
+[node name="Torch" type="Node3D" parent="." unique_id=1307807606]
+
+[node name="Torch" parent="Torch" unique_id=2093334873 instance=ExtResource("3_5kb17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 2.2, 1)

@@ -10,6 +10,7 @@ enum ItemType {
 }
 
 @export var ITEM_TYPE: ItemType
+@export var amount: int = 1
 @export var sprite: Texture2D = preload("res://icon.svg")
 @export var key_id: String = ""
 
@@ -34,13 +35,13 @@ func _process(delta: float) -> void:
 func on_pickup() -> void:
 	match ITEM_TYPE:
 		ItemType.POTION:
-			GameState.inventory.potions += 1
+			GameState.inventory.potions += amount
 		ItemType.SMOKE:
-			GameState.inventory.smoke_bombs += 1
+			GameState.inventory.smoke_bombs += amount
 		ItemType.BOMB:
-			GameState.inventory.bombs += 1
+			GameState.inventory.bombs += amount
 		ItemType.ARROW:
-			GameState.player.arrows += 1
+			GameState.player.arrows += amount
 		ItemType.KEY:
 			GameState.add_key(key_id)
 	MessageManager.show_message("item_pickup", {"item": item_name} )
