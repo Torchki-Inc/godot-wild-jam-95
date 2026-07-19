@@ -1,22 +1,22 @@
-[gd_scene format=4 uid="uid://dpxvs80oyk00q"]
+[gd_scene format=4 uid="uid://bq1drrfvxfuev"]
 
-[ext_resource type="Texture2D" uid="uid://3nru4xlwsl74" path="res://assets/tilesets/dungeon/walldungeon1.png" id="1_mhc71"]
-[ext_resource type="Texture2D" uid="uid://bmjuun3836doe" path="res://assets/tilesets/dungeon/floordungeon1.png" id="1_q5ncw"]
-[ext_resource type="Material" uid="uid://c4mrjp4ifge4i" path="res://shaders/materials/wall_material.tres" id="1_rlehd"]
-[ext_resource type="Texture2D" uid="uid://ctcwjjgc5xo6v" path="res://assets/tilesets/dungeon/floordungeon2.png" id="2_1c6hm"]
-[ext_resource type="Texture2D" uid="uid://b5d6byh50vn1f" path="res://assets/tilesets/dungeon/floordungeon3.png" id="3_dhb3n"]
-[ext_resource type="Texture2D" uid="uid://ql3428cj73kb" path="res://assets/tilesets/dungeon/walldungeon2.png" id="4_q42pb"]
-[ext_resource type="Texture2D" uid="uid://b78mi5rtwajvs" path="res://assets/tilesets/dungeon/walldungeon3.png" id="5_2ibn2"]
-[ext_resource type="Texture2D" uid="uid://crcp2r6tpmgpx" path="res://assets/tilesets/dungeon/walldungeon4.png" id="7_bkrfm"]
-[ext_resource type="Texture2D" uid="uid://b1q3dtl7luhun" path="res://assets/tilesets/dungeon/chapel/floorchapel1.png" id="9_p5fib"]
-[ext_resource type="Texture2D" uid="uid://bnt6qx4x2087e" path="res://assets/tilesets/dungeon/chapel/floorchapel2.png" id="10_kmsmd"]
-[ext_resource type="Texture2D" uid="uid://b0cchcvryuxn2" path="res://assets/tilesets/dungeon/chapel/wallchapel1.png" id="11_smxeu"]
-[ext_resource type="Texture2D" uid="uid://jgdjh8d3sh2x" path="res://assets/tilesets/dungeon/chapel/wallchapel3.png" id="12_8bo6s"]
-[ext_resource type="Texture2D" uid="uid://cv1gw4qnp2dpn" path="res://assets/tilesets/dungeon/chapel/wallchapel2.png" id="13_0m2ll"]
-[ext_resource type="Texture2D" uid="uid://blnv2lqnofr7q" path="res://assets/tilesets/dungeon/chapel/wallchapel4.png" id="14_8bo6s"]
+[ext_resource type="Texture2D" uid="uid://bmjuun3836doe" path="res://assets/tilesets/dungeon/floordungeon1.png" id="1_p37xn"]
+[ext_resource type="Texture2D" uid="uid://ctcwjjgc5xo6v" path="res://assets/tilesets/dungeon/floordungeon2.png" id="2_pxxv8"]
+[ext_resource type="Texture2D" uid="uid://b5d6byh50vn1f" path="res://assets/tilesets/dungeon/floordungeon3.png" id="3_7146p"]
+[ext_resource type="Texture2D" uid="uid://3nru4xlwsl74" path="res://assets/tilesets/dungeon/walldungeon1.png" id="4_0f01v"]
+[ext_resource type="Material" uid="uid://c4mrjp4ifge4i" path="res://shaders/materials/wall_material.tres" id="5_gsdcm"]
+[ext_resource type="Texture2D" uid="uid://ql3428cj73kb" path="res://assets/tilesets/dungeon/walldungeon2.png" id="6_gjley"]
+[ext_resource type="Texture2D" uid="uid://b78mi5rtwajvs" path="res://assets/tilesets/dungeon/walldungeon3.png" id="7_cscc4"]
+[ext_resource type="Texture2D" uid="uid://crcp2r6tpmgpx" path="res://assets/tilesets/dungeon/walldungeon4.png" id="8_sj43j"]
+[ext_resource type="Texture2D" uid="uid://b1q3dtl7luhun" path="res://assets/tilesets/dungeon/chapel/floorchapel1.png" id="9_rtf2o"]
+[ext_resource type="Texture2D" uid="uid://bnt6qx4x2087e" path="res://assets/tilesets/dungeon/chapel/floorchapel2.png" id="10_lx02k"]
+[ext_resource type="Texture2D" uid="uid://b0cchcvryuxn2" path="res://assets/tilesets/dungeon/chapel/wallchapel1.png" id="11_0asy7"]
+[ext_resource type="Texture2D" uid="uid://jgdjh8d3sh2x" path="res://assets/tilesets/dungeon/chapel/wallchapel3.png" id="12_8mpka"]
+[ext_resource type="Texture2D" uid="uid://cv1gw4qnp2dpn" path="res://assets/tilesets/dungeon/chapel/wallchapel2.png" id="13_tjbc4"]
+[ext_resource type="Texture2D" uid="uid://blnv2lqnofr7q" path="res://assets/tilesets/dungeon/chapel/wallchapel4.png" id="14_mxs7a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhc71"]
-albedo_texture = ExtResource("1_q5ncw")
+albedo_texture = ExtResource("1_p37xn")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5gdvu"]
 material = SubResource("StandardMaterial3D_mhc71")
@@ -25,19 +25,19 @@ material = SubResource("StandardMaterial3D_mhc71")
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhb3n"]
-albedo_texture = ExtResource("2_1c6hm")
+albedo_texture = ExtResource("2_pxxv8")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_q5ncw"]
 material = SubResource("StandardMaterial3D_dhb3n")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5fib"]
-albedo_texture = ExtResource("3_dhb3n")
+albedo_texture = ExtResource("3_7146p")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_q42pb"]
 material = SubResource("StandardMaterial3D_p5fib")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5ncw"]
-albedo_texture = ExtResource("1_mhc71")
+albedo_texture = ExtResource("4_0f01v")
 uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wewn7"]
@@ -48,14 +48,14 @@ size = Vector3(2, 4, 0.2)
 data = PackedVector3Array(-1, 2, 0.099999994, 1, 2, 0.099999994, -1, -2, 0.099999994, 1, 2, 0.099999994, 1, -2, 0.099999994, -1, -2, 0.099999994, 1, 2, -0.099999994, -1, 2, -0.099999994, 1, -2, -0.099999994, -1, 2, -0.099999994, -1, -2, -0.099999994, 1, -2, -0.099999994, 1, 2, 0.099999994, 1, 2, -0.099999994, 1, -2, 0.099999994, 1, 2, -0.099999994, 1, -2, -0.099999994, 1, -2, 0.099999994, -1, 2, -0.099999994, -1, 2, 0.099999994, -1, -2, -0.099999994, -1, 2, 0.099999994, -1, -2, 0.099999994, -1, -2, -0.099999994, 1, 2, 0.099999994, -1, 2, 0.099999994, 1, 2, -0.099999994, -1, 2, 0.099999994, -1, 2, -0.099999994, 1, 2, -0.099999994, -1, -2, 0.099999994, 1, -2, 0.099999994, -1, -2, -0.099999994, 1, -2, 0.099999994, 1, -2, -0.099999994, -1, -2, -0.099999994)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rlehd"]
-material = ExtResource("1_rlehd")
+material = ExtResource("5_gsdcm")
 size = Vector3(2, 4, 0.2)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rlehd"]
 data = PackedVector3Array(-1, 2, 0.099999994, 1, 2, 0.099999994, -1, -2, 0.099999994, 1, 2, 0.099999994, 1, -2, 0.099999994, -1, -2, 0.099999994, 1, 2, -0.099999994, -1, 2, -0.099999994, 1, -2, -0.099999994, -1, 2, -0.099999994, -1, -2, -0.099999994, 1, -2, -0.099999994, 1, 2, 0.099999994, 1, 2, -0.099999994, 1, -2, 0.099999994, 1, 2, -0.099999994, 1, -2, -0.099999994, 1, -2, 0.099999994, -1, 2, -0.099999994, -1, 2, 0.099999994, -1, -2, -0.099999994, -1, 2, 0.099999994, -1, -2, 0.099999994, -1, -2, -0.099999994, 1, 2, 0.099999994, -1, 2, 0.099999994, 1, 2, -0.099999994, -1, 2, 0.099999994, -1, 2, -0.099999994, 1, 2, -0.099999994, -1, -2, 0.099999994, 1, -2, 0.099999994, -1, -2, -0.099999994, 1, -2, 0.099999994, 1, -2, -0.099999994, -1, -2, -0.099999994)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ibn2"]
-albedo_texture = ExtResource("4_q42pb")
+albedo_texture = ExtResource("6_gjley")
 uv1_scale = Vector3(2, 2, 2)
 uv1_offset = Vector3(-0.25, 0, 0)
 
@@ -64,7 +64,7 @@ material = SubResource("StandardMaterial3D_2ibn2")
 size = Vector3(2, 4, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mxrd"]
-albedo_texture = ExtResource("5_2ibn2")
+albedo_texture = ExtResource("7_cscc4")
 uv1_scale = Vector3(2, 2, 2)
 uv1_offset = Vector3(-1.64, 0, 0)
 
@@ -73,13 +73,13 @@ material = SubResource("StandardMaterial3D_8mxrd")
 size = Vector3(2, 4, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afpkl"]
-albedo_texture = ExtResource("7_bkrfm")
+albedo_texture = ExtResource("8_sj43j")
 uv1_scale = Vector3(1.9, 1.9, 1.9)
 uv1_offset = Vector3(-0.43, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkrfm"]
 cull_mode = 2
-albedo_texture = ExtResource("7_bkrfm")
+albedo_texture = ExtResource("8_sj43j")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dhb3n"]
 _surfaces = [{
@@ -121,7 +121,7 @@ _surfaces = [{
 data = PackedVector3Array(-1, 2, 0.099999994, 1, 2, 0.099999994, -1, -2, 0.099999994, 1, 2, 0.099999994, 1, -2, 0.099999994, -1, -2, 0.099999994, 1, 2, -0.099999994, -1, 2, -0.099999994, 1, -2, -0.099999994, -1, 2, -0.099999994, -1, -2, -0.099999994, 1, -2, -0.099999994, 1, 2, 0.099999994, 1, 2, -0.099999994, 1, -2, 0.099999994, 1, 2, -0.099999994, 1, -2, -0.099999994, 1, -2, 0.099999994, -1, 2, -0.099999994, -1, 2, 0.099999994, -1, -2, -0.099999994, -1, 2, 0.099999994, -1, -2, 0.099999994, -1, -2, -0.099999994, 1, 2, 0.099999994, -1, 2, 0.099999994, 1, 2, -0.099999994, -1, 2, 0.099999994, -1, 2, -0.099999994, 1, 2, -0.099999994, -1, -2, 0.099999994, 1, -2, 0.099999994, -1, -2, -0.099999994, 1, -2, 0.099999994, 1, -2, -0.099999994, -1, -2, -0.099999994, -1, -2, -0.11, 1, -2, -0.11, -1, 2, -0.11, 1, -2, -0.11, 1, 2, -0.11, -1, 2, -0.11, 1, -2, 0.11, -1, -2, 0.11, 1, 2, 0.11, -1, -2, 0.11, -1, 2, 0.11, 1, 2, 0.11)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmsmd"]
-albedo_texture = ExtResource("9_p5fib")
+albedo_texture = ExtResource("9_rtf2o")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8mxrd"]
 material = SubResource("StandardMaterial3D_kmsmd")
@@ -130,13 +130,13 @@ material = SubResource("StandardMaterial3D_kmsmd")
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smxeu"]
-albedo_texture = ExtResource("10_kmsmd")
+albedo_texture = ExtResource("10_lx02k")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8bo6s"]
 material = SubResource("StandardMaterial3D_smxeu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbvc2"]
-albedo_texture = ExtResource("11_smxeu")
+albedo_texture = ExtResource("11_0asy7")
 uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kmsmd"]
@@ -144,132 +144,59 @@ material = SubResource("StandardMaterial3D_bbvc2")
 size = Vector3(2, 4, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4uxdo"]
-albedo_texture = ExtResource("12_8bo6s")
+albedo_texture = ExtResource("12_8mpka")
 uv1_scale = Vector3(2, 2, 2)
 uv1_offset = Vector3(0.36, 0, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rq2xq"]
-albedo_texture = ExtResource("13_0m2ll")
+[sub_resource type="BoxMesh" id="BoxMesh_ngtvt"]
+material = SubResource("StandardMaterial3D_4uxdo")
+size = Vector3(2, 4, 0.2)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8bo6s"]
-_surfaces = [{
-"aabb": AABB(-1, -2, -0.1, 2, 4, 0.2),
-"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
-"format": 34359742487,
-"index_count": 36,
-"index_data": PackedByteArray("AAACAAQAAgAGAAQAAQADAAUAAwAHAAUACAAKAAwACgAOAAwACQALAA0ACwAPAA0AEAASABQAEgAWABQAEQATABUAEwAXABUA"),
-"material": SubResource("StandardMaterial3D_4uxdo"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AACAvwAAAEDNzMw9AACAPwAAAEDNzMy9AACAPwAAAEDNzMw9AACAvwAAAEDNzMy9AACAvwAAAMDNzMw9AACAPwAAAMDNzMy9AACAPwAAAMDNzMw9AACAvwAAAMDNzMy9AACAPwAAAEDNzMw9AACAvwAAAEDNzMy9AACAPwAAAEDNzMy9AACAvwAAAEDNzMw9AACAPwAAAMDNzMw9AACAvwAAAMDNzMy9AACAPwAAAMDNzMy9AACAvwAAAMDNzMw9AACAPwAAAEDNzMw9AACAvwAAAMDNzMw9AACAvwAAAEDNzMw9AACAPwAAAMDNzMw9AACAPwAAAEDNzMy9AACAvwAAAMDNzMy9AACAvwAAAEDNzMy9AACAPwAAAMDNzMy9/3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
-}, {
-"aabb": AABB(-1, -2, 0.09999991, 2, 4, 1e-05),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAA="),
-"format": 34359742487,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAQADAAIA"),
-"material": SubResource("StandardMaterial3D_rq2xq"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AACAPwAAAMDBzMw9AACAvwAAAMDBzMw9AACAPwAAAEDZzMw9AACAvwAAAEDZzMw9/38AgP7//7//fwCA/v//v/9/AID+//+//38AgP7//78=")
-}, {
-"aabb": AABB(-1, -2, -0.10000017, 2, 4, 1e-05),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAA="),
-"format": 34359742487,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAQADAAIA"),
-"material": SubResource("StandardMaterial3D_rq2xq"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AACAvwAAAMDNzMy9AACAPwAAAMC2zMy9AACAvwAAAEDkzMy9AACAPwAAAEDNzMy9/v///wAA/7/+////AAD/v/7///8AAP+//v///wAA/78=")
-}]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rq2xq"]
+albedo_texture = ExtResource("13_tjbc4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c8qny"]
+material = SubResource("StandardMaterial3D_rq2xq")
+size = Vector2(2, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_smxeu"]
+material = SubResource("StandardMaterial3D_4uxdo")
+size = Vector3(2, 4, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bo6s"]
-albedo_texture = ExtResource("12_8bo6s")
+albedo_texture = ExtResource("12_8mpka")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0m2ll"]
+material = SubResource("StandardMaterial3D_8bo6s")
+size = Vector2(2, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngtvt"]
-albedo_texture = ExtResource("12_8bo6s")
+albedo_texture = ExtResource("12_8mpka")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0m2ll"]
-_surfaces = [{
-"aabb": AABB(-1, -2, -0.1, 2, 4, 0.2),
-"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
-"format": 34359742487,
-"index_count": 36,
-"index_data": PackedByteArray("AAACAAQAAgAGAAQAAQADAAUAAwAHAAUACAAKAAwACgAOAAwACQALAA0ACwAPAA0AEAASABQAEgAWABQAEQATABUAEwAXABUA"),
-"material": SubResource("StandardMaterial3D_4uxdo"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AACAvwAAAEDNzMw9AACAPwAAAEDNzMy9AACAPwAAAEDNzMw9AACAvwAAAEDNzMy9AACAvwAAAMDNzMw9AACAPwAAAMDNzMy9AACAPwAAAMDNzMw9AACAvwAAAMDNzMy9AACAPwAAAEDNzMw9AACAvwAAAEDNzMy9AACAPwAAAEDNzMy9AACAvwAAAEDNzMw9AACAPwAAAMDNzMw9AACAvwAAAMDNzMy9AACAPwAAAMDNzMy9AACAvwAAAMDNzMw9AACAPwAAAEDNzMw9AACAvwAAAMDNzMw9AACAvwAAAEDNzMw9AACAPwAAAMDNzMw9AACAPwAAAEDNzMy9AACAvwAAAMDNzMy9AACAvwAAAEDNzMy9AACAPwAAAMDNzMy9/3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
-}, {
-"aabb": AABB(-1, -2, 0.09999991, 2, 4, 1e-05),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAA="),
-"format": 34359742487,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAQADAAIA"),
-"material": SubResource("StandardMaterial3D_8bo6s"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AACAPwAAAMDBzMw9AACAvwAAAMDBzMw9AACAPwAAAEDZzMw9AACAvwAAAEDZzMw9/38AgP7//7//fwCA/v//v/9/AID+//+//38AgP7//78=")
-}, {
-"aabb": AABB(-1, -2, -0.10000017, 2, 4, 1e-05),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAA="),
-"format": 34359742487,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAQADAAIA"),
-"material": SubResource("StandardMaterial3D_ngtvt"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AACAvwAAAMDNzMy9AACAPwAAAMC2zMy9AACAvwAAAEDkzMy9AACAPwAAAEDNzMy9/v///wAA/7/+////AAD/v/7///8AAP+//v///wAA/78=")
-}]
+[sub_resource type="PlaneMesh" id="PlaneMesh_rq2xq"]
+material = SubResource("StandardMaterial3D_ngtvt")
+size = Vector2(2, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0m2ll"]
+material = SubResource("StandardMaterial3D_4uxdo")
+size = Vector3(2, 4, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejao0"]
+albedo_texture = ExtResource("14_mxs7a")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m2ll"]
-albedo_texture = ExtResource("14_8bo6s")
+albedo_texture = ExtResource("14_mxs7a")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1nveu"]
+material = SubResource("StandardMaterial3D_0m2ll")
+size = Vector2(2, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msmjt"]
-albedo_texture = ExtResource("14_8bo6s")
+albedo_texture = ExtResource("14_mxs7a")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bbvc2"]
-_surfaces = [{
-"aabb": AABB(-1, -2, -0.1, 2, 4, 0.2),
-"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
-"format": 34359742487,
-"index_count": 36,
-"index_data": PackedByteArray("AAACAAQAAgAGAAQAAQADAAUAAwAHAAUACAAKAAwACgAOAAwACQALAA0ACwAPAA0AEAASABQAEgAWABQAEQATABUAEwAXABUA"),
-"material": SubResource("StandardMaterial3D_4uxdo"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AACAvwAAAEDNzMw9AACAPwAAAEDNzMy9AACAPwAAAEDNzMw9AACAvwAAAEDNzMy9AACAvwAAAMDNzMw9AACAPwAAAMDNzMy9AACAPwAAAMDNzMw9AACAvwAAAMDNzMy9AACAPwAAAEDNzMw9AACAvwAAAEDNzMy9AACAPwAAAEDNzMy9AACAvwAAAEDNzMw9AACAPwAAAMDNzMw9AACAvwAAAMDNzMy9AACAPwAAAMDNzMy9AACAvwAAAMDNzMw9AACAPwAAAEDNzMw9AACAvwAAAMDNzMw9AACAvwAAAEDNzMw9AACAPwAAAMDNzMw9AACAPwAAAEDNzMy9AACAvwAAAMDNzMy9AACAvwAAAEDNzMy9AACAPwAAAMDNzMy9/3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
-}, {
-"aabb": AABB(-1, -2, 0.09999991, 2, 4, 1e-05),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAA="),
-"format": 34359742487,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAQADAAIA"),
-"material": SubResource("StandardMaterial3D_0m2ll"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AACAPwAAAMDBzMw9AACAvwAAAMDBzMw9AACAPwAAAEDZzMw9AACAvwAAAEDZzMw9/38AgP7//7//fwCA/v//v/9/AID+//+//38AgP7//78=")
-}, {
-"aabb": AABB(-1, -2, -0.10000017, 2, 4, 1e-05),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAA="),
-"format": 34359742487,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAQADAAIA"),
-"material": SubResource("StandardMaterial3D_msmjt"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AACAvwAAAMDNzMy9AACAPwAAAMC2zMy9AACAvwAAAEDkzMy9AACAPwAAAEDNzMy9/v///wAA/7/+////AAD/v/7///8AAP+//v///wAA/78=")
-}]
+[sub_resource type="PlaneMesh" id="PlaneMesh_lickp"]
+material = SubResource("StandardMaterial3D_msmjt")
+size = Vector2(2, 4)
 
 [node name="Root" type="Node3D" unique_id=266184487]
 
@@ -351,6 +278,7 @@ mesh = SubResource("ArrayMesh_dhb3n")
 shape = SubResource("ConcavePolygonShape3D_p5fib")
 
 [node name="ChapelFloor" type="MeshInstance3D" parent="." unique_id=1069924894]
+visible = false
 mesh = SubResource("PlaneMesh_8mxrd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ChapelFloor" unique_id=1327068193]
@@ -383,29 +311,54 @@ shape = SubResource("ConcavePolygonShape3D_mhc71")
 [node name="ChapaelWall2" type="MeshInstance3D" parent="." unique_id=1839068566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.9)
 visible = false
-mesh = SubResource("ArrayMesh_8bo6s")
+mesh = SubResource("BoxMesh_ngtvt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChapaelWall2" unique_id=1135442127]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.1)
+mesh = SubResource("PlaneMesh_c8qny")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ChapaelWall2" unique_id=369778963]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChapaelWall2/StaticBody3D" unique_id=446264859]
 shape = SubResource("ConcavePolygonShape3D_mhc71")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ChapaelWall2" unique_id=1018070832]
+transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 0, 0, -0.1)
+mesh = SubResource("PlaneMesh_c8qny")
+
 [node name="ChapaelWall3" type="MeshInstance3D" parent="." unique_id=415464837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.9)
 visible = false
-mesh = SubResource("ArrayMesh_0m2ll")
+mesh = SubResource("BoxMesh_smxeu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChapaelWall3" unique_id=1500894838]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.1)
+mesh = SubResource("PlaneMesh_0m2ll")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ChapaelWall3" unique_id=1133928124]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChapaelWall3/StaticBody3D" unique_id=1354742581]
 shape = SubResource("ConcavePolygonShape3D_mhc71")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ChapaelWall3" unique_id=610231767]
+transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 0, 0, -0.1)
+mesh = SubResource("PlaneMesh_rq2xq")
+
 [node name="ChapaelWall4" type="MeshInstance3D" parent="." unique_id=573885363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.9)
 visible = false
-mesh = SubResource("ArrayMesh_bbvc2")
+mesh = SubResource("BoxMesh_0m2ll")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChapaelWall4" unique_id=1469194506]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.1)
+material_override = SubResource("StandardMaterial3D_ejao0")
+mesh = SubResource("PlaneMesh_1nveu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ChapaelWall4" unique_id=1046496028]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChapaelWall4/StaticBody3D" unique_id=1531273047]
 shape = SubResource("ConcavePolygonShape3D_mhc71")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ChapaelWall4" unique_id=278629515]
+transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 0, 0, -0.1)
+mesh = SubResource("PlaneMesh_lickp")

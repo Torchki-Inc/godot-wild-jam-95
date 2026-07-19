@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1yhou67nhkid" path="res://scenes/level/door.tscn" id="2_6gumx"]
 [ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="3_b1l4n"]
 [ext_resource type="PackedScene" uid="uid://bn5jgjkndmdqf" path="res://scenes/level/lever.tscn" id="4_4n73c"]
+[ext_resource type="PackedScene" uid="uid://dtdrjatgdfimn" path="res://scenes/vfx/torch_exploring.tscn" id="5_384j7"]
 
 [node name="Floor11" type="Node3D" unique_id=653976076]
 
@@ -65,3 +66,32 @@ item_name = "simple key"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -8)
 lever_id = "lever_floor_1_1"
 activation_message = "You hear old mechanism set in motion"
+
+[node name="Torches" type="Node3D" parent="." unique_id=463290056]
+
+[node name="Torch" parent="Torches" unique_id=2093334873 instance=ExtResource("5_384j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6000001, 2.3, 0)
+
+[node name="Torch2" parent="Torches" unique_id=2085698400 instance=ExtResource("5_384j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6000001, 2.3, 6.6043825)
+
+[node name="Torch3" parent="Torches" unique_id=1986525963 instance=ExtResource("5_384j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6000001, 2.3, 10.2847395)
+
+[node name="Torch5" parent="Torches" unique_id=280640611 instance=ExtResource("5_384j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3487575, 2.3, 17.721296)
+
+[node name="Torch6" parent="Torches" unique_id=148530778 instance=ExtResource("5_384j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.395417, 2.3, 17.721296)
+
+[node name="Torch7" parent="Torches" unique_id=2035900583 instance=ExtResource("5_384j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.885326, 2.3, 8.447601)
+
+[node name="Torch8" parent="Torches" unique_id=549269107 instance=ExtResource("5_384j7")]
+transform = Transform3D(0.99999774, 0, -0.002119806, 0, 1, 0, 0.002119806, 0, 0.99999774, 7.884078, 2.3, -0.3085378)
+
+[node name="Torch9" parent="Torches" unique_id=1287990875 instance=ExtResource("5_384j7")]
+transform = Transform3D(0.99999774, 0, -0.002119806, 0, 1, 0, 0.002119806, 0, 0.99999774, 6.6250315, 2.3, -9.268349)
+
+[node name="Torch10" parent="Torches" unique_id=1352078475 instance=ExtResource("5_384j7")]
+transform = Transform3D(0.99999774, 0, -0.002119806, 0, 1, 0, 0.002119806, 0, 0.99999774, -5.002695, 2.3, -9.707361)

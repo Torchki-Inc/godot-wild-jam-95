@@ -2,6 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://cxuydycoocknt" path="res://assets/tilesets/dungeon/dungeon_tileset.tres" id="1_067u5"]
 [ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="2_1jp8b"]
+[ext_resource type="PackedScene" uid="uid://dtdrjatgdfimn" path="res://scenes/vfx/torch_exploring.tscn" id="3_5kb17"]
 
 [node name="Floor1B" type="Node3D" unique_id=1920983300]
 
@@ -42,3 +43,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.014942, 0.6350708, -0.9444
 ITEM_TYPE = 4
 key_id = "rusty_key"
 item_name = "rusty_key"
+
+[node name="Torch" type="Node3D" parent="." unique_id=1307807606]
+
+[node name="Torch" parent="Torch" unique_id=2093334873 instance=ExtResource("3_5kb17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 2.2, 1)

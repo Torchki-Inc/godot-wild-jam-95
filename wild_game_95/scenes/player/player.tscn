@@ -152,7 +152,7 @@ height = 2.2426758
 shader = ExtResource("3_gmlin")
 shader_parameter/pixel_size = 1.11200000532
 shader_parameter/vhs_intensity = 0.0
-shader_parameter/noise_intensity = 0.0850000040375
+shader_parameter/noise_intensity = 0.0
 shader_parameter/opacity = 0.4650000220875
 
 [node name="Player" type="CharacterBody3D" unique_id=1686751974 node_paths=PackedStringArray("head", "debug_label", "sprite") groups=["Player"]]
@@ -167,6 +167,7 @@ sprite = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="AnimatedSprite3D" parent="." unique_id=1535030750]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shaded = true
 sprite_frames = SubResource("SpriteFrames_wewn7")
 animation = &"move_down"
 frame_progress = 0.17757751
