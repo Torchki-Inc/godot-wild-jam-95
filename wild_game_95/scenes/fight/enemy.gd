@@ -2,7 +2,7 @@ class_name Enemy
 extends CharacterBody3D
 
 @export var encounter_data: EncounterData
-@export var sprite: Sprite3D
+@export var sprite: Texture2D
 
 @export_group("Movement")
 @export var move_speed: float = 2.0
