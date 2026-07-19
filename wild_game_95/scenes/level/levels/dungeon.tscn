@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://yw48ta5icipj" path="res://assets/sprites/ghoul1.png" id="20_4a22m"]
 [ext_resource type="Texture2D" uid="uid://b6yyuxvmlgw2" path="res://assets/sprites/monster2.png" id="21_oehqu"]
 [ext_resource type="Texture2D" uid="uid://v4dt8tsl1nkc" path="res://assets/sprites/ghoul2.png" id="22_4a22m"]
+[ext_resource type="Resource" uid="uid://5tnuhjvu2io7" path="res://data/enemies/demon_crow.tres" id="22_oehqu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_684e0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -68,11 +69,6 @@ enemies = Array[ExtResource("8_5tvkj")]([ExtResource("12_vbvgv"), ExtResource("1
 battle_environment = ExtResource("8_6j73u")
 metadata/_custom_type_script = "uid://bct0nkfj3elu0"
 
-[sub_resource type="Resource" id="Resource_fh2kf"]
-script = ExtResource("9_6j73u")
-battle_environment = ExtResource("8_6j73u")
-metadata/_custom_type_script = "uid://bct0nkfj3elu0"
-
 [sub_resource type="Resource" id="Resource_6j73u"]
 script = ExtResource("9_6j73u")
 enemies = Array[ExtResource("8_5tvkj")]([ExtResource("14_0xra2"), ExtResource("13_0xra2"), ExtResource("9_5tvkj")])
@@ -106,6 +102,12 @@ metadata/_custom_type_script = "uid://bct0nkfj3elu0"
 [sub_resource type="Resource" id="Resource_bsyvq"]
 script = ExtResource("9_6j73u")
 enemies = Array[ExtResource("8_5tvkj")]([ExtResource("13_0xra2"), ExtResource("13_0xra2")])
+battle_environment = ExtResource("8_6j73u")
+metadata/_custom_type_script = "uid://bct0nkfj3elu0"
+
+[sub_resource type="Resource" id="Resource_fh2kf"]
+script = ExtResource("9_6j73u")
+enemies = Array[ExtResource("8_5tvkj")]([ExtResource("22_oehqu")])
 battle_environment = ExtResource("8_6j73u")
 metadata/_custom_type_script = "uid://bct0nkfj3elu0"
 
@@ -260,11 +262,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.53701, 0.96129847, -5.222
 encounter_data = SubResource("Resource_lkjk7")
 sprite = ExtResource("15_hhrqb")
 
-[node name="Boss" parent="Entity" unique_id=1233335166 instance=ExtResource("7_mgoae")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.31261, 1.2624645, -154.69275)
-encounter_data = SubResource("Resource_fh2kf")
-sprite = ExtResource("16_vb0lq")
-
 [node name="Enemy4" parent="Entity" unique_id=788124089 instance=ExtResource("7_mgoae")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.246084, 1.2624645, -143.77698)
 encounter_data = SubResource("Resource_6j73u")
@@ -294,6 +291,11 @@ sprite = ExtResource("21_oehqu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.361906, 1.2624645, -94.32849)
 encounter_data = SubResource("Resource_bsyvq")
 sprite = ExtResource("22_4a22m")
+
+[node name="Boss" parent="Entity" unique_id=1863924031 instance=ExtResource("7_mgoae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.31261, 1.2624645, -154.69275)
+encounter_data = SubResource("Resource_fh2kf")
+sprite = ExtResource("16_vb0lq")
 
 [node name="musik_switch" type="Node3D" parent="." unique_id=1412099438]
 
