@@ -10,6 +10,11 @@ extends Node
 @onready var level_root: Node3D = $LevelRoot
 @onready var fight_root: Node = $FightRoot
 
+@export_category("Cutscenes")
+@export var test_cutscene: CutsceneData
+
+@onready var cutscene_player: CutscenePlayer = $UI/CutscenePlayer
+
 var current_level: Node
 var player: Node
 var current_fight: Node
@@ -18,6 +23,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if GameState.state == GameState.State.EXPLORING:
 			enter_fight(test_encounter)
+
+	if event.is_action_pressed("ui_undo"):
+		if test_cutscene != null:
+			await play_cutscene(test_cutscene)
 
 func _ready() -> void:
 	# process_mode = Node.PROCESS_MODE_ALWAYS
@@ -127,3 +136,15 @@ func handle_fight_result(result) -> void:
 		return
 
 	print("Fight result: ", result)
+
+func play_cutscene(data: CutsceneData) -> void:
+	if data == null:
+		push_warning("Tried to play a null cutscene.")
+		return
+
+	GameState.set_state(GameState.State.CUTSCENE)
+
+	cutscene_player.play(data)
+	await cutscene_player.finished
+
+	GameState.set_state(GameState.State.EXPLORING)
