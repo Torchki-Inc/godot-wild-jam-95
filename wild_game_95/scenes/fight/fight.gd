@@ -59,6 +59,7 @@ func setup(encounter: EncounterData) -> void:
 	encounter_data = encounter
 
 func _ready() -> void:
+	$Camera3D.add_to_group("camera")
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 	if encounter_data == null:

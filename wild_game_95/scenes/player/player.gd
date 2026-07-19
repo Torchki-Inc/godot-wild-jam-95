@@ -9,6 +9,12 @@ extends CharacterBody3D
 @export var head: Node3D
 @export var debug_label: Label
 
+@export_group("Audio")
+@export var footstep_sounds: Array[AudioStream] = []
+@export var step_interval: float = 0.35
+
+var step_timer: float = 0.0
+
 @export var sprite: AnimatedSprite3D
 
 enum FacingDirection {
@@ -47,10 +53,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		update_animations(direction)
+		_process_footsteps(delta)
 	else:
 		velocity.x = 0
 		velocity.z = 0
 		sprite.stop()
+		step_timer = 0.0
 
 	if not is_on_floor():
 		velocity.y -= 9.8 * delta
@@ -93,3 +101,11 @@ func update_animations(dir: Vector3) -> void:
 			sprite.play("move_left")
 		FacingDirection.RIGHT:
 			sprite.play("move_right")
+
+func _process_footsteps(delta: float) -> void:
+	step_timer -= delta
+	if step_timer <= 0.0:
+		step_timer = step_interval
+		if not footstep_sounds.is_empty():
+			var sound := footstep_sounds[randi() % footstep_sounds.size()]
+			AudioManager.play_sfx_random_pitch(sound, 0.9, 1.1, -6.0)

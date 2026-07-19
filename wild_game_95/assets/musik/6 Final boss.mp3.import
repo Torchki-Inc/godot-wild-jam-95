@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mojdruvjm4l1"
+path="res://.godot/imported/6 Final boss.mp3-16d32c7316cfa9baee04b793244ec789.mp3str"
+
+[deps]
+
+source_file="res://assets/musik/6 Final boss.mp3"
+dest_files=["res://.godot/imported/6 Final boss.mp3-16d32c7316cfa9baee04b793244ec789.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
