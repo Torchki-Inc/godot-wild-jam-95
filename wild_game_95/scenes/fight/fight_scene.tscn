@@ -25,6 +25,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_2sgx1")
 
 [node name="MainButtons" type="GridContainer" parent="BattleUI/Root" unique_id=684442678]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -51,13 +52,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -11.5
-offset_right = 30.0
-offset_bottom = 11.5
+offset_left = -19.0
+offset_top = -8.5
+offset_right = 19.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "ATTACK"
+text = "Attack"
 
 [node name="Item" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=1692229795]
 layout_mode = 2
@@ -74,13 +75,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -11.5
-offset_right = 36.0
-offset_bottom = 11.5
+offset_left = -26.5
+offset_top = -8.5
+offset_right = 26.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "USE ITEM"
+text = "Use Item"
 
 [node name="Skill" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=47383889]
 layout_mode = 2
@@ -97,13 +98,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -26.5
-offset_top = -11.5
-offset_right = 26.5
-offset_bottom = 11.5
+offset_left = -26.0
+offset_top = -8.5
+offset_right = 26.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "USE SKILL"
+text = "Use Skill"
 
 [node name="Run" type="TextureButton" parent="BattleUI/Root/MainButtons" unique_id=1364729401]
 layout_mode = 2
@@ -120,16 +121,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -11.5
+offset_top = -8.5
+offset_right = 11.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "RUN"
+text = "Run"
 
 [node name="AttackButtons" type="GridContainer" parent="BattleUI/Root" unique_id=318286092]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -156,13 +156,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -11.5
-offset_right = 30.0
-offset_bottom = 11.5
+offset_left = -16.0
+offset_top = -8.5
+offset_right = 16.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "SLASH"
+text = "Slash"
 
 [node name="Attack2" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=167474289]
 layout_mode = 2
@@ -179,13 +179,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -11.5
-offset_right = 30.0
-offset_bottom = 11.5
+offset_left = -37.5
+offset_top = -8.5
+offset_right = 37.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "HEAVY STRIKE"
+text = "Heavy Strike"
 
 [node name="Attack3" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=107532705]
 layout_mode = 2
@@ -202,13 +202,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -11.5
-offset_right = 30.0
-offset_bottom = 11.5
+offset_left = -28.0
+offset_top = -8.5
+offset_right = 28.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "CROSSBOW"
+text = "Crossbow"
 
 [node name="Back" type="TextureButton" parent="BattleUI/Root/AttackButtons" unique_id=807218081]
 layout_mode = 2
@@ -225,13 +225,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -14.5
+offset_top = -8.5
+offset_right = 14.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "BACK"
+text = "Back"
 
 [node name="SkillButtons" type="GridContainer" parent="BattleUI/Root" unique_id=461974389]
 visible = false
@@ -261,13 +261,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -11.5
-offset_right = 30.0
-offset_bottom = 11.5
+offset_left = -18.5
+offset_top = -8.5
+offset_right = 18.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "DEFEND"
+text = "Defend"
 
 [node name="Skill2" type="TextureButton" parent="BattleUI/Root/SkillButtons" unique_id=38143659]
 layout_mode = 2
@@ -284,13 +284,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -15.5
-offset_top = -11.5
-offset_right = 15.5
-offset_bottom = 11.5
+offset_left = -12.0
+offset_top = -8.5
+offset_right = 12.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "AIM"
+text = "Aim"
 
 [node name="Back" type="TextureButton" parent="BattleUI/Root/SkillButtons" unique_id=656234735]
 layout_mode = 2
@@ -307,13 +307,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -14.5
+offset_top = -8.5
+offset_right = 14.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "BACK"
+text = "Back"
 
 [node name="ItemButtons" type="GridContainer" parent="BattleUI/Root" unique_id=1308487686]
 visible = false
@@ -343,13 +343,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -11.5
-offset_right = 32.0
-offset_bottom = 11.5
+offset_left = -19.0
+offset_top = -8.5
+offset_right = 19.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "POTION"
+text = "Potion"
 
 [node name="Item2" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=647319029]
 layout_mode = 2
@@ -366,13 +366,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.5
-offset_top = -11.5
-offset_right = 23.5
-offset_bottom = 11.5
+offset_left = -17.0
+offset_top = -8.5
+offset_right = 17.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "BOMB"
+text = "Bomb"
 
 [node name="Item3" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=1726334196]
 layout_mode = 2
@@ -389,13 +389,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
+offset_left = -37.5
 offset_top = -11.5
-offset_right = 17.0
+offset_right = 37.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "SMOKE BOMB"
+text = "Smoke Bomb"
 
 [node name="Back" type="TextureButton" parent="BattleUI/Root/ItemButtons" unique_id=1250494882]
 layout_mode = 2
@@ -412,13 +412,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -16.5
+offset_top = -8.5
+offset_right = 16.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "BACK"
+text = "BAck"
 
 [node name="TargetButtons" type="GridContainer" parent="BattleUI/Root" unique_id=2088419708]
 visible = false

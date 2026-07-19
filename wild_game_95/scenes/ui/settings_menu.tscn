@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://d017dplw562c2"]
+
+[ext_resource type="Script" uid="uid://b6ohtm70s573i" path="res://scenes/ui/settings_menu.gd" id="1_qwcqe"]
+[ext_resource type="Texture2D" uid="uid://p5wmc2d7cer4" path="res://assets/button.png" id="2_x3vyp"]
+[ext_resource type="Texture2D" uid="uid://bh4p3b0x1itcb" path="res://assets/button_selected.png" id="3_0b1cv"]
+
+[node name="SettingsMenu" type="Control" unique_id=1052367107]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwcqe")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1184251116]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Background" unique_id=1316056290]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_right = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/CenterContainer" unique_id=266711978]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/CenterContainer/PanelContainer" unique_id=1300680924]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer" unique_id=1068897619]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox" unique_id=1410777212]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"
+
+[node name="MasterRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox" unique_id=2109381149]
+layout_mode = 2
+
+[node name="MasterLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/MasterRow" unique_id=1560695506]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/MasterRow" unique_id=1977600037]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MasterValue" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/MasterRow" unique_id=533971487]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="MusicRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox" unique_id=120078998]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/MusicRow" unique_id=459530408]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/MusicRow" unique_id=2048875188]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MusicValue" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/MusicRow" unique_id=1161433811]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="SFXRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox" unique_id=1006166164]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/SFXRow" unique_id=2094252084]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/SFXRow" unique_id=1781122668]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="SFXValue" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/SFXRow" unique_id=270058167]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="FullscreenCheck" type="CheckButton" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox" unique_id=168701801]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="ResetButton" type="TextureButton" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox" unique_id=2061726682]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_x3vyp")
+texture_pressed = ExtResource("3_0b1cv")
+texture_hover = ExtResource("3_0b1cv")
+
+[node name="Label" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/ResetButton" unique_id=534841049]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.5
+offset_right = 20.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reset Settings"
+
+[node name="BackButton" type="TextureButton" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox" unique_id=204648519]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_x3vyp")
+texture_pressed = ExtResource("3_0b1cv")
+texture_hover = ExtResource("3_0b1cv")
+
+[node name="Label" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/VBox/BackButton" unique_id=2011311994]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -8.5
+offset_right = 14.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"

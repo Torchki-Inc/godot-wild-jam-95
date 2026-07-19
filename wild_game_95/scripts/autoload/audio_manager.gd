@@ -216,10 +216,14 @@ func _set_bus_volume(
 		return
 
 	var clamped_volume := clampf(linear_volume, 0.0, 1.0)
+	var volume_db := SILENT_VOLUME_DB
+
+	if clamped_volume > 0.0:
+		volume_db = linear_to_db(clamped_volume)
 
 	AudioServer.set_bus_volume_db(
 		bus_index,
-		linear_to_db(clamped_volume)
+		volume_db
 	)
 
 

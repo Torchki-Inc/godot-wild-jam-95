@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://cwe8xwl743gom"
 GameState="*uid://b1fvn6q4tkd1b"
 AudioManager="*uid://c01gwoovp28aw"
 MessageManager="*uid://304yaopvle8t"
+SettingsManager="*uid://bwalx3e57c46j"
 
 [display]
 
@@ -46,6 +47,10 @@ folder_colors={
 
 Door=""
 Player=""
+
+[gui]
+
+theme/custom_font="uid://cylmw2ec6k1ud"
 
 [input]
 

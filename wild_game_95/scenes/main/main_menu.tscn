@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dmtd10nyx4w05" path="res://scenes/main/main_menu.gd" id="1_sd5it"]
 [ext_resource type="PackedScene" uid="uid://jf3diyih5ovq" path="res://scenes/main/main_game.tscn" id="2_5vafy"]
 [ext_resource type="Texture2D" uid="uid://clk8is2byogge" path="res://assets/battle_button.png" id="3_byqcc"]
+[ext_resource type="PackedScene" uid="uid://d017dplw562c2" path="res://scenes/ui/settings_menu.tscn" id="3_w6ykx"]
 
 [node name="MainMenu" type="Control" unique_id=1241170514]
 layout_mode = 3
@@ -14,22 +15,66 @@ grow_vertical = 2
 script = ExtResource("1_sd5it")
 game_scene = ExtResource("2_5vafy")
 
-[node name="StartButton" type="TextureButton" parent="." unique_id=20140109]
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=668773775]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -188.0
+offset_right = 140.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StartButton" type="TextureButton" parent="MenuButtons" unique_id=20140109]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("3_byqcc")
+
+[node name="Label" type="Label" parent="MenuButtons/StartButton" unique_id=1323890116]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -15.5
-offset_right = 28.0
-offset_bottom = 15.5
+offset_left = -14.5
+offset_top = -8.5
+offset_right = 14.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
+text = "Start"
+
+[node name="SettingsButton" type="TextureButton" parent="MenuButtons" unique_id=585139201]
+unique_name_in_owner = true
+layout_mode = 2
 texture_normal = ExtResource("3_byqcc")
 
-[node name="Label" type="Label" parent="StartButton" unique_id=1323890116]
+[node name="Label" type="Label" parent="MenuButtons/SettingsButton" unique_id=2136756208]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -8.5
+offset_right = 23.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="QuitButton" type="TextureButton" parent="MenuButtons" unique_id=1766456933]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("3_byqcc")
+
+[node name="Label" type="Label" parent="MenuButtons/QuitButton" unique_id=527099383]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -42,6 +87,13 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "START"
+text = "QUIT"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[node name="SettingsMenu" parent="." unique_id=1052367107 instance=ExtResource("3_w6ykx")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]

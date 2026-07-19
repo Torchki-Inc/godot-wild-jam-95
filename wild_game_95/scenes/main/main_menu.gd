@@ -2,16 +2,34 @@ extends Control
 
 @export var game_scene: PackedScene
 
-# Called when the node enters the scene tree for the first time.
+@onready var menu_buttons: VBoxContainer = %MenuButtons
+@onready var start_button: BaseButton = %StartButton
+@onready var settings_menu: Control = %SettingsMenu
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	GameState.set_state(GameState.State.MENU)
 
+	settings_menu.closed.connect(
+		_on_settings_menu_closed
+	)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+	start_button.grab_focus()
 
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_packed(game_scene)
+
+
+func _on_settings_button_pressed() -> void:
+	menu_buttons.hide()
+	settings_menu.open()
+
+
+func _on_settings_menu_closed() -> void:
+	menu_buttons.show()
+	%SettingsButton.grab_focus()
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
