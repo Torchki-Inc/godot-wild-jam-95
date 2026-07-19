@@ -45,8 +45,8 @@ sprite = ExtResource("3_q4ftb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.015, 0.6, -0.944)
 ITEM_TYPE = 4
 sprite = ExtResource("4_rf076")
-key_id = "rusty_key"
-item_name = "rusty_key"
+key_id = "rusty key"
+item_name = "rusty key"
 
 [node name="Torch" type="Node3D" parent="." unique_id=1307807606]
 

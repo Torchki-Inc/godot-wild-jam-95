@@ -201,6 +201,7 @@ size = 10.0
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraRig/SpringArm3D/Camera3D" unique_id=637980831]
 
 [node name="Debug" type="Label" parent="CameraRig/SpringArm3D/Camera3D/CanvasLayer" unique_id=1570445388]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 

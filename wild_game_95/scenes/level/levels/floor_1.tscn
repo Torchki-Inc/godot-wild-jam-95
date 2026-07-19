@@ -60,6 +60,7 @@ data = {
 
 [node name="Door" parent="Doors" unique_id=1626321234 instance=ExtResource("2_is1hj")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.1, 2, -2.2)
+required_key = "rusty key"
 
 [node name="Door2" parent="Doors" unique_id=1594382963 instance=ExtResource("2_is1hj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.600002, 2, -9.9)
