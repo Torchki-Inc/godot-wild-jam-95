@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwtnuk6fe5r24"]
+
+[ext_resource type="Script" uid="uid://bd2oymr7euxqt" path="res://scenes/fight/enemy.gd" id="1_5uwov"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=2029052555]
+script = ExtResource("1_5uwov")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1339576650]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1596497064]

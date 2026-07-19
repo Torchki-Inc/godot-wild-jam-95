@@ -33,6 +33,7 @@ func _ready() -> void:
 
 	spawn_player()
 	load_level(starting_level)
+	add_to_group("main_game")
 
 	GameState.set_state(GameState.State.EXPLORING)
 
