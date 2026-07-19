@@ -3,10 +3,11 @@ extends Resource
 
 enum Passive {
 	NONE,
-	DODGE,
+	DODGE_CHANCE,
 	ACTS_FIRST,
 	STEAL_ITEMS,
 	DAMAGE_REDUCTION,
+	DEMON_CROW,
 }
 
 @export var display_name: String

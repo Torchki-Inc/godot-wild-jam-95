@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ck2p6n3rsds25"]
+
+[ext_resource type="PackedScene" uid="uid://d2jmv5va6wqjo" path="res://scenes/fight/actors/battle_actor.tscn" id="1_wcybx"]
+[ext_resource type="Texture2D" uid="uid://dv8tmy2rhthaf" path="res://assets/sprites/goblin2.png" id="2_dns1n"]
+
+[node name="BattleActor" unique_id=1387722252 instance=ExtResource("1_wcybx")]
+
+[node name="Shadow" parent="." index="0" unique_id=249207425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4489038, 1.0542787, 0)
+
+[node name="Sprite" parent="." index="1" unique_id=1154192992]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+texture = ExtResource("2_dns1n")

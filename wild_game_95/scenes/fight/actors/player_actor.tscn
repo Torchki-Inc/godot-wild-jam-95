@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dg86is1jqt21k"]
+
+[ext_resource type="PackedScene" uid="uid://d2jmv5va6wqjo" path="res://scenes/fight/actors/battle_actor.tscn" id="1_nhysg"]
+[ext_resource type="Texture2D" uid="uid://cpxbgwmo765os" path="res://assets/sprites/askielfight1.png" id="2_xntev"]
+
+[node name="BattleActor" unique_id=1387722252 instance=ExtResource("1_nhysg")]
+
+[node name="Sprite" parent="." index="1" unique_id=1154192992]
+texture = ExtResource("2_xntev")

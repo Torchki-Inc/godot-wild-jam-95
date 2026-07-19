@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EncounterData" format=3 uid="uid://bm88ihpi0mrjd"]
+
+[ext_resource type="PackedScene" uid="uid://6n66al1j85g3" path="res://scenes/fight/environements/chapel.tscn" id="1_rlnjf"]
+[ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="2_mjs5n"]
+[ext_resource type="Resource" uid="uid://5tnuhjvu2io7" path="res://data/enemies/demon_crow.tres" id="3_21xon"]
+[ext_resource type="Script" uid="uid://bct0nkfj3elu0" path="res://scripts/battle/encounter_data.gd" id="4_cuh7g"]
+
+[resource]
+script = ExtResource("4_cuh7g")
+enemies = Array[ExtResource("2_mjs5n")]([ExtResource("3_21xon")])
+can_run = false
+battle_environment = ExtResource("1_rlnjf")
+metadata/_custom_type_script = "uid://bct0nkfj3elu0"

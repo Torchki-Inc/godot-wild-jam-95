@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://5tnuhjvu2io7"]
+
+[ext_resource type="Script" uid="uid://efac4ijlimfd" path="res://scripts/battle/enemy_move_data.gd" id="1_gxfas"]
+[ext_resource type="PackedScene" uid="uid://bi8wunk7glaui" path="res://scenes/fight/actors/crow.tscn" id="1_wpymu"]
+[ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="2_81s8q"]
+[ext_resource type="Resource" uid="uid://ckc42i27q8vgx" path="res://data/moves/peck.tres" id="3_7q738"]
+[ext_resource type="Resource" uid="uid://bjlatts8sbgcp" path="res://data/moves/wing_buffet.tres" id="4_4mvv7"]
+[ext_resource type="Resource" uid="uid://p2p37i8su1gb" path="res://data/moves/black_omen.tres" id="5_7k6q1"]
+[ext_resource type="Resource" uid="uid://e0l37y8ceanl" path="res://data/moves/take_flight.tres" id="6_2yi24"]
+[ext_resource type="Resource" uid="uid://chepjy0hwsbrp" path="res://data/moves/feast_on_fear.tres" id="7_dwjwm"]
+
+[resource]
+script = ExtResource("2_81s8q")
+display_name = "Demon Crow"
+max_health = 45
+model_scene = ExtResource("1_wpymu")
+passive = 5
+moves = Array[ExtResource("1_gxfas")]([ExtResource("3_7q738"), ExtResource("4_4mvv7"), ExtResource("5_7k6q1"), ExtResource("6_2yi24"), ExtResource("7_dwjwm")])
+metadata/_custom_type_script = "uid://0w1pe1fmfvwg"

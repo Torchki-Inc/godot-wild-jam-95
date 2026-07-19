@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bi8wunk7glaui"]
+
+[ext_resource type="PackedScene" uid="uid://d2jmv5va6wqjo" path="res://scenes/fight/actors/battle_actor.tscn" id="1_64mle"]
+[ext_resource type="Texture2D" uid="uid://cd4ijkxg5wx3x" path="res://assets/sprites/demoncrow2.png" id="2_l7u4t"]
+
+[node name="BattleActor" unique_id=1387722252 instance=ExtResource("1_64mle")]
+
+[node name="Shadow" parent="." index="0" unique_id=249207425]
+visible = false
+
+[node name="Sprite" parent="." index="1" unique_id=1154192992]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1.9483082, 0, 0)
+texture = ExtResource("2_l7u4t")

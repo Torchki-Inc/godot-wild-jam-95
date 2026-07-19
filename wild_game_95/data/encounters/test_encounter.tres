@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://0w1pe1fmfvwg" path="res://scripts/battle/enemy_data.gd" id="1_6ce15"]
 [ext_resource type="PackedScene" uid="uid://6ad83o6sbnjq" path="res://scenes/fight/environements/dungeon.tscn" id="1_s3pxy"]
-[ext_resource type="Resource" uid="uid://c5seacpm27u2d" path="res://data/enemies/test_soul.tres" id="2_s3pxy"]
 [ext_resource type="Script" uid="uid://bct0nkfj3elu0" path="res://scripts/battle/encounter_data.gd" id="3_lvd7i"]
+[ext_resource type="Resource" uid="uid://b6eq20s4qmvyf" path="res://data/enemies/goblin.tres" id="4_hx38t"]
+[ext_resource type="Resource" uid="uid://c8oa2rjpyr67b" path="res://data/enemies/dog.tres" id="5_0hwbb"]
+[ext_resource type="Resource" uid="uid://dktuhmuaqvece" path="res://data/enemies/cursed_soul.tres" id="5_hx38t"]
 
 [resource]
 script = ExtResource("3_lvd7i")
-enemies = Array[ExtResource("1_6ce15")]([ExtResource("2_s3pxy")])
+enemies = Array[ExtResource("1_6ce15")]([ExtResource("4_hx38t"), ExtResource("5_0hwbb"), ExtResource("5_hx38t")])
 battle_environment = ExtResource("1_s3pxy")
 metadata/_custom_type_script = "uid://bct0nkfj3elu0"

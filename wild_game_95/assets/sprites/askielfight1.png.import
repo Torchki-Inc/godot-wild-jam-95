@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ov0vi38yn11m"
-path.s3tc="res://.godot/imported/backgroundchapel.png-9046221944ce4e3d28892957f425915e.s3tc.ctex"
+uid="uid://cpxbgwmo765os"
+path.s3tc="res://.godot/imported/askielfight1.png-df073bfbbc586ab9c36e4c6ece01b344.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/backgroundchapel.png"
-dest_files=["res://.godot/imported/backgroundchapel.png-9046221944ce4e3d28892957f425915e.s3tc.ctex"]
+source_file="res://assets/sprites/askielfight1.png"
+dest_files=["res://.godot/imported/askielfight1.png-df073bfbbc586ab9c36e4c6ece01b344.s3tc.ctex"]
 
 [params]
 

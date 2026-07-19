@@ -8,6 +8,8 @@ enum Effect {
 	STEAL_ITEM,
 	DODGE_NEXT_TURN,
 	PREPARE_MOVE,
+	HEAL,
+	TAKE_FLIGHT,
 }
 
 @export var display_name: String

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2jmv5va6wqjo"]
+
+[ext_resource type="Texture2D" uid="uid://ck5a6c52ag2as" path="res://assets/sprites/shadow.png" id="1_vsl28"]
+
+[node name="BattleActor" type="Node3D" unique_id=1387722252]
+
+[node name="Shadow" type="Sprite3D" parent="." unique_id=249207425]
+texture = ExtResource("1_vsl28")
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1154192992]

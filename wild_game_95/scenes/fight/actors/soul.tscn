@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bgdd8g2k7dipq"]
+
+[ext_resource type="PackedScene" uid="uid://d2jmv5va6wqjo" path="res://scenes/fight/actors/battle_actor.tscn" id="1_pewca"]
+[ext_resource type="Texture2D" uid="uid://v4dt8tsl1nkc" path="res://assets/sprites/ghoul2.png" id="2_q4pq6"]
+
+[node name="BattleActor" unique_id=1387722252 instance=ExtResource("1_pewca")]
+
+[node name="Shadow" parent="." index="0" unique_id=249207425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3121312, 0.6269537, 0)
+
+[node name="Sprite" parent="." index="1" unique_id=1154192992]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+texture = ExtResource("2_q4pq6")

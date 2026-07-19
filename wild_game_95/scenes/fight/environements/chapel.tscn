@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://6n66al1j85g3"]
+
+[ext_resource type="Texture2D" uid="uid://ov0vi38yn11m" path="res://assets/backgroundchapel.png" id="1_gm8g8"]
+[ext_resource type="Script" uid="uid://btms475jdell7" path="res://scenes/fight/environements/chapel.gd" id="1_q4wsl"]
+
+[sub_resource type="Environment" id="Environment_wcnl7"]
+background_mode = 3
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 2
+tonemap_exposure = 0.55
+glow_enabled = true
+glow_intensity = 1.24
+glow_strength = 0.41
+glow_blend_mode = 0
+fog_enabled = true
+fog_mode = 1
+fog_density = 1.0
+
+[node name="Dungeon" type="Node3D" unique_id=294443838]
+script = ExtResource("1_q4wsl")
+pulse_speed = 2.0
+pulse_amount = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=460341275]
+environment = SubResource("Environment_wcnl7")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=615945116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, -2.3)
+gi_mode = 2
+transparent = false
+shaded = true
+texture = ExtResource("1_gm8g8")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=1710396648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2162285, 0.85328907, -1.502564)
+light_color = Color(0.67655426, 0.8236283, 1, 1)
+light_energy = 12.324
+area_range = 1.0
+area_attenuation = 4.649
+area_size = Vector2(0.4584875, 1.1821252)
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="." unique_id=1186641649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60550773, 0.9814725, -1.502564)
+light_color = Color(0.67655426, 0.8236283, 1, 1)
+light_energy = 12.324
+area_range = 1.0
+area_attenuation = 4.649
+area_size = Vector2(0.4584875, 1.1821252)
+
+[node name="AreaLight3D3" type="AreaLight3D" parent="." unique_id=878709605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91156924, 1.172696, -1.502564)
+light_color = Color(0.67655426, 0.8236283, 1, 1)
+light_energy = 12.324
+area_range = 1.0
+area_attenuation = 4.649
+area_size = Vector2(0.4584875, 1.1821252)
+
+[node name="AreaLight3D4" type="AreaLight3D" parent="." unique_id=1075873861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2856233, 1.3143691, -1.502564)
+light_color = Color(0.67655426, 0.8236283, 1, 1)
+light_energy = 12.324
+area_range = 1.0
+area_attenuation = 4.649
+area_size = Vector2(0.4584875, 1.1821252)

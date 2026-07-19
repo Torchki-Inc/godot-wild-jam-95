@@ -4,6 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bmwt3by7xwf6c" path="res://assets/battle_overlay.png" id="2_2sgx1"]
 [ext_resource type="Texture2D" uid="uid://clk8is2byogge" path="res://assets/battle_button.png" id="3_wcevn"]
 [ext_resource type="Texture2D" uid="uid://dwi3gukbbv2ks" path="res://assets/battle_button_selected.png" id="4_r66f3"]
+[ext_resource type="Texture2D" uid="uid://btvcfpa460bqs" path="res://assets/sprites/healthbars/askielhealthbarback.png" id="5_lbxbr"]
+[ext_resource type="PackedScene" uid="uid://dg86is1jqt21k" path="res://scenes/fight/actors/player_actor.tscn" id="5_wra2d"]
+[ext_resource type="Texture2D" uid="uid://orsljds4itpr" path="res://assets/sprites/healthbars/askielhealthbar.png" id="6_wsu1o"]
+[ext_resource type="Texture2D" uid="uid://cf4pm3cbrdglo" path="res://assets/sprites/healthbars/askielhealthbarfill.png" id="7_n4171"]
+[ext_resource type="Texture2D" uid="uid://uovja38bt0od" path="res://assets/sprites/healthbars/ennemieshealthbarback.png" id="8_qsq4k"]
+[ext_resource type="Texture2D" uid="uid://drwajjxgs2akg" path="res://assets/sprites/healthbars/ennemieshealthbar.png" id="9_eb0xa"]
+[ext_resource type="Texture2D" uid="uid://cqi0ww5hp74cq" path="res://assets/sprites/healthbars/ennemieshealthbarfill.png" id="10_sh5bl"]
 
 [node name="Fight" type="Node3D" unique_id=558413241]
 script = ExtResource("1_qxmn2")
@@ -15,9 +22,11 @@ layer = 150
 
 [node name="Root" type="Control" parent="BattleUI" unique_id=151723790]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Border" type="TextureRect" parent="BattleUI/Root" unique_id=365026297]
 layout_mode = 0
@@ -522,15 +531,169 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="IntentUI" type="Control" parent="BattleUI/Root" unique_id=1828824854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Intent0" type="PanelContainer" parent="BattleUI/Root/IntentUI" unique_id=1160280302]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleUI/Root/IntentUI/Intent0" unique_id=1909923807]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/Root/IntentUI/Intent0/MarginContainer" unique_id=45381843]
+layout_mode = 2
+
+[node name="EnemyName" type="Label" parent="BattleUI/Root/IntentUI/Intent0/MarginContainer/VBoxContainer" unique_id=1232505501]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "ENEMY"
+
+[node name="PrimaryIntent" type="Label" parent="BattleUI/Root/IntentUI/Intent0/MarginContainer/VBoxContainer" unique_id=2031921818]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "Intent"
+
+[node name="BonusIntent" type="Label" parent="BattleUI/Root/IntentUI/Intent0/MarginContainer/VBoxContainer" unique_id=1088261234]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Bonus Intent"
+
+[node name="Intent1" type="PanelContainer" parent="BattleUI/Root/IntentUI" unique_id=1770665051]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleUI/Root/IntentUI/Intent1" unique_id=96399395]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/Root/IntentUI/Intent1/MarginContainer" unique_id=1082341137]
+layout_mode = 2
+
+[node name="EnemyName" type="Label" parent="BattleUI/Root/IntentUI/Intent1/MarginContainer/VBoxContainer" unique_id=1748168144]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "ENEMY"
+
+[node name="PrimaryIntent" type="Label" parent="BattleUI/Root/IntentUI/Intent1/MarginContainer/VBoxContainer" unique_id=1154998763]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "Intent"
+
+[node name="BonusIntent" type="Label" parent="BattleUI/Root/IntentUI/Intent1/MarginContainer/VBoxContainer" unique_id=684741594]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Bonus Intent"
+
+[node name="Intent2" type="PanelContainer" parent="BattleUI/Root/IntentUI" unique_id=786936764]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleUI/Root/IntentUI/Intent2" unique_id=1242524075]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/Root/IntentUI/Intent2/MarginContainer" unique_id=1988482761]
+layout_mode = 2
+
+[node name="EnemyName" type="Label" parent="BattleUI/Root/IntentUI/Intent2/MarginContainer/VBoxContainer" unique_id=1627560297]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "ENEMY"
+
+[node name="PrimaryIntent" type="Label" parent="BattleUI/Root/IntentUI/Intent2/MarginContainer/VBoxContainer" unique_id=1898903653]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "Intent"
+
+[node name="BonusIntent" type="Label" parent="BattleUI/Root/IntentUI/Intent2/MarginContainer/VBoxContainer" unique_id=739116980]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Bonus Intent"
+
+[node name="HealthUI" type="Control" parent="BattleUI/Root" unique_id=1856090859]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="BattleUI/Root/HealthUI" unique_id=1804726339]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 20.0
+offset_right = 181.0
+offset_bottom = 60.0
+value = 100.0
+texture_under = ExtResource("5_lbxbr")
+texture_over = ExtResource("6_wsu1o")
+texture_progress = ExtResource("7_n4171")
+
+[node name="EnemyHealthRow" type="HBoxContainer" parent="BattleUI/Root/HealthUI" unique_id=1756183735]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 186.0
+offset_right = 616.0
+offset_bottom = 226.0
+alignment = 1
+
+[node name="EnemyHealthBar2" type="TextureProgressBar" parent="BattleUI/Root/HealthUI/EnemyHealthRow" unique_id=369278091]
+layout_mode = 2
+texture_under = ExtResource("8_qsq4k")
+texture_over = ExtResource("9_eb0xa")
+texture_progress = ExtResource("10_sh5bl")
+
+[node name="EnemyHealthBar1" type="TextureProgressBar" parent="BattleUI/Root/HealthUI/EnemyHealthRow" unique_id=1129107748]
+layout_mode = 2
+texture_under = ExtResource("8_qsq4k")
+texture_over = ExtResource("9_eb0xa")
+texture_progress = ExtResource("10_sh5bl")
+
+[node name="EnemyHealthBar0" type="TextureProgressBar" parent="BattleUI/Root/HealthUI/EnemyHealthRow" unique_id=868988999]
+layout_mode = 2
+texture_under = ExtResource("8_qsq4k")
+texture_over = ExtResource("9_eb0xa")
+texture_progress = ExtResource("10_sh5bl")
+
 [node name="EnemySlots" type="Node3D" parent="." unique_id=204100950]
 
 [node name="Slot0" type="Node3D" parent="EnemySlots" unique_id=329696043]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 1.5, 0.4, -1.52)
 
 [node name="Slot1" type="Node3D" parent="EnemySlots" unique_id=1954418001]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 1, 0.5, -1.52)
 
-[node name="Slot2" type="Node3D" parent="EnemySlots" unique_id=262627477]
+[node name="Slot2" type="Node3D" parent="EnemySlots" unique_id=749709213]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0.5, 0.4, -1.52)
 
-[node name="Slot3" type="Node3D" parent="EnemySlots" unique_id=391901983]
+[node name="PlayerSlot" type="Node3D" parent="." unique_id=552922998]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -1, 0.4, -1.52)
+
+[node name="PlayerBattleActor" parent="PlayerSlot" unique_id=1387722252 instance=ExtResource("5_wra2d")]
 
 [connection signal="pressed" from="BattleUI/Root/MainButtons/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="BattleUI/Root/MainButtons/Item" to="." method="_on_item_pressed"]
