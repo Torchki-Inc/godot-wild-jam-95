@@ -4,7 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://c1yhou67nhkid" path="res://scenes/level/door.tscn" id="2_6gumx"]
 [ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="3_b1l4n"]
 [ext_resource type="PackedScene" uid="uid://bn5jgjkndmdqf" path="res://scenes/level/lever.tscn" id="4_4n73c"]
+[ext_resource type="Texture2D" uid="uid://bw4x8wxbcw06h" path="res://assets/sprites/items/arrow.png" id="4_pvxlj"]
+[ext_resource type="Texture2D" uid="uid://cnwpjsk5lp5bo" path="res://assets/sprites/items/key.png" id="4_vypo6"]
 [ext_resource type="PackedScene" uid="uid://dtdrjatgdfimn" path="res://scenes/vfx/torch_exploring.tscn" id="5_384j7"]
+[ext_resource type="Texture2D" uid="uid://0nblybhdv3wv" path="res://assets/sprites/items/bombs.png" id="5_n3ff2"]
+[ext_resource type="Texture2D" uid="uid://blsu1a1jlkb21" path="res://assets/sprites/items/smokebombs.png" id="6_jxvex"]
 
 [node name="Floor11" type="Node3D" unique_id=653976076]
 
@@ -34,36 +38,43 @@ data = {
 
 [node name="Door" parent="Doors" unique_id=1626321234 instance=ExtResource("2_6gumx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9, 2, -2.9)
-required_key = "floor_1_1"
+required_key = "simple key"
 
 [node name="Items" type="Node3D" parent="." unique_id=1514946173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Item" parent="Items" unique_id=1321334820 instance=ExtResource("3_b1l4n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.20000005, 10.1)
 ITEM_TYPE = 3
 amount = 2
+sprite = ExtResource("4_pvxlj")
 
 [node name="Item2" parent="Items" unique_id=1060534609 instance=ExtResource("3_b1l4n")]
 transform = Transform3D(1, 0, 0, 0, 0.99988776, -0.014980032, 0, 0.014980032, 0.99988776, 18.570696, 0.20000005, 12.701602)
 ITEM_TYPE = 2
+sprite = ExtResource("5_n3ff2")
 
 [node name="Item3" parent="Items" unique_id=765582708 instance=ExtResource("3_b1l4n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.770476, 0.18917239, -14.301784)
+ITEM_TYPE = 3
+sprite = ExtResource("4_pvxlj")
 
 [node name="Item4" parent="Items" unique_id=155659177 instance=ExtResource("3_b1l4n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3051124, 0.18917239, -14.301784)
 ITEM_TYPE = 1
+sprite = ExtResource("6_jxvex")
 
 [node name="Keys" type="Node3D" parent="." unique_id=988081061]
 
 [node name="Item" parent="Keys" unique_id=1770779913 instance=ExtResource("3_b1l4n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 16)
 ITEM_TYPE = 4
-key_id = "floor_1_1"
+sprite = ExtResource("4_vypo6")
+key_id = "simple key"
 item_name = "simple key"
 
 [node name="Lever" parent="Keys" unique_id=1125123968 instance=ExtResource("4_4n73c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 1.3299108, -9.948981)
 lever_id = "lever_floor_1_1"
 activation_message = "You hear old mechanism set in motion"
 

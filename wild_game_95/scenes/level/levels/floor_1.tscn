@@ -3,7 +3,34 @@
 [ext_resource type="MeshLibrary" uid="uid://cxuydycoocknt" path="res://assets/tilesets/dungeon/dungeon_tileset.tres" id="1_6joet"]
 [ext_resource type="PackedScene" uid="uid://c1yhou67nhkid" path="res://scenes/level/door.tscn" id="2_is1hj"]
 [ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="3_brja1"]
+[ext_resource type="Script" uid="uid://cbidq68om2nvk" path="res://scenes/level/door.gd" id="3_qgfcw"]
 [ext_resource type="PackedScene" uid="uid://dtdrjatgdfimn" path="res://scenes/vfx/torch_exploring.tscn" id="4_6d030"]
+[ext_resource type="Texture2D" uid="uid://v5g53jpmiiuj" path="res://assets/tilesets/dungeon/doorchapel.png" id="4_dw6dp"]
+[ext_resource type="Texture2D" uid="uid://cnwpjsk5lp5bo" path="res://assets/sprites/items/key.png" id="4_uinbw"]
+[ext_resource type="Texture2D" uid="uid://kcr4yk0jd6n6" path="res://assets/tilesets/dungeon/doordungeonclosed.png" id="5_upcgt"]
+[ext_resource type="Texture2D" uid="uid://blsu1a1jlkb21" path="res://assets/sprites/items/smokebombs.png" id="7_dw6dp"]
+[ext_resource type="Texture2D" uid="uid://dqeneydtk4hpy" path="res://assets/sprites/items/healthpotion.png" id="7_upcgt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnm6w"]
+albedo_texture = ExtResource("4_dw6dp")
+
+[sub_resource type="BoxMesh" id="BoxMesh_yib56"]
+material = SubResource("StandardMaterial3D_xnm6w")
+size = Vector3(0.1, 4, 1.8)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3qmq5"]
+data = PackedVector3Array(-0.049999997, 2, 0.9, 0.049999997, 2, 0.9, -0.049999997, -2, 0.9, 0.049999997, 2, 0.9, 0.049999997, -2, 0.9, -0.049999997, -2, 0.9, 0.049999997, 2, -0.9, -0.049999997, 2, -0.9, 0.049999997, -2, -0.9, -0.049999997, 2, -0.9, -0.049999997, -2, -0.9, 0.049999997, -2, -0.9, 0.049999997, 2, 0.9, 0.049999997, 2, -0.9, 0.049999997, -2, 0.9, 0.049999997, 2, -0.9, 0.049999997, -2, -0.9, 0.049999997, -2, 0.9, -0.049999997, 2, -0.9, -0.049999997, 2, 0.9, -0.049999997, -2, -0.9, -0.049999997, 2, 0.9, -0.049999997, -2, 0.9, -0.049999997, -2, -0.9, 0.049999997, 2, 0.9, -0.049999997, 2, 0.9, 0.049999997, 2, -0.9, -0.049999997, 2, 0.9, -0.049999997, 2, -0.9, 0.049999997, 2, -0.9, -0.049999997, -2, 0.9, 0.049999997, -2, 0.9, -0.049999997, -2, -0.9, 0.049999997, -2, 0.9, 0.049999997, -2, -0.9, -0.049999997, -2, -0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wytq7"]
+shading_mode = 0
+albedo_texture = ExtResource("5_upcgt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a8a0q"]
+material = SubResource("StandardMaterial3D_wytq7")
+size = Vector2(1.8, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fk5c4"]
+size = Vector3(1.6, 4.225586, 2)
 
 [node name="Floor1" type="Node3D" unique_id=922095307]
 
@@ -18,7 +45,7 @@ data = {
 mesh_library = ExtResource("1_6joet")
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65535, 65533, 655367, 0, 65533, 655365, 65534, 65533, 655366, 1, 65533, 655363, 2, 65533, 1441795, 2, 65534, 1441795, 65533, 65533, 1048579, 65533, 65534, 1048581, 65533, 65535, 655365, 65532, 65535, 655363, 65531, 65535, 655363, 65530, 65535, 655365, 2, 65535, 655363, 3, 65535, 655363, 4, 65535, 655363, 65535, 1, 1441798, 65535, 2, 1441798, 0, 1, 1048582, 0, 2, 1048579, 0, 3, 1048579, 65535, 3, 1441795, 4, 65533, 1048581, 4, 65534, 1048579, 6, 65533, 1441795, 6, 65534, 1441795, 4, 65532, 1441799, 6, 65532, 1048583, 6, 65535, 655365, 8, 65535, 655365, 9, 65535, 655363, 10, 65535, 655366, 7, 65535, 655366, 12, 65535, 655363, 13, 65535, 655363, 14, 65535, 655363, 15, 65535, 655363, 17, 0, 1048581, 17, 65535, 1048581, 17, 65534, 1048581, 17, 65529, 1048579, 17, 65528, 1048579, 17, 65527, 1048579, 17, 65526, 1048579, 17, 65525, 1048579, 17, 65524, 1048579, 17, 65523, 1048579, 17, 65522, 1048579, 17, 65533, 1048579, 17, 65532, 1048579, 17, 65530, 1048579, 10, 65533, 655365, 11, 65533, 655367, 12, 65533, 655366, 9, 65533, 1048579, 9, 65534, 1048579, 13, 65533, 1441795, 13, 65534, 1441798, 19, 65532, 1441798, 19, 65530, 1441798, 19, 65529, 5, 21, 65529, 5, 20, 65529, 7, 18, 65530, 6, 15, 65534, 1048579, 15, 65533, 1048579, 15, 65532, 1048579, 15, 65531, 1048579, 15, 65530, 1048579, 15, 65529, 1048579, 15, 65528, 1048579, 15, 65527, 1048579, 15, 65526, 1048579, 15, 65525, 1048579, 15, 65524, 1048579, 15, 65523, 1048579, 2, 65531, 1441795, 2, 65530, 1441799, 2, 65529, 1441795, 2, 65528, 1441795, 2, 65527, 3, 3, 65527, 7, 4, 65527, 1441795, 4, 65526, 1441795, 4, 65525, 1441795, 4, 65524, 1441795, 4, 65523, 1441795, 4, 65522, 1441795, 8, 65527, 6, 8, 65528, 1048582, 8, 65529, 1048579, 8, 65530, 1048579, 8, 65531, 1048582, 7, 65527, 3, 6, 65527, 1048579, 6, 65526, 1048579, 6, 65525, 1048579, 6, 65524, 1048579, 6, 65523, 1048579, 6, 65522, 1048579, 15, 65522, 1048579, 17, 65521, 1048579, 17, 65520, 1048579, 17, 65519, 1048579, 16, 65519, 655363, 15, 65519, 655363, 17, 65518, 5, 16, 65518, 6, 15, 65518, 3, 14, 65518, 7, 13, 65518, 3, 12, 65518, 6, 11, 65518, 5, 10, 65518, 3, 9, 65518, 7, 8, 65518, 3, 3, 65518, 6, 2, 65518, 3, 1, 65518, 6, 0, 65518, 3, 65535, 65518, 7, 65534, 65518, 3, 65533, 65518, 6, 65532, 65518, 3, 65531, 65518, 7, 7, 65518, 5, 4, 65518, 1441795, 6, 65518, 1048579, 4, 65517, 1441795, 6, 65517, 1048579)
+"cells": PackedInt32Array(65535, 65533, 655367, 0, 65533, 655365, 65534, 65533, 655366, 1, 65533, 655363, 2, 65533, 1441795, 2, 65534, 1441795, 65533, 65533, 1048579, 65533, 65534, 1048581, 65533, 65535, 655365, 65532, 65535, 655363, 65531, 65535, 655363, 65530, 65535, 655365, 2, 65535, 655363, 3, 65535, 655363, 4, 65535, 655363, 65535, 1, 1441798, 65535, 2, 1441798, 0, 1, 1048582, 0, 2, 1048579, 0, 3, 1048579, 65535, 3, 1441795, 4, 65533, 1048581, 4, 65534, 1048579, 6, 65533, 1441795, 6, 65534, 1441795, 4, 65532, 1441799, 6, 65532, 1048583, 6, 65535, 655365, 8, 65535, 655365, 9, 65535, 655363, 10, 65535, 655366, 7, 65535, 655366, 12, 65535, 655363, 13, 65535, 655363, 14, 65535, 655363, 15, 65535, 655363, 17, 0, 1048581, 17, 65535, 1048581, 17, 65534, 1048581, 17, 65529, 1048579, 17, 65528, 1048579, 17, 65527, 1048579, 17, 65526, 1048579, 17, 65525, 1048579, 17, 65524, 1048579, 17, 65523, 1048579, 17, 65522, 1048579, 17, 65533, 1048579, 17, 65532, 1048579, 17, 65530, 1048579, 10, 65533, 655365, 11, 65533, 655367, 12, 65533, 655366, 9, 65533, 1048579, 9, 65534, 1048579, 13, 65533, 1441795, 13, 65534, 1441798, 19, 65532, 1441798, 19, 65530, 1441798, 19, 65529, 5, 21, 65529, 5, 20, 65529, 7, 18, 65530, 6, 15, 65534, 1048579, 15, 65533, 1048579, 15, 65532, 1048579, 15, 65531, 1048579, 15, 65530, 1048579, 15, 65529, 1048579, 15, 65528, 1048579, 15, 65527, 1048579, 15, 65526, 1048579, 15, 65525, 1048579, 15, 65524, 1048579, 15, 65523, 1048579, 2, 65531, 1441795, 2, 65530, 1441799, 2, 65529, 1441795, 2, 65528, 1441795, 2, 65527, 3, 3, 65527, 7, 4, 65527, 1441795, 4, 65526, 1441795, 4, 65525, 1441795, 4, 65524, 1441795, 4, 65523, 1441795, 4, 65522, 1441795, 8, 65527, 6, 8, 65528, 1048582, 8, 65529, 1048579, 8, 65530, 1048579, 8, 65531, 1048582, 7, 65527, 3, 6, 65527, 1048579, 6, 65526, 1048579, 6, 65525, 1048579, 6, 65524, 1048579, 6, 65523, 1048579, 6, 65522, 1048579, 15, 65522, 1048579, 17, 65521, 1048579, 17, 65520, 1048579, 17, 65519, 1048579, 16, 65519, 655363, 15, 65519, 655363, 17, 65518, 5, 16, 65518, 6, 15, 65518, 3, 14, 65518, 7, 13, 65518, 3, 12, 65518, 6, 11, 65518, 5, 10, 65518, 3, 9, 65518, 7, 8, 65518, 3, 3, 65518, 6, 2, 65518, 3, 1, 65518, 6, 0, 65518, 3, 65535, 65518, 7, 65534, 65518, 3, 65533, 65518, 6, 65532, 65518, 3, 65531, 65518, 7, 7, 65518, 5, 4, 65518, 1441795, 6, 65518, 1048579, 4, 65517, 1441795, 6, 65517, 1048579, 65530, 0, 1441795, 65532, 65521, 1441802, 65532, 65520, 1441802, 65532, 65519, 1441802)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -26,7 +53,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 mesh_library = ExtResource("1_6joet")
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65530, 1, 655364, 65531, 1, 655364, 65532, 1, 655364, 65533, 1, 655364, 65534, 1, 655364, 1, 1, 655364, 2, 1, 655364, 3, 1, 655364, 4, 1, 655364, 2, 65532, 655364, 3, 65532, 655364, 7, 65532, 655364, 8, 65532, 655364, 6, 65533, 655364, 5, 1, 655364, 6, 1, 655364, 7, 1, 655364, 8, 1, 655364, 9, 1, 655364, 10, 1, 655364, 11, 1, 655364, 12, 1, 655364, 13, 1, 655364, 14, 1, 655364, 15, 1, 655364, 16, 1, 655364, 4, 65533, 655364, 17, 1, 655364, 18, 65532, 655364, 19, 65533, 655364, 20, 65533, 655364, 21, 65533, 655364, 3, 65522, 655364, 65531, 65522, 655364, 65532, 65522, 655364, 65533, 65522, 655364, 65534, 65522, 655364, 65535, 65522, 655364, 0, 65522, 655364, 1, 65522, 655364, 2, 65522, 655364, 7, 65522, 655364, 8, 65522, 655364, 9, 65522, 655364, 10, 65522, 655364, 11, 65522, 655364, 12, 65522, 655364, 13, 65522, 655364, 14, 65522, 655364, 15, 65522, 655364)
+"cells": PackedInt32Array(65530, 1, 655364, 65531, 1, 655364, 65532, 1, 655364, 65533, 1, 655364, 65534, 1, 655364, 1, 1, 655364, 2, 1, 655364, 3, 1, 655364, 4, 1, 655364, 2, 65532, 655364, 3, 65532, 655364, 7, 65532, 655364, 8, 65532, 655364, 6, 65533, 655364, 5, 1, 655364, 6, 1, 655364, 7, 1, 655364, 8, 1, 655364, 9, 1, 655364, 10, 1, 655364, 11, 1, 655364, 12, 1, 655364, 13, 1, 655364, 14, 1, 655364, 15, 1, 655364, 16, 1, 655364, 4, 65533, 655364, 17, 1, 655364, 18, 65532, 655364, 19, 65533, 655364, 20, 65533, 655364, 21, 65533, 655364, 3, 65522, 655364, 65531, 65522, 655364, 65532, 65522, 655364, 65533, 65522, 655364, 65534, 65522, 655364, 65535, 65522, 655364, 0, 65522, 655364, 1, 65522, 655364, 2, 65522, 655364, 7, 65522, 655364, 8, 65522, 655364, 9, 65522, 655364, 10, 65522, 655364, 11, 65522, 655364, 12, 65522, 655364, 13, 65522, 655364, 14, 65522, 655364, 15, 65522, 655364, 65535, 3, 4, 0, 3, 4)
 }
 
 [node name="Doors" type="Node3D" parent="." unique_id=215161056]
@@ -36,13 +63,102 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.1
 
 [node name="Door2" parent="Doors" unique_id=1594382963 instance=ExtResource("2_is1hj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.600002, 2, -9.9)
+required_key = "basement key"
+
+[node name="Door3" type="Node3D" parent="Doors" unique_id=677504166 node_paths=PackedStringArray("area", "required_levers")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.98286, 1.801734, -36.776722)
+script = ExtResource("3_qgfcw")
+area = NodePath("Area3D")
+required_levers = [null, null, null]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Doors/Door3" unique_id=1682272407]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D" unique_id=498043805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_yib56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Door3/StaticBody3D" unique_id=873861941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("ConcavePolygonShape3D_3qmq5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D" unique_id=953716593]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.051, 0, 1)
+mesh = SubResource("QuadMesh_a8a0q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D" unique_id=583399099]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.051, 0, 1)
+mesh = SubResource("QuadMesh_a8a0q")
+
+[node name="Area3D" type="Area3D" parent="Doors/Door3" unique_id=1897189269 groups=["Door"]]
+visible = false
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Door3/Area3D" unique_id=484568152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03173828, 0.8169967)
+shape = SubResource("BoxShape3D_fk5c4")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Doors/Door3" unique_id=1748924784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8264332)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D2" unique_id=384206058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_yib56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Door3/StaticBody3D2" unique_id=1331615577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("ConcavePolygonShape3D_3qmq5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D2" unique_id=1264580170]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.050998688, 0, 0.98908615)
+mesh = SubResource("QuadMesh_a8a0q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D2" unique_id=397368515]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.051, 0, 1)
+mesh = SubResource("QuadMesh_a8a0q")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Doors/Door3" unique_id=1526804034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8072453)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D3" unique_id=149972463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_yib56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Door3/StaticBody3D3" unique_id=767827116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("ConcavePolygonShape3D_3qmq5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D3" unique_id=1188598172]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.050998688, 0, 0.98908615)
+mesh = SubResource("QuadMesh_a8a0q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Doors/Door3/StaticBody3D3" unique_id=483461010]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.051, 0, 1)
+mesh = SubResource("QuadMesh_a8a0q")
+
+[node name="Door4" parent="Doors" unique_id=511447130 instance=ExtResource("2_is1hj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.850623, 2, -1.8027184)
+required_key = "12341414"
 
 [node name="Items" type="Node3D" parent="." unique_id=30526733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Item" parent="Items" unique_id=1321334820 instance=ExtResource("3_brja1")]
 transform = Transform3D(-0.6874784, 0, 0.7262048, 0, 1, 0, -0.7262048, 0, -0.6874784, 5.471689, 0.7604687, -12.276927)
+sprite = ExtResource("7_upcgt")
+
+[node name="Item2" parent="Items" unique_id=344382473 instance=ExtResource("3_brja1")]
+transform = Transform3D(-0.6874784, 0, 0.7262048, 0, 1, 0, -0.7262048, 0, -0.6874784, 5.471689, 0.7604687, -9.5974865)
+ITEM_TYPE = 1
+sprite = ExtResource("7_dw6dp")
 
 [node name="Keys" type="Node3D" parent="." unique_id=1163877472]
+
+[node name="Item" parent="Keys" unique_id=973239846 instance=ExtResource("3_brja1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2086444, 0, -29.745422)
+ITEM_TYPE = 4
+sprite = ExtResource("4_uinbw")
+key_id = "basement key"
+item_name = "basement key"
 
 [node name="Torches" type="Node3D" parent="." unique_id=1789574976]
 
@@ -123,3 +239,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.551582, 2.2349725, -32.362
 
 [node name="Torch26" parent="Torches" unique_id=488603653 instance=ExtResource("4_6d030")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0394163, 2.4743457, -28.759819)
+
+[connection signal="area_entered" from="Doors/Door3/Area3D" to="Doors/Door3" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Doors/Door3/Area3D" to="Doors/Door3" method="_on_area_3d_area_exited"]

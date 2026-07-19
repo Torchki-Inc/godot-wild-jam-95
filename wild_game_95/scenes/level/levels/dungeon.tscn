@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://couluf7qw6ik" path="res://scenes/level/levels/floor_2.tscn" id="4_hiapd"]
 [ext_resource type="PackedScene" uid="uid://8pra0lpoayfe" path="res://scenes/level/util/level_teleport.tscn" id="5_684e0"]
 [ext_resource type="PackedScene" uid="uid://dxa5axluk8doy" path="res://scenes/level/levels/chapel.tscn" id="7_hnbee"]
+[ext_resource type="PackedScene" uid="uid://b57xu2cle8m5n" path="res://scenes/player/player.tscn" id="7_s3av6"]
+[ext_resource type="PackedScene" uid="uid://d3g2cr7ydn14h" path="res://scenes/ui/message_ui.tscn" id="8_mgoae"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_684e0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,6 +48,10 @@ light_energy = 0.4
 environment = SubResource("Environment_s3av6")
 
 [node name="Floor1" parent="." unique_id=922095307 instance=ExtResource("1_dvlae")]
+
+[node name="Door3" parent="Floor1/Doors" parent_id_path=PackedInt32Array(922095307, 215161056) index="2" unique_id=677504166 node_paths=PackedStringArray("required_levers")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.98286, 1.801734, -36.34613)
+required_levers = [NodePath("../../../Floor11/Keys/Lever")]
 
 [node name="Floor11" parent="." unique_id=653976076 instance=ExtResource("2_th8ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105, 0, -18)
@@ -162,6 +168,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.111855, 0.5, -107.265114)
 
 [node name="4" type="Marker3D" parent="TransitionsRoot/Exits" unique_id=87604983]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.887075, 0.5, -160.63655)
+
+[node name="Player" parent="." unique_id=1686751974 instance=ExtResource("7_s3av6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14628601, 3.654419, 0.18870449)
+SPEED = 14.0
+
+[node name="MessageUI" parent="." unique_id=263412717 instance=ExtResource("8_mgoae")]
 
 [editable path="Floor1"]
 [editable path="Floor11"]

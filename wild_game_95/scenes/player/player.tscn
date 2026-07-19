@@ -172,7 +172,7 @@ sprite_frames = SubResource("SpriteFrames_wewn7")
 animation = &"move_down"
 frame_progress = 0.17757751
 
-[node name="InteractZone" type="Area3D" parent="." unique_id=1837636290]
+[node name="InteractZone" type="Area3D" parent="." unique_id=1837636290 groups=["Player"]]
 collision_layer = 31
 monitoring = false
 

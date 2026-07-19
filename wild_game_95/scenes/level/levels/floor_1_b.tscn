@@ -3,6 +3,8 @@
 [ext_resource type="MeshLibrary" uid="uid://cxuydycoocknt" path="res://assets/tilesets/dungeon/dungeon_tileset.tres" id="1_067u5"]
 [ext_resource type="PackedScene" uid="uid://p52mtcn56mv8" path="res://scenes/items/item.tscn" id="2_1jp8b"]
 [ext_resource type="PackedScene" uid="uid://dtdrjatgdfimn" path="res://scenes/vfx/torch_exploring.tscn" id="3_5kb17"]
+[ext_resource type="Texture2D" uid="uid://0nblybhdv3wv" path="res://assets/sprites/items/bombs.png" id="3_q4ftb"]
+[ext_resource type="Texture2D" uid="uid://cnwpjsk5lp5bo" path="res://assets/sprites/items/key.png" id="4_rf076"]
 
 [node name="Floor1B" type="Node3D" unique_id=1920983300]
 
@@ -33,14 +35,16 @@ data = {
 [node name="Items" type="Node3D" parent="." unique_id=2106068956]
 
 [node name="Item" parent="Items" unique_id=1321334820 instance=ExtResource("2_1jp8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 2)
 ITEM_TYPE = 2
+sprite = ExtResource("3_q4ftb")
 
 [node name="Keys" type="Node3D" parent="." unique_id=146547264]
 
 [node name="Item" parent="Keys" unique_id=522278764 instance=ExtResource("2_1jp8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.014942, 0.6350708, -0.94446373)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.015, 0.6, -0.944)
 ITEM_TYPE = 4
+sprite = ExtResource("4_rf076")
 key_id = "rusty_key"
 item_name = "rusty_key"
 
