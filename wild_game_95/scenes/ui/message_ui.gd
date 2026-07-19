@@ -11,6 +11,10 @@ var previous_tree_paused := false
 var dialogue_session_active := false
 var owns_pause := false
 
+@export_group("Audio")
+@export var typing_sounds: Array[AudioStream] = []
+@export var sound_every_n_chars: int = 2
+
 func _ready() -> void:
 	process_mode = ProcessMode.PROCESS_MODE_WHEN_PAUSED
 
@@ -46,12 +50,19 @@ func _on_message_shown(text: String) -> void:
 	type_text()
 
 func type_text() -> void:
-	label.text = full_text        # весь текст сразу, целиком — переносы посчитаны один раз
-	label.visible_characters = 0  # но видно 0 символов
+	label.text = full_text
+	label.visible_characters = 0
 	for i in full_text.length():
 		if !typing:
 			break
 		label.visible_characters = i + 1
+
+		if not typing_sounds.is_empty() and i % sound_every_n_chars == 0:
+			var ch := full_text[i]
+			if ch != " " and ch != "\n":
+				var sound := typing_sounds[randi() % typing_sounds.size()]
+				AudioManager.play_sfx_random_pitch(sound, 0.85, 1.15, -8.0)
+
 		await get_tree().create_timer(0.025, true).timeout
 	label.visible_characters = full_text.length()
 	typing = false

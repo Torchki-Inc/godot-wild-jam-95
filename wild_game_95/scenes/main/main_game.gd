@@ -15,6 +15,14 @@ extends Node
 
 @onready var cutscene_player: CutscenePlayer = $UI/CutscenePlayer
 
+@export_category("Music")
+@export var prologue_music: AudioStream
+@export var exploration_music: AudioStream
+@export var combat_music: AudioStream
+@export var boss_approach_music: AudioStream
+@export var boss_music: AudioStream
+@export var credits_music: AudioStream
+
 var current_level: Node
 var player: Node
 var current_fight: Node
@@ -36,6 +44,7 @@ func _ready() -> void:
 	add_to_group("main_game")
 
 	GameState.set_state(GameState.State.EXPLORING)
+	AudioManager.play_music(exploration_music)
 
 
 
@@ -117,7 +126,7 @@ func enter_fight(encounter_data: EncounterData) -> void:
 	fight_root.add_child(current_fight)
 
 	switch_to_cutscene_camera("camera_player")
-
+	AudioManager.play_music(combat_music, 0.8)
 
 	if current_fight.has_signal("fight_finished"):
 		current_fight.fight_finished.connect(_on_fight_finished)
@@ -135,7 +144,7 @@ func _on_fight_finished(result = null) -> void:
 	get_tree().paused = false
 
 	switch_to_cutscene_camera("camera_fight")
-
+	AudioManager.play_music(exploration_music, 1.2)
 
 	handle_fight_result(result)
 

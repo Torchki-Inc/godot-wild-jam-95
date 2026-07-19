@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://bct0nkfj3elu0"
 load_path = "res://.godot/imported/some-meme-reactions-that-i-have-v0-qzdcbihjs43h1.webp-3a73153549c3ab0202176dc78c5a9511.s3tc.ctex"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hnbee"]
-radius = 1.6639179
+radius = 1.6638297
 
 [node name="Enemy" type="CharacterBody3D" unique_id=2029052555]
 script = ExtResource("1_5uwov")

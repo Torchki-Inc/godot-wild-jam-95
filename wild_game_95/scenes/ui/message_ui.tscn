@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clunleybpykpx" path="res://scenes/ui/message_ui.gd" id="1_rowjr"]
 [ext_resource type="Texture2D" uid="uid://dwi3gukbbv2ks" path="res://assets/battle_button_selected.png" id="2_pfwhv"]
+[ext_resource type="AudioStream" uid="uid://b5aegmy16vtfk" path="res://assets/sfx/Dialogue beep.mp3" id="2_u23ax"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pvj2x"]
 content_margin_left = 4.0
@@ -14,6 +15,7 @@ texture = ExtResource("2_pfwhv")
 process_mode = 3
 layer = 10
 script = ExtResource("1_rowjr")
+typing_sounds = Array[AudioStream]([ExtResource("2_u23ax")])
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=749181806]
 custom_minimum_size = Vector2(80, 0)

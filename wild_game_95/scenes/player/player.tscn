@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dy2nyw6g0hd3c" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://cdj40p4gc550c" path="res://assets/sprites/Player_sprite_sheet.png" id="2_dovo2"]
+[ext_resource type="AudioStream" uid="uid://dcfdt73xdf4es" path="res://assets/sfx/individual footstep.mp3" id="2_lvxji"]
 [ext_resource type="Shader" uid="uid://dq1aybfj4d6nx" path="res://shaders/materials/crt.gdshader" id="3_gmlin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
@@ -163,6 +164,7 @@ SPEED = 4.0
 acceleration = 1.0
 head = NodePath("CameraRig")
 debug_label = NodePath("CameraRig/SpringArm3D/Camera3D/CanvasLayer/Debug")
+footstep_sounds = Array[AudioStream]([ExtResource("2_lvxji")])
 sprite = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="AnimatedSprite3D" parent="." unique_id=1535030750]

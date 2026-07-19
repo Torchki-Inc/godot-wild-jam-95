@@ -14,6 +14,8 @@
 [ext_resource type="Resource" uid="uid://b6eq20s4qmvyf" path="res://data/enemies/goblin.tres" id="12_vbvgv"]
 [ext_resource type="Resource" uid="uid://dktuhmuaqvece" path="res://data/enemies/cursed_soul.tres" id="13_0xra2"]
 [ext_resource type="Resource" uid="uid://hxxt5ejakaqk" path="res://data/enemies/flesh_amalgamtion.tres" id="14_0xra2"]
+[ext_resource type="PackedScene" uid="uid://bthyaflogor31" path="res://scenes/triggers/music_switch.tscn" id="15_lkjk7"]
+[ext_resource type="AudioStream" uid="uid://f8eg14wbi3d3" path="res://assets/musik/5 approaching boss.mp3" id="16_fh2kf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_684e0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -97,6 +99,9 @@ metadata/_custom_type_script = "uid://bct0nkfj3elu0"
 script = ExtResource("9_6j73u")
 battle_environment = ExtResource("8_6j73u")
 metadata/_custom_type_script = "uid://bct0nkfj3elu0"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lkjk7"]
+size = Vector3(11, 1, 4.0463867)
 
 [node name="Dungeon" type="Node3D" unique_id=1298098383]
 
@@ -272,6 +277,16 @@ encounter_data = SubResource("Resource_hhrqb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.361906, 1.2624645, -94.32849)
 encounter_data = SubResource("Resource_bsyvq")
 
+[node name="musik_switch" type="Node3D" parent="." unique_id=1412099438]
+
+[node name="MusicSwitch2" parent="musik_switch" unique_id=1059623582 instance=ExtResource("15_lkjk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.100006, 0, -109.200005)
+music = ExtResource("16_fh2kf")
+
+[node name="CollisionShape3D" parent="musik_switch/MusicSwitch2" index="0" unique_id=868430289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0.47680664)
+shape = SubResource("BoxShape3D_lkjk7")
+
 [editable path="Floor1"]
 [editable path="Floor11"]
 [editable path="Floor1B"]
@@ -285,3 +300,4 @@ encounter_data = SubResource("Resource_bsyvq")
 [editable path="TransitionsRoot/Enters/2_to_1"]
 [editable path="TransitionsRoot/Enters/2_to_chapel"]
 [editable path="TransitionsRoot/Enters/chapel_to_2"]
+[editable path="musik_switch/MusicSwitch2"]
